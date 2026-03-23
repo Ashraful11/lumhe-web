@@ -1,0 +1,229 @@
+---
+---
+<section class="hero">
+  <div class="hero__decorations" aria-hidden="true">
+    <div class="hero__dot hero__dot--1 float"></div>
+    <div class="hero__dot hero__dot--2 float-reverse"></div>
+    <div class="hero__dot hero__dot--3 float-slow"></div>
+    <div class="hero__shape hero__shape--1 float" data-parallax="-0.08"></div>
+    <div class="hero__shape hero__shape--2 float-reverse" data-parallax="0.06"></div>
+  </div>
+
+  <div class="hero__inner container">
+    <div class="hero__content">
+      <div class="anim-first-hit delay-1">
+        <span class="hero__badge label">
+          <span class="hero__badge-dot"></span>
+          One Platform, Every Celebration
+        </span>
+      </div>
+
+      <h1 class="heading-2xl anim-first-hit delay-2">
+        Your Entire<br/>
+        <span class="underline-wave">Celebration</span>,
+        <em class="gradient-text font-serif">One Place</em>
+      </h1>
+
+      <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 560px;">
+        Upload your invitation in any format. Find and connect with guests by name, phone, or email.
+        Track RSVPs per function, share Moments, and collect digital shagun — all in one place. Completely free.
+      </p>
+
+      <div class="hero__cta anim-first-hit delay-4">
+        <a href="#" class="btn btn-primary btn-lg magnetic">
+          Get Started Free
+          <span class="arrow">&rarr;</span>
+        </a>
+        <a href="#products" class="btn btn-outline btn-lg">
+          Explore Features
+        </a>
+      </div>
+
+      <div class="hero__social-proof anim-first-hit delay-5">
+        <div class="hero__avatars">
+          <div class="hero__avatar" style="background: #FF8A80;">A</div>
+          <div class="hero__avatar" style="background: #81C784;">S</div>
+          <div class="hero__avatar" style="background: #64B5F6;">M</div>
+          <div class="hero__avatar" style="background: #FFD54F;">R</div>
+        </div>
+        <p class="body-sm text-muted">
+          Trusted by <strong style="color: var(--color-text);">2,500+</strong> families &amp; event hosts
+        </p>
+      </div>
+    </div>
+
+    <div class="hero__visual anim-first-hit delay-3">
+      <div class="hero__card-stack">
+        <!-- Upload formats showcase -->
+        <div class="hero__card hero__card--back tilt-card" data-parallax="0.05">
+          <div class="hero__card-inner" style="background: linear-gradient(135deg, #F9E8D0, #FFD6A5);">
+            <div class="hero__card-pattern"></div>
+            <div class="hero__card-text">
+              <span class="label" style="color: #D4A373;">Wedding</span>
+              <h3 class="font-serif" style="font-size: 1.3rem; color: #5D4037;">Mehendi + Sangeet + Reception</h3>
+              <p class="body-sm" style="color: #8D6E63;">3 functions, 1 invite</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card hero__card--mid tilt-card" data-parallax="-0.03">
+          <div class="hero__card-inner" style="background: linear-gradient(135deg, #E8D5F5, #C9B1FF);">
+            <div class="hero__card-pattern"></div>
+            <div class="hero__card-text">
+              <span class="label" style="color: #7E57C2;">Birthday</span>
+              <h3 class="font-serif" style="font-size: 1.3rem; color: #311B92;">Isha turns 25</h3>
+              <p class="body-sm" style="color: #5C6BC0;">42 guests confirmed</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card hero__card--front tilt-card" data-parallax="-0.06">
+          <div class="hero__card-inner" style="background: linear-gradient(135deg, #FF5252, #FF8A80);">
+            <div class="hero__card-pattern hero__card-pattern--light"></div>
+            <div class="hero__card-text" style="color: white;">
+              <span class="label" style="color: rgba(255,255,255,0.8);">Kitty Party</span>
+              <h3 class="font-serif" style="font-size: 1.4rem;">Saturday Brunch</h3>
+              <p class="body-sm" style="color: rgba(255,255,255,0.85);">12/12 confirmed</p>
+            </div>
+            <div class="hero__card-formats">
+              <span class="format-tag">📸 Image</span>
+              <span class="format-tag">🎬 Video</span>
+              <span class="format-tag">📄 PDF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Celebration types ticker -->
+  <div class="hero__ticker anim-first-hit delay-6">
+    <div class="hero__ticker-track" style="display: flex; gap: 1rem;">
+      <span>Weddings</span><span>Birthdays</span><span>Engagements</span><span>Kitty Parties</span><span>Baby Showers</span><span>Anniversaries</span><span>Housewarming</span><span>Farewell Parties</span><span>Corporate Events</span><span>Griha Pravesh</span>
+      <span>Weddings</span><span>Birthdays</span><span>Engagements</span><span>Kitty Parties</span><span>Baby Showers</span><span>Anniversaries</span><span>Housewarming</span><span>Farewell Parties</span><span>Corporate Events</span><span>Griha Pravesh</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-3xl) 0 0;
+    padding-top: calc(var(--space-3xl) + 80px);
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 60%);
+  }
+
+  .hero__decorations { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .hero__dot { position: absolute; border-radius: 50%; }
+  .hero__dot--1 { width: 300px; height: 300px; top: 10%; right: -5%; background: radial-gradient(circle, rgba(255,82,82,0.08), transparent 70%); }
+  .hero__dot--2 { width: 200px; height: 200px; bottom: 15%; left: -3%; background: radial-gradient(circle, rgba(139,92,246,0.06), transparent 70%); }
+  .hero__dot--3 { width: 150px; height: 150px; top: 40%; left: 30%; background: radial-gradient(circle, rgba(249,232,208,0.4), transparent 70%); }
+  .hero__shape { position: absolute; }
+  .hero__shape--1 { width: 40px; height: 40px; top: 20%; right: 15%; border: 2px solid rgba(255,82,82,0.15); border-radius: 8px; transform: rotate(45deg); }
+  .hero__shape--2 { width: 24px; height: 24px; bottom: 25%; left: 10%; background: rgba(249,232,208,0.6); border-radius: 50%; }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    flex: 1;
+  }
+
+  .hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .hero__badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(255,82,82,0.08); color: var(--color-primary);
+    padding: 0.4rem 1rem; border-radius: var(--radius-full); width: fit-content;
+  }
+  .hero__badge-dot {
+    width: 6px; height: 6px; background: var(--color-primary); border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.5;transform:scale(1.5);} }
+
+  .hero__cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: var(--space-sm); }
+  .btn-lg { padding: 1rem 2rem; font-size: 1rem; }
+
+  .hero__social-proof { display: flex; align-items: center; gap: 0.75rem; margin-top: var(--space-sm); }
+  .hero__avatars { display: flex; }
+  .hero__avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 700; color: white;
+    border: 2px solid white; margin-left: -8px;
+  }
+  .hero__avatar:first-child { margin-left: 0; }
+
+  .hero__visual { display: flex; justify-content: center; align-items: center; }
+
+  .hero__card-stack { position: relative; width: 320px; height: 420px; }
+  .hero__card {
+    position: absolute; border-radius: var(--radius-xl); overflow: hidden;
+    box-shadow: var(--shadow-lg); transition: transform 0.5s var(--ease-smooth);
+  }
+  .hero__card--back { width: 260px; height: 360px; top: 30px; right: 0; transform: rotate(6deg); }
+  .hero__card--mid { width: 270px; height: 370px; top: 15px; left: 10px; transform: rotate(-3deg); }
+  .hero__card--front { width: 280px; height: 380px; top: 0; left: 20px; z-index: 2; }
+
+  .hero__card-inner {
+    width: 100%; height: 100%; display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 1.5rem; position: relative;
+  }
+  .hero__card-pattern {
+    position: absolute; inset: 0; opacity: 0.08;
+    background-image: radial-gradient(circle at 20% 30%, currentColor 1px, transparent 1px), radial-gradient(circle at 80% 70%, currentColor 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  .hero__card-pattern--light { opacity: 0.12; color: white; }
+  .hero__card-text { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0.25rem; }
+
+  .hero__card-formats {
+    display: flex; gap: 0.4rem; margin-top: 0.75rem; position: relative; z-index: 1;
+  }
+  .format-tag {
+    background: rgba(255,255,255,0.2); backdrop-filter: blur(4px);
+    padding: 0.2rem 0.5rem; border-radius: var(--radius-sm);
+    font-size: 0.65rem; font-weight: 600; color: white;
+  }
+
+  /* Celebration ticker */
+  .hero__ticker {
+    margin-top: var(--space-xl); padding: 1rem 0;
+    border-top: 1px solid var(--color-border-light);
+    overflow: hidden; position: relative;
+  }
+  .hero__ticker::before, .hero__ticker::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2;
+  }
+  .hero__ticker::before { left: 0; background: linear-gradient(90deg, var(--color-surface), transparent); }
+  .hero__ticker::after { right: 0; background: linear-gradient(90deg, transparent, var(--color-surface)); }
+
+  .hero__ticker-track {
+    display: flex; gap: 2rem; animation: ticker 30s linear infinite; white-space: nowrap;
+  }
+  .hero__ticker-track span {
+    font-size: 0.85rem; font-weight: 500; color: var(--color-text-light);
+    padding: 0.3rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-full);
+    flex-shrink: 0;
+  }
+
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  @media (max-width: 900px) {
+    .hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .hero__content { align-items: center; }
+    .hero__cta { justify-content: center; }
+    .hero__social-proof { justify-content: center; }
+    .hero__card-stack { width: 280px; height: 380px; margin-top: var(--space-lg); }
+    .hero__card--back { width: 220px; height: 300px; }
+    .hero__card--mid { width: 230px; height: 310px; }
+    .hero__card--front { width: 240px; height: 320px; }
+  }
+</style>

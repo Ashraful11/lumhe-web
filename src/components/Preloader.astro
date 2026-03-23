@@ -1,0 +1,123 @@
+---
+---
+<!-- Preloader overlay — MindMarket-style SVG draw animation -->
+<div class="preloader" data-preloader>
+  <div class="preloader__inner" data-preloader-inner>
+    <!-- Lumhe logo SVG that draws itself -->
+    <svg class="preloader__svg" data-preloader-svg viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Shadow paths (back layer, revealed with delay) -->
+      <path class="preloader__shadow preloader__shadow--1" d="
+        M 150 40
+        C 100 40, 60 80, 60 130
+        C 60 200, 150 270, 150 270
+        C 150 270, 240 200, 240 130
+        C 240 80, 200 40, 150 40Z
+      " stroke="var(--color-primary)" stroke-width="4" stroke-opacity="0.15" stroke-linecap="round"/>
+
+      <path class="preloader__shadow preloader__shadow--2" d="
+        M 150 40
+        C 100 40, 60 80, 60 130
+        C 60 200, 150 270, 150 270
+        C 150 270, 240 200, 240 130
+        C 240 80, 200 40, 150 40Z
+      " stroke="var(--color-primary)" stroke-width="8" stroke-opacity="0.06" stroke-linecap="round"/>
+
+      <!-- Main heart path (draws from 0% to 100%) -->
+      <path class="preloader__main-path" data-main-path d="
+        M 150 40
+        C 100 40, 60 80, 60 130
+        C 60 200, 150 270, 150 270
+        C 150 270, 240 200, 240 130
+        C 240 80, 200 40, 150 40Z
+      " stroke="var(--color-primary)" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Inner decorative thread -->
+      <path class="preloader__inner-path" data-inner-path d="
+        M 150 80
+        C 125 80, 95 100, 95 135
+        C 95 175, 150 225, 150 225
+        C 150 225, 205 175, 205 135
+        C 205 100, 175 80, 150 80Z
+      " stroke="var(--color-primary)" stroke-width="1.5" stroke-opacity="0.4" stroke-linecap="round"/>
+
+      <!-- Center dot (scales in with elastic) -->
+      <circle class="preloader__dot" data-dot cx="150" cy="155" r="12" fill="var(--color-primary)"/>
+
+      <!-- Decorative sparkles -->
+      <circle class="preloader__sparkle preloader__sparkle--1" cx="90" cy="85" r="4" fill="var(--color-primary)" fill-opacity="0.3"/>
+      <circle class="preloader__sparkle preloader__sparkle--2" cx="210" cy="85" r="3" fill="#8B5CF6" fill-opacity="0.3"/>
+      <circle class="preloader__sparkle preloader__sparkle--3" cx="150" cy="290" r="3.5" fill="#F59E0B" fill-opacity="0.3"/>
+    </svg>
+
+    <!-- Brand text -->
+    <div class="preloader__text" data-preloader-text>
+      <span class="preloader__brand">Lumhe</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #FDFBF7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s var(--ease-smooth), visibility 0.5s;
+  }
+
+  .preloader.is-done {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .preloader__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0; /* GSAP sets to 1 */
+  }
+
+  .preloader__svg {
+    width: 120px;
+    height: 128px;
+  }
+
+  .preloader__main-path,
+  .preloader__inner-path {
+    fill: none;
+  }
+
+  .preloader__shadow {
+    fill: none;
+    opacity: 0; /* GSAP reveals */
+  }
+
+  .preloader__dot {
+    transform-origin: center;
+    transform: scaleY(0); /* GSAP elastic */
+  }
+
+  .preloader__sparkle {
+    opacity: 0; /* GSAP reveals */
+    transform-origin: center;
+    transform: scale(0);
+  }
+
+  .preloader__text {
+    opacity: 0; /* GSAP reveals */
+    transform: translateY(10px);
+  }
+
+  .preloader__brand {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    letter-spacing: -0.02em;
+  }
+</style>

@@ -1,0 +1,538 @@
+---
+/**
+ * Lumhe Experience Page
+ * Built using the MindMarket.com structure and SVG assets,
+ * recontextualized for Lumhe's celebration platform.
+ * Uses the downloaded mindmarket-com assets for illustrations.
+ */
+---
+
+<!DOCTYPE html>
+<html lang="en" class="lenis">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lumhe — One Platform, Every Celebration</title>
+  <meta name="description" content="Lumhe is a unified celebration platform. Upload any invitation, connect with guests, track RSVPs per function, share Moments, and collect digital shagun."/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ═══ Base Reset ═══ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-bg: #FDFBF7;
+      --color-charcoal: #2C2E2A;
+      --color-text: #2C2E2A;
+      --color-text-muted: #6B7280;
+      --color-primary: #FF5252;
+      --color-primary-light: #FF8A80;
+      --color-yellow: #F5E211;
+      --color-blue: #2BA0FF;
+      --color-green: #8ED462;
+      --color-pink: #FF705C;
+      --color-purple: #EBC1FF;
+      --color-beige-400: #F5F1E4;
+      --color-beige-500: #E0DBCE;
+      --color-border: #E0DBCE;
+      --font: 'Inter', system-ui, sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --transition-slow: 0.8s;
+      --radius: 16px;
+    }
+
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: auto; }
+    html.lenis, html.lenis body { height: auto; }
+    body { font-family: var(--font); color: var(--color-text); background: var(--color-bg); line-height: 1.6; overflow-x: hidden; }
+
+    ::selection { background: var(--color-primary); color: white; }
+
+    /* ═══ Typography (MindMarket fluid scale) ═══ */
+    .heading-2xl { font-size: clamp(3rem, 1.1rem + 9.5vw, 7rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.04em; }
+    .heading-xl { font-size: clamp(2rem, 0.8rem + 6vw, 4.5rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.035em; }
+    .heading-lg { font-size: clamp(1.5rem, 0.5rem + 5vw, 3.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+    .heading-md { font-size: clamp(1.25rem, 1rem + 1.5vw, 2rem); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
+    .body-lg { font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem); line-height: 1.7; }
+    .body-md { font-size: 1rem; line-height: 1.65; }
+    .body-sm { font-size: 0.875rem; line-height: 1.5; }
+    .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    /* ═══ Layout ═══ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.25rem, 3vw, 2.5rem); }
+    .section { padding: clamp(4rem, 8vw, 8rem) 0; }
+
+    /* ═══ Animations (MindMarket anim-first-hit) ═══ */
+    .anim-first-hit { opacity: 0; transform: translateY(60px); }
+    .anim-first-hit.is-active { opacity: 1; transform: translateY(0); transition: opacity var(--transition-slow) var(--ease), transform var(--transition-slow) var(--ease); }
+    .anim-first-hit.delay-1.is-active { transition-delay: 0.1s; }
+    .anim-first-hit.delay-2.is-active { transition-delay: 0.2s; }
+    .anim-first-hit.delay-3.is-active { transition-delay: 0.35s; }
+    .anim-first-hit.delay-4.is-active { transition-delay: 0.5s; }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ═══ Nav (MindMarket style) ═══ */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 0; transition: all 0.4s var(--ease); }
+    .nav--scrolled { background: rgba(253,251,247,0.92); backdrop-filter: blur(16px); padding: 0.75rem 0; box-shadow: 0 1px 20px rgba(0,0,0,0.04); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav__brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--color-text); font-weight: 800; font-size: 1.2rem; }
+    .nav__brand svg { width: 28px; height: 28px; }
+    .nav__links { display: flex; gap: 2rem; }
+    .nav__links a { font-size: 0.9rem; font-weight: 500; color: var(--color-text-muted); text-decoration: none; transition: color 0.25s; }
+    .nav__links a:hover { color: var(--color-primary); }
+    .nav__cta { background: var(--color-charcoal); color: white; padding: 0.65rem 1.5rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: all 0.25s var(--ease); }
+    .nav__cta:hover { background: var(--color-primary); transform: translateY(-2px); }
+
+    @media (max-width: 768px) { .nav__links { display: none; } }
+
+    /* ═══ Hero (MindMarket layout with background illustration) ═══ */
+    .hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding-top: 100px; overflow: hidden; }
+    .hero__bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+    .hero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
+    .hero__content { position: relative; z-index: 1; max-width: 720px; }
+    .hero__content h1 { color: var(--color-charcoal); }
+    .hero__content h1 em { color: var(--color-primary); font-style: normal; }
+    .hero__content p { color: var(--color-text-muted); max-width: 560px; margin-top: 1.25rem; }
+    .hero__cta { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--color-primary); color: white; padding: 0.9rem 2rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none; margin-top: 2rem; transition: all 0.25s var(--ease); border: none; cursor: pointer; }
+    .hero__cta:hover { background: #D32F2F; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,82,82,0.25); }
+    .hero__cta .arrow { transition: transform 0.3s var(--ease); }
+    .hero__cta:hover .arrow { transform: translateX(4px); }
+
+    /* ═══ Content Sections (MindMarket alternating layout) ═══ */
+    .content-block { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+    .content-block--reverse { direction: rtl; }
+    .content-block--reverse > * { direction: ltr; }
+    .content-block__text { display: flex; flex-direction: column; gap: 1rem; }
+    .content-block__text h2 { color: var(--color-charcoal); }
+    .content-block__text h2 em { color: var(--color-primary); font-style: normal; }
+    .content-block__text p { color: var(--color-text-muted); }
+    .content-block__visual { display: flex; justify-content: center; position: relative; }
+    .content-block__visual img { max-width: 100%; height: auto; border-radius: var(--radius); }
+
+    @media (max-width: 900px) {
+      .content-block { grid-template-columns: 1fr; }
+      .content-block--reverse { direction: ltr; }
+    }
+
+    /* ═══ Illustration containers ═══ */
+    .illus-wrap { position: relative; width: 100%; max-width: 400px; margin: 0 auto; }
+    .illus-wrap svg { width: 100%; height: auto; }
+
+    /* Decorative shapes around illustrations (MindMarket style) */
+    .deco-circle { position: absolute; border-radius: 50%; }
+    .deco-circle--yellow { background: var(--color-yellow); }
+    .deco-circle--blue { background: var(--color-blue); }
+    .deco-circle--pink { background: var(--color-pink); }
+    .deco-circle--green { background: var(--color-green); }
+    .deco-circle--purple { background: var(--color-purple); }
+
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    @keyframes float-r { 0%,100%{transform:translateY(0)} 50%{transform:translateY(12px)} }
+    .float { animation: float 5s ease-in-out infinite; }
+    .float-r { animation: float-r 6s ease-in-out infinite; }
+
+    /* ═══ Stats (MindMarket counter section) ═══ */
+    .stats { border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+    .stats__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center; }
+    .stats__num { font-size: clamp(3rem, 5vw, 5rem); font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+    .stats__label { color: var(--color-text-muted); margin-top: 0.5rem; }
+    @media (max-width: 600px) { .stats__grid { grid-template-columns: 1fr; } }
+
+    /* ═══ CTA Section (MindMarket "Ready when you are") ═══ */
+    .cta-section { background: var(--color-charcoal); color: white; border-radius: var(--radius); padding: clamp(3rem, 6vw, 5rem); text-align: center; position: relative; overflow: hidden; }
+    .cta-section h2 em { color: var(--color-primary); font-style: normal; }
+    .cta-section p { color: rgba(255,255,255,0.7); max-width: 500px; margin: 1rem auto 0; }
+    .cta-section .hero__cta { margin-top: 2rem; }
+
+    /* ═══ Ticker / Rail (MindMarket brand logos) ═══ */
+    .rail { overflow: hidden; padding: 2rem 0; border-bottom: 1px solid var(--color-border); position: relative; }
+    .rail::before, .rail::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; }
+    .rail::before { left: 0; background: linear-gradient(90deg, var(--color-bg), transparent); }
+    .rail::after { right: 0; background: linear-gradient(90deg, transparent, var(--color-bg)); }
+    .rail__track { display: flex; gap: 2rem; animation: rail-scroll 25s linear infinite; white-space: nowrap; }
+    .rail__track span { font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted); padding: 0.5rem 1.25rem; border: 1px solid var(--color-border); border-radius: 999px; flex-shrink: 0; }
+    @keyframes rail-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* ═══ Features List (MindMarket pill badges) ═══ */
+    .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .pill { padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+    .pill--primary { background: rgba(255,82,82,0.08); color: var(--color-primary); }
+    .pill--green { background: rgba(142,212,98,0.15); color: #3D8B1C; }
+    .pill--blue { background: rgba(43,160,255,0.1); color: var(--color-blue); }
+    .pill--yellow { background: rgba(245,226,17,0.15); color: #8B7E00; }
+    .pill--purple { background: rgba(235,193,255,0.2); color: #7B2FA0; }
+
+    /* ═══ Cards (MindMarket case study cards) ═══ */
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .card { border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; background: white; transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+    .card__img { aspect-ratio: 16/10; overflow: hidden; }
+    .card__img div { width: 100%; height: 100%; transition: transform 0.5s var(--ease); }
+    .card:hover .card__img div { transform: scale(1.05); }
+    .card__body { padding: 1.5rem; }
+    .card__tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-primary); }
+    .card__title { font-size: 1.1rem; font-weight: 700; margin-top: 0.5rem; line-height: 1.3; }
+    @media (max-width: 900px) { .cards-grid { grid-template-columns: 1fr; } }
+
+    /* ═══ Footer (MindMarket minimal) ═══ */
+    .footer { border-top: 1px solid var(--color-border); padding: 3rem 0 2rem; }
+    .footer__inner { display: flex; justify-content: space-between; align-items: center; }
+    .footer__brand { font-weight: 800; font-size: 1.1rem; }
+    .footer__links { display: flex; gap: 1.5rem; }
+    .footer__links a { font-size: 0.85rem; color: var(--color-text-muted); text-decoration: none; }
+    .footer__links a:hover { color: var(--color-primary); }
+    .footer__copy { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2rem; text-align: center; }
+    @media (max-width: 600px) { .footer__inner { flex-direction: column; gap: 1.5rem; text-align: center; } .footer__links { flex-wrap: wrap; justify-content: center; } }
+
+    /* ═══ Wave underline (MindMarket) ═══ */
+    .underline-wave { position: relative; display: inline-block; }
+    .underline-wave::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 6px; background: var(--color-primary); border-radius: 3px; mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='8'%3E%3Cpath d='M0 4 Q12.5 0 25 4 T50 4 T75 4 T100 4' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E"); mask-size: 50px 8px; mask-repeat: repeat-x; animation: wave 2s linear infinite; }
+    @keyframes wave { to { mask-position: 50px 0; } }
+
+    /* Divider */
+    .divider { width: 60px; height: 3px; background: var(--color-primary); border-radius: 2px; }
+  </style>
+</head>
+
+<body>
+  <!-- ═══ Navigation ═══ -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand">
+        <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#FF5252"/><path d="M14 7C10.5 7 8 10 8 13.5C8 18 14 22 14 22C14 22 20 18 20 13.5C20 10 17.5 7 14 7Z" fill="white" fill-opacity="0.9"/></svg>
+        Lumhe
+      </a>
+      <div class="nav__links">
+        <a href="/#products">Products</a>
+        <a href="/moments">Moments</a>
+        <a href="/lifafa">Lifafa</a>
+        <a href="/story">Our Story</a>
+      </div>
+      <a href="#cta" class="nav__cta">Get Started — Free</a>
+    </div>
+  </nav>
+
+  <!-- ═══ Hero ═══ -->
+  <section class="hero section">
+    <div class="hero__bg" aria-hidden="true">
+      <!-- Floating decorative elements (MindMarket style) -->
+      <div class="deco-circle deco-circle--yellow float" style="width:80px;height:80px;top:15%;right:12%;"></div>
+      <div class="deco-circle deco-circle--blue float-r" style="width:40px;height:40px;top:30%;right:25%;"></div>
+      <div class="deco-circle deco-circle--pink float" style="width:60px;height:60px;bottom:25%;left:5%;"></div>
+      <div class="deco-circle deco-circle--green float-r" style="width:30px;height:30px;top:20%;left:15%;"></div>
+      <div class="deco-circle deco-circle--purple float" style="width:50px;height:50px;bottom:15%;right:8%;"></div>
+      <img src="/mindmarket-com/images/plane-trace.svg" alt="" style="position:absolute;top:10%;right:5%;width:250px;opacity:0.12;"/>
+      <img src="/mindmarket-com/images/soccer-trace.svg" alt="" style="position:absolute;bottom:10%;left:3%;width:200px;opacity:0.1;"/>
+    </div>
+    <div class="container">
+      <div class="hero__content">
+        <div class="anim-first-hit delay-1">
+          <span class="label" style="color: var(--color-primary);">One platform, every celebration</span>
+        </div>
+        <h1 class="heading-2xl anim-first-hit delay-2">
+          Your entire<br/><em>celebration</em>,<br/>one place
+        </h1>
+        <p class="body-lg anim-first-hit delay-3">
+          Lumhe brings invitations, RSVPs, shared Moments, and digital shagun into one unified platform — replacing WhatsApp broadcasts, Google Forms, cash envelopes, and scattered photo groups. Completely free.
+        </p>
+        <a href="#cta" class="hero__cta anim-first-hit delay-4">
+          Start for free <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Celebration Types Rail ═══ -->
+  <div class="rail">
+    <div class="rail__track" style="display:flex;gap:1rem;">
+      <span>Weddings</span><span>Birthdays</span><span>Engagements</span><span>Kitty Parties</span><span>Baby Showers</span><span>Anniversaries</span><span>Housewarming</span><span>Farewell</span><span>Corporate Events</span><span>Griha Pravesh</span>
+      <span>Weddings</span><span>Birthdays</span><span>Engagements</span><span>Kitty Parties</span><span>Baby Showers</span><span>Anniversaries</span><span>Housewarming</span><span>Farewell</span><span>Corporate Events</span><span>Griha Pravesh</span>
+    </div>
+  </div>
+
+  <!-- ═══ Section 1: No More Chaos ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="content-block reveal">
+        <div class="content-block__text">
+          <span class="label" style="color: var(--color-pink);">The problem</span>
+          <h2 class="heading-xl">No more <em>chaos.</em></h2>
+          <p class="body-lg">Managing guests on WhatsApp, tracking RSVPs over phone calls, collecting shagun in cash, sharing photos across five group chats — it adds up fast. Lumhe brings it all under one roof. No misalignment, no friction.</p>
+          <div class="divider"></div>
+        </div>
+        <div class="content-block__visual">
+          <div class="illus-wrap">
+            <img src="/mindmarket-com/images/plane-1.svg" alt="" style="max-width:180px;" class="float"/>
+            <div class="deco-circle deco-circle--yellow float-r" style="width:60px;height:60px;top:-10px;right:20px;"></div>
+            <div class="deco-circle deco-circle--blue float" style="width:30px;height:30px;bottom:20px;left:10px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Section 2: Upload Once ═══ -->
+  <section class="section" style="background: var(--color-beige-400);">
+    <div class="container">
+      <div class="content-block content-block--reverse reveal">
+        <div class="content-block__text">
+          <span class="label" style="color: var(--color-green);">Upload</span>
+          <h2 class="heading-xl">Upload once.<br/><em>Any format.</em></h2>
+          <p class="body-lg">Designed your invite on Canva? Shot a video? Got a PDF from the printer? Just upload it. Lumhe handles the rest — add event details, multiple functions, and RSVP settings.</p>
+          <div class="pills">
+            <span class="pill pill--primary">📸 Image</span>
+            <span class="pill pill--blue">🎬 Video</span>
+            <span class="pill pill--yellow">📄 PDF</span>
+            <span class="pill pill--green">📝 Text</span>
+          </div>
+        </div>
+        <div class="content-block__visual">
+          <div class="illus-wrap">
+            <img src="/mindmarket-com/images/folder.svg" alt="" style="max-width:160px;" class="float-r"/>
+            <img src="/mindmarket-com/images/sheet.svg" alt="" style="max-width:100px; position:absolute; top:-20px; right:0;" class="float"/>
+            <div class="deco-circle deco-circle--pink float" style="width:40px;height:40px;bottom:0;left:20px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Section 3: Find & Connect ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="content-block reveal">
+        <div class="content-block__text">
+          <span class="label" style="color: var(--color-blue);">Discover</span>
+          <h2 class="heading-xl">Find your <em>guests.</em></h2>
+          <p class="body-lg">Search for people by name, phone number, or email right inside Lumhe. Build your celebration circle over time. Send invitations directly — no broadcast lists, no copy-pasting numbers.</p>
+          <div class="pills">
+            <span class="pill pill--primary">By Name</span>
+            <span class="pill pill--blue">By Phone</span>
+            <span class="pill pill--purple">By Email</span>
+          </div>
+        </div>
+        <div class="content-block__visual">
+          <div class="illus-wrap">
+            <img src="/mindmarket-com/images/soccer-circle.svg" alt="" style="max-width:180px;" class="float"/>
+            <div class="deco-circle deco-circle--purple float-r" style="width:50px;height:50px;top:0;right:-10px;"></div>
+            <div class="deco-circle deco-circle--green float" style="width:25px;height:25px;bottom:30px;left:0;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Section 4: Track RSVPs Per Function ═══ -->
+  <section class="section" style="background: var(--color-beige-400);">
+    <div class="container">
+      <div class="content-block content-block--reverse reveal">
+        <div class="content-block__text">
+          <span class="label" style="color: var(--color-primary);">RSVP</span>
+          <h2 class="heading-xl">Track every <em>RSVP.</em></h2>
+          <p class="body-lg">Mehendi, Sangeet, Ceremony, Reception — different guests for different functions. See who confirmed, who hasn't responded, who declined. Send nudge reminders to non-responders only.</p>
+          <div class="pills">
+            <span class="pill pill--primary">Per-Function Tracking</span>
+            <span class="pill pill--green">Nudge Reminders</span>
+            <span class="pill pill--blue">Real-Time Headcount</span>
+          </div>
+        </div>
+        <div class="content-block__visual">
+          <div class="illus-wrap">
+            <img src="/mindmarket-com/images/clock.svg" alt="" style="max-width:140px;" class="float"/>
+            <img src="/mindmarket-com/images/clock-shape.svg" alt="" style="max-width:220px; position:absolute; top:-30px; left:-30px; opacity:0.4;" class="float-r"/>
+            <div class="deco-circle deco-circle--yellow float" style="width:35px;height:35px;bottom:10px;right:0;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Section 5: Moments + Lifafa ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="content-block reveal">
+        <div class="content-block__text">
+          <span class="label" style="color: var(--color-green);">After the event</span>
+          <h2 class="heading-xl">Moments <em>&</em> Lifafa.</h2>
+          <p class="body-lg">Guests share photos through <strong>Moments</strong> — a permanent, beautiful photo timeline. No WhatsApp group chaos. And send shagun through <strong>Digital Lifafa</strong> — direct UPI transfer. Lumhe never touches the money.</p>
+          <div class="pills">
+            <span class="pill pill--purple">📸 Shared Moments</span>
+            <span class="pill pill--yellow">🎁 Digital Lifafa</span>
+            <span class="pill pill--green">💸 Direct UPI</span>
+            <span class="pill pill--primary">♾️ No Expiry</span>
+          </div>
+        </div>
+        <div class="content-block__visual">
+          <div class="illus-wrap">
+            <img src="/mindmarket-com/images/composer-shape.svg" alt="" style="max-width:200px;" class="float"/>
+            <img src="/mindmarket-com/images/music-note-1.svg" alt="" style="width:30px; position:absolute; top:0; right:30px;" class="float-r"/>
+            <img src="/mindmarket-com/images/music-note-2.svg" alt="" style="width:25px; position:absolute; top:40px; right:0;" class="float"/>
+            <div class="deco-circle deco-circle--pink float" style="width:45px;height:45px;bottom:-10px;left:30px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Stats ═══ -->
+  <section class="section stats">
+    <div class="container">
+      <div style="text-align:center; margin-bottom: 3rem;" class="reveal">
+        <span class="label" style="color: var(--color-primary);">By the numbers</span>
+        <h2 class="heading-lg" style="margin-top: 0.5rem;">A few numbers behind the<br/><span class="underline-wave">celebrations</span> we power</h2>
+      </div>
+      <div class="stats__grid reveal">
+        <div>
+          <div class="stats__num" style="color: var(--color-primary);" data-count="12" data-suffix="K+">0</div>
+          <p class="stats__label body-md">Celebrations managed across weddings, birthdays, kitty parties, and more.</p>
+        </div>
+        <div>
+          <div class="stats__num" style="color: var(--color-green);" data-count="45" data-suffix="K+">0</div>
+          <p class="stats__label body-md">Moments shared — photos collected across all events, permanently stored.</p>
+        </div>
+        <div>
+          <div class="stats__num" style="color: var(--color-blue);" data-count="100" data-suffix="%">0</div>
+          <p class="stats__label body-md">Free — always. No hidden fees. No premium tiers. Lumhe is free for everyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA (MindMarket "Ready when you are") ═══ -->
+  <section class="section" id="cta">
+    <div class="container">
+      <div class="cta-section reveal">
+        <div class="deco-circle deco-circle--pink float" style="width:200px;height:200px;top:-60px;right:-40px;opacity:0.06;position:absolute;"></div>
+        <div class="deco-circle deco-circle--purple float-r" style="width:150px;height:150px;bottom:-40px;left:-30px;opacity:0.06;position:absolute;"></div>
+        <span class="label" style="color: rgba(255,255,255,0.5);">Ready when you are</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">Ready to bring your<br/>celebration <em>together?</em></h2>
+        <p class="body-lg">Upload your invitation, connect with your guests, track RSVPs per function, share Moments, and collect digital shagun. All free. From day one.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
+          <a href="#" class="hero__cta">Start Your Celebration <span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="pills" style="justify-content:center; margin-top:1.5rem;">
+          <span class="pill" style="background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.7);">Free forever</span>
+          <span class="pill" style="background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.7);">No credit card</span>
+          <span class="pill" style="background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.7);">No app downloads for guests</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Use Cases Cards ═══ -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+        <span class="label" style="color: var(--color-primary);">Celebrations</span>
+        <h2 class="heading-lg" style="margin-top:0.5rem;">Lumhe works for <em>everything</em></h2>
+      </div>
+      <div class="cards-grid reveal">
+        <div class="card">
+          <div class="card__img"><div style="background: linear-gradient(135deg, #FF5252, #FF8A80);"></div></div>
+          <div class="card__body">
+            <span class="card__tag">Wedding</span>
+            <h3 class="card__title">Manage RSVPs for 5 functions with separate guest lists — Haldi to Reception</h3>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img"><div style="background: linear-gradient(135deg, #8B5CF6, #A78BFA);"></div></div>
+          <div class="card__body">
+            <span class="card__tag">Birthday</span>
+            <h3 class="card__title">Upload your Canva design, find friends inside Lumhe, collect Moments after</h3>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img"><div style="background: linear-gradient(135deg, #F59E0B, #FBBF24);"></div></div>
+          <div class="card__body">
+            <span class="card__tag">Kitty Party</span>
+            <h3 class="card__title">Monthly invites, instant RSVPs, Digital Lifafa for contributions — no cash tracking</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span>Lumhe</span>
+        </div>
+        <div class="footer__links">
+          <a href="/moments">Moments</a>
+          <a href="/lifafa">Digital Lifafa</a>
+          <a href="/templates">Templates</a>
+          <a href="/story">Our Story</a>
+        </div>
+      </div>
+      <p class="footer__copy">&copy; 2026 Lumhe. All rights reserved. Made with ❤️ in India. Completely free.</p>
+    </div>
+  </footer>
+
+  <!-- Inline first-hit trigger (must run before module) -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.querySelectorAll('.anim-first-hit').forEach(function(el) { el.classList.add('is-active'); });
+      }, 200);
+    });
+  </script>
+
+  <!-- ═══ Scripts ═══ -->
+  <script type="module">
+    import Lenis from 'lenis';
+
+    // Lenis smooth scroll
+    const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    // Scroll animations — low threshold + generous root margin for reliable triggering
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Fallback: if Lenis blocks native scroll events, force-reveal after 3s
+    setTimeout(() => {
+      document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => el.classList.add('is-visible'));
+    }, 3000);
+
+    // First-hit handled by inline script above
+
+    // Navbar
+    let lastScroll = 0;
+    lenis.on('scroll', () => {
+      const s = window.scrollY;
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('nav--scrolled', s > 80);
+      nav.classList.toggle('nav--hidden', s > lastScroll && s > 400);
+      lastScroll = s;
+    });
+
+    // Counters
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const target = parseInt(el.dataset.count);
+          const suffix = el.dataset.suffix || '';
+          const dur = 2000, start = performance.now();
+          function step(now) {
+            const p = Math.min((now - start) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.floor(target * eased) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+          counterObs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+  </script>
+</body>
+</html>

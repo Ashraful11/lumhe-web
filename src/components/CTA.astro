@@ -1,0 +1,56 @@
+---
+---
+<section id="cta" class="cta section">
+  <div class="container">
+    <div class="cta__card reveal-scale">
+      <div class="cta__decorations" aria-hidden="true">
+        <div class="cta__circle cta__circle--1 float"></div>
+        <div class="cta__circle cta__circle--2 float-reverse"></div>
+        <div class="cta__shape float-slow"></div>
+      </div>
+      <div class="cta__content">
+        <span class="label" style="color: rgba(255,255,255,0.7);">Completely Free</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem; color: white;">
+          Your Next Celebration<br/>
+          <em class="font-serif">Starts Here</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 520px;">
+          Upload your invitation, connect with guests, track RSVPs, share Moments, and collect digital shagun. All free. No credit card. No catch.
+        </p>
+        <div class="cta__actions" style="margin-top: var(--space-lg);">
+          <a href="#" class="btn btn-cta magnetic">
+            Start Your Celebration
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta { padding: var(--space-2xl) 0 var(--space-3xl); }
+  .cta__card {
+    background: linear-gradient(135deg, var(--color-charcoal), var(--color-dark));
+    border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); text-align: center;
+    position: relative; overflow: hidden; display: flex; justify-content: center;
+  }
+  .cta__decorations { position: absolute; inset: 0; pointer-events: none; }
+  .cta__circle { position: absolute; border-radius: 50%; }
+  .cta__circle--1 { width: 300px; height: 300px; top: -80px; right: -60px; background: radial-gradient(circle, rgba(255,82,82,0.15), transparent 70%); }
+  .cta__circle--2 { width: 200px; height: 200px; bottom: -50px; left: -40px; background: radial-gradient(circle, rgba(139,92,246,0.1), transparent 70%); }
+  .cta__shape { position: absolute; width: 60px; height: 60px; top: 20%; left: 15%; border: 2px solid rgba(255,255,255,0.06); border-radius: 12px; transform: rotate(45deg); }
+  .cta__content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+  .cta__actions { display: flex; gap: 1rem; justify-content: center; }
+  .btn-cta {
+    background: var(--color-primary); color: white; padding: 1rem 2.5rem; font-size: 1rem;
+    border-radius: var(--radius-full); font-weight: 700; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.3s var(--ease-smooth); position: relative; overflow: hidden; border: none; cursor: pointer;
+  }
+  .btn-cta::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent); opacity: 0; transition: opacity 0.3s; }
+  .btn-cta:hover::before { opacity: 1; }
+  .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(255,82,82,0.4); }
+  .btn-cta .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-cta:hover .arrow { transform: translateX(4px); }
+</style>

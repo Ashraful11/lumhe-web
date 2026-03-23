@@ -1,0 +1,31 @@
+---
+const stats = [
+  { value: 12, suffix: 'K+', label: 'Celebrations Managed', color: 'var(--color-primary)' },
+  { value: 98, suffix: '%', label: 'RSVP Response Rate', color: 'var(--color-teal)' },
+  { value: 45, suffix: 'K+', label: 'Moments Shared', color: 'var(--color-violet)' },
+  { value: 100, suffix: '%', label: 'Free — Always', color: 'var(--color-amber)' },
+];
+---
+
+<section class="stats section">
+  <div class="container">
+    <div class="stats__grid reveal">
+      {stats.map((stat) => (
+        <div class="stats__item">
+          <div class="stats__value" style={`color: ${stat.color};`}>
+            <span data-count={stat.value} data-suffix={stat.suffix}>0</span>
+          </div>
+          <p class="body-md text-muted">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats { padding: var(--space-2xl) 0; background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+  .stats__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); text-align: center; }
+  .stats__value { font-family: var(--font-heading); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+  .stats__item p { margin-top: 0.5rem; }
+  @media (max-width: 768px) { .stats__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg) var(--space-md); } }
+</style>

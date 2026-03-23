@@ -1,0 +1,122 @@
+---
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="8" fill="#FF5252"/>
+            <path d="M14 7C10.5 7 8 10 8 13.5C8 18 14 22 14 22C14 22 20 18 20 13.5C20 10 17.5 7 14 7Z" fill="white" fill-opacity="0.9"/>
+          </svg>
+          <span style="font-weight: 700; font-size: 1.1rem;">
+            Lumhe
+          </span>
+        </div>
+        <p class="body-sm text-muted" style="margin-top: 0.75rem; max-width: 280px;">
+          Beautiful digital invitations for every celebration. Designed with love, powered by AI.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Products</h4>
+        <ul class="footer__links">
+          <li><a href="/templates" class="link-animated body-sm">Invites</a></li>
+          <li><a href="/moments" class="link-animated body-sm">Moments</a></li>
+          <li><a href="/lifafa" class="link-animated body-sm">Digital Lifafa</a></li>
+          <li><a href="/templates" class="link-animated body-sm">Templates</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Company</h4>
+        <ul class="footer__links">
+          <li><a href="#" class="link-animated body-sm">About</a></li>
+          <li><a href="#" class="link-animated body-sm">Blog</a></li>
+          <li><a href="#" class="link-animated body-sm">Careers</a></li>
+          <li><a href="#" class="link-animated body-sm">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Legal</h4>
+        <ul class="footer__links">
+          <li><a href="#" class="link-animated body-sm">Privacy</a></li>
+          <li><a href="#" class="link-animated body-sm">Terms</a></li>
+          <li><a href="#" class="link-animated body-sm">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="body-sm text-light">&copy; 2026 Lumhe Invites. All rights reserved.</p>
+      <p class="body-sm text-light">Made with <span style="color: var(--color-primary);">♥</span> in India</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-surface-alt);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-2xl) 0 var(--space-lg);
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .footer__heading {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+
+  .footer__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer__links a {
+    color: var(--color-text-muted);
+  }
+
+  .footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 768px) {
+    .footer__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+    }
+
+    .footer__brand {
+      grid-column: 1 / -1;
+    }
+
+    .footer__bottom {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+</style>

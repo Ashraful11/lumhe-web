@@ -1,0 +1,64 @@
+---
+const testimonials = [
+  {
+    name: 'Ananya Sharma',
+    role: 'Wedding Host',
+    quote: 'Managing RSVPs for 5 different functions was a nightmare on WhatsApp. With Lumhe, I knew exactly who was coming to which function. The nudge reminders saved me dozens of follow-up calls.',
+    avatar: 'A',
+    color: '#FF8A80',
+  },
+  {
+    name: 'Vikram Patel',
+    role: 'Birthday Organiser',
+    quote: 'I uploaded my Canva-designed invite, found all my friends inside Lumhe, and had RSVPs within hours. The Moments feature meant all party photos were in one beautiful album — not scattered across 5 WhatsApp groups.',
+    avatar: 'V',
+    color: '#64B5F6',
+  },
+  {
+    name: 'Meera Iyer',
+    role: 'Kitty Party Host',
+    quote: 'Our kitty group uses Lumhe every month now. Upload the invite, everyone gets notified, RSVPs with one tap. Digital Lifafa made collecting contributions so easy — no cash tracking!',
+    avatar: 'M',
+    color: '#81C784',
+  },
+];
+---
+
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="testimonials__header text-center reveal">
+      <span class="label text-primary">Testimonials</span>
+      <h2 class="heading-xl" style="margin-top: 0.5rem;">
+        Loved by <em class="font-serif">Families</em>
+      </h2>
+    </div>
+
+    <div class="testimonials__grid stagger-children" style="margin-top: var(--space-2xl);">
+      {testimonials.map((t) => (
+        <div class="testimonial-card card-hover">
+          <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
+          <blockquote class="body-lg" style="margin-top: 1rem; font-style: italic; color: var(--color-text);">
+            &ldquo;{t.quote}&rdquo;
+          </blockquote>
+          <div class="testimonial__author" style="margin-top: 1.5rem;">
+            <div class="testimonial__avatar" style={`background: ${t.color};`}>{t.avatar}</div>
+            <div>
+              <p style="font-weight: 600;">{t.name}</p>
+              <p class="body-sm text-muted">{t.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials__header { max-width: 500px; margin: 0 auto; }
+  .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .testimonial-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; }
+  .testimonial__stars { color: var(--color-amber); font-size: 1.1rem; letter-spacing: 2px; }
+  .testimonial__author { display: flex; align-items: center; gap: 0.75rem; }
+  .testimonial__avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 1rem; flex-shrink: 0; }
+  @media (max-width: 900px) { .testimonials__grid { grid-template-columns: 1fr; max-width: 550px; margin-left: auto; margin-right: auto; } }
+</style>

@@ -1,0 +1,90 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Upload Your Invitation',
+    description: 'Bring your invitation in any format — image, video, PDF, or text. Designed on Canva, a phone, or by a professional. Add event details, functions, dates, and venues.',
+    visual: '📤',
+  },
+  {
+    number: '02',
+    title: 'Find & Invite Guests',
+    description: 'Search for guests by name, phone number, or email right inside Lumhe. Connect and send your invitation directly — no WhatsApp broadcast lists needed.',
+    visual: '🔍',
+  },
+  {
+    number: '03',
+    title: 'Track RSVPs Per Function',
+    description: 'See who\'s confirmed, who hasn\'t responded, who declined — for each function separately. Send nudge reminders to non-responders only.',
+    visual: '✅',
+  },
+  {
+    number: '04',
+    title: 'Celebrate Together',
+    description: 'Guests share photos through Moments and send digital shagun through Lifafa. Everything stays in one place — organised, permanent, beautiful.',
+    visual: '🎉',
+  },
+];
+---
+
+<section id="how-it-works" class="section bg-surface-alt">
+  <div class="container">
+    <div class="hiw__header text-center reveal">
+      <span class="label text-primary">How It Works</span>
+      <h2 class="heading-xl" style="margin-top: 0.5rem;">
+        From Invitation to<br/>
+        <em class="font-serif">Celebration</em>
+      </h2>
+    </div>
+
+    <div class="hiw__steps" style="margin-top: var(--space-2xl);">
+      {steps.map((step, i) => (
+        <div class={`hiw__step reveal ${i % 2 === 0 ? '' : 'hiw__step--reverse'}`} style={`transition-delay: ${i * 0.1}s;`}>
+          <div class="hiw__step-content">
+            <div class="hiw__step-number">
+              <span class="gradient-text font-serif" style="font-size: 3rem; font-weight: 700;">{step.number}</span>
+            </div>
+            <h3 class="heading-md" style="margin-top: 0.75rem;">{step.title}</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.5rem; max-width: 400px;">{step.description}</p>
+          </div>
+          <div class="hiw__step-visual" data-parallax={i % 2 === 0 ? '0.04' : '-0.04'}>
+            <div class="hiw__visual-card tilt-card">
+              <span style="font-size: 4rem;">{step.visual}</span>
+            </div>
+          </div>
+          {i < steps.length - 1 && (
+            <div class="hiw__connector" aria-hidden="true">
+              <svg width="2" height="80" viewBox="0 0 2 80"><line x1="1" y1="0" x2="1" y2="80" stroke="var(--color-border)" stroke-width="2" stroke-dasharray="4 4"/></svg>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hiw__header { max-width: 600px; margin: 0 auto; }
+  .hiw__steps { display: flex; flex-direction: column; gap: var(--space-2xl); max-width: 900px; margin: 0 auto; }
+  .hiw__step { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; position: relative; }
+  .hiw__step--reverse { direction: rtl; }
+  .hiw__step--reverse > * { direction: ltr; }
+  .hiw__step-content { display: flex; flex-direction: column; }
+  .hiw__step-number { display: flex; align-items: center; }
+  .hiw__visual-card {
+    background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl);
+    padding: 3rem; display: flex; align-items: center; justify-content: center;
+    aspect-ratio: 1; max-width: 240px; margin: 0 auto;
+    transition: transform 0.5s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth); box-shadow: var(--shadow-md);
+  }
+  .hiw__visual-card:hover { box-shadow: var(--shadow-xl); }
+  .hiw__connector { position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%); }
+
+  @media (max-width: 768px) {
+    .hiw__step { grid-template-columns: 1fr; text-align: center; }
+    .hiw__step--reverse { direction: ltr; }
+    .hiw__step-content { align-items: center; }
+    .hiw__visual-card { max-width: 180px; }
+    .hiw__connector { display: none; }
+  }
+</style>

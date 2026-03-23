@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Lumhe Lifafa — Digital Shagun & Cashless Gifting" description="Send digital Lifafa (Shagun) envelopes via UPI. Lumhe never touches the money. Beautiful animated envelopes with personal messages.">
+  <Navbar />
+
+  <section class="lifafa-hero">
+    <div class="container">
+      <div class="lifafa-hero__inner">
+        <div class="lifafa-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="label" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(245,158,11,0.08); color: var(--color-amber); padding: 0.4rem 1rem; border-radius: var(--radius-full);">
+              <span style="width:6px;height:6px;background:var(--color-amber);border-radius:50%;"></span>
+              Digital Shagun — Live
+            </span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            The Art of<br/>
+            <span class="underline-wave">Giving</span>,
+            <em class="font-serif" style="color: var(--color-amber);">Reimagined</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 540px;">
+            Send digital Lifafa with animated envelopes, personal messages, and instant receipts.
+            Guests pay directly via any UPI app — <strong>Lumhe never touches the money</strong>.
+            For weddings, birthdays, and every celebration.
+          </p>
+          <div class="anim-first-hit delay-4" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: var(--space-sm);">
+            <a href="#" class="btn btn-lifafa magnetic">
+              Send a Lifafa — Free
+              <span class="arrow">&rarr;</span>
+            </a>
+            <a href="#how-lifafa-works" class="btn btn-outline">How It Works</a>
+          </div>
+        </div>
+
+        <div class="lifafa-hero__visual anim-first-hit delay-3">
+          <div class="lifafa-envelope tilt-card">
+            <div class="lifafa-envelope__flap"></div>
+            <div class="lifafa-envelope__body">
+              <div class="lifafa-envelope__pattern" aria-hidden="true"></div>
+              <div class="lifafa-envelope__content">
+                <div class="lifafa-envelope__badge">🎁 Shagun</div>
+                <p class="font-serif" style="font-size: 1.6rem; color: #5D4037; margin-top: 0.5rem;">Wishing you both<br/>a lifetime of joy</p>
+                <div class="lifafa-envelope__amount">
+                  <span style="font-size: 0.7rem; color: #8D6E63;">SENT VIA UPI</span>
+                  <span style="font-size: 2rem; font-weight: 800; font-family: var(--font-heading); color: #5D4037;">₹5,100</span>
+                </div>
+                <div class="lifafa-envelope__receipt">
+                  <span class="body-sm" style="color: #A1887F;">✓ Received by Host directly</span>
+                </div>
+                <div class="lifafa-envelope__from">
+                  <span class="body-sm" style="color: #A1887F;">From the Sharma Family</span>
+                </div>
+              </div>
+            </div>
+            <div class="lifafa-sparkles" aria-hidden="true">
+              <div class="sparkle float" style="top: 10%; left: 15%; width: 8px; height: 8px; background: var(--color-amber); border-radius: 50%; opacity: 0.6;"></div>
+              <div class="sparkle float-reverse" style="top: 25%; right: 10%; width: 6px; height: 6px; background: #FF8A80; border-radius: 50%; opacity: 0.5;"></div>
+              <div class="sparkle float-slow" style="bottom: 20%; left: 20%; width: 5px; height: 5px; background: var(--color-violet); border-radius: 50%; opacity: 0.4;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust banner -->
+  <section style="padding: var(--space-lg) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); background: var(--color-surface-alt);">
+    <div class="container">
+      <div class="trust-banner reveal" style="display: flex; justify-content: center; gap: var(--space-xl); flex-wrap: wrap; text-align: center;">
+        <div><strong style="font-size: 1.1rem;">💸 Direct UPI Transfer</strong><br/><span class="body-sm text-muted">Money goes straight to host</span></div>
+        <div><strong style="font-size: 1.1rem;">🔒 Lumhe Never Touches Money</strong><br/><span class="body-sm text-muted">Zero fees from Lumhe</span></div>
+        <div><strong style="font-size: 1.1rem;">🧾 Instant Receipts</strong><br/><span class="body-sm text-muted">Both sender and receiver notified</span></div>
+        <div><strong style="font-size: 1.1rem;">🆓 Completely Free</strong><br/><span class="body-sm text-muted">No hidden charges</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label" style="color: var(--color-amber);">Why Digital Lifafa</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Tradition Meets<br/>
+          <em class="font-serif">Convenience</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          No more awkward cash handovers. No more bank transfer confusions. Send your blessings beautifully, from anywhere.
+        </p>
+      </div>
+
+      <div class="lifafa-features stagger-children" style="margin-top: var(--space-2xl);">
+        <div class="lf-card card-hover tilt-card">
+          <span style="font-size: 2rem;">✉️</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Animated Envelopes</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Beautiful envelope designs with opening animations. Gold foil, floral, minimal — choose the style that fits your occasion.</p>
+        </div>
+        <div class="lf-card card-hover tilt-card">
+          <span style="font-size: 2rem;">💬</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Personal Messages</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Add heartfelt notes or voice messages. Make every gift personal and memorable, not just a bank notification.</p>
+        </div>
+        <div class="lf-card card-hover tilt-card">
+          <span style="font-size: 2rem;">🧾</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Instant Receipts</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Sender gets notified when the Lifafa is opened. Host sees who gifted what. Clean digital record for everyone.</p>
+        </div>
+        <div class="lf-card card-hover tilt-card">
+          <span style="font-size: 2rem;">📲</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Any UPI App</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Guests pay using their preferred UPI app — GPay, PhonePe, Paytm, or any other. No new accounts needed.</p>
+        </div>
+        <div class="lf-card card-hover tilt-card">
+          <span style="font-size: 2rem;">🌍</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Send From Anywhere</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Distance no longer matters. Send shagun from any city, any country — instantly delivered with love.</p>
+        </div>
+        <div class="lf-card card-hover tilt-card">
+          <span style="font-size: 2rem;">🎊</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Any Occasion</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Wedding shagun, birthday gifts, anniversary blessings, housewarming — Digital Lifafa works for every celebration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-lifafa-works" class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label" style="color: var(--color-amber);">Simple Steps</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Send Blessings in<br/>
+          <em class="font-serif">Seconds</em>
+        </h2>
+      </div>
+
+      <div class="lifafa-steps" style="margin-top: var(--space-2xl);">
+        <div class="ls-step reveal" style="transition-delay: 0.1s;">
+          <div class="ls-step__icon">🎨</div>
+          <h3 class="heading-sm">Choose an Envelope</h3>
+          <p class="body-sm text-muted">Pick from animated envelope designs</p>
+        </div>
+        <div class="ls-step__arrow" aria-hidden="true">&rarr;</div>
+        <div class="ls-step reveal" style="transition-delay: 0.2s;">
+          <div class="ls-step__icon">✍️</div>
+          <h3 class="heading-sm">Add a Message</h3>
+          <p class="body-sm text-muted">Write a note or record a voice message</p>
+        </div>
+        <div class="ls-step__arrow" aria-hidden="true">&rarr;</div>
+        <div class="ls-step reveal" style="transition-delay: 0.3s;">
+          <div class="ls-step__icon">📤</div>
+          <h3 class="heading-sm">Guest Pays via UPI</h3>
+          <p class="body-sm text-muted">Direct to host. Lumhe never touches the money</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="lifafa-cta reveal-scale">
+        <div class="lifafa-cta__decor float" aria-hidden="true"></div>
+        <div style="position: relative; z-index: 1; text-align: center;">
+          <h2 class="heading-xl" style="color: white;">
+            Make Every Gift<br/>
+            <em class="font-serif">Unforgettable</em>
+          </h2>
+          <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+            Free to use. No hidden fees. The host receives 100% of the gift.
+          </p>
+          <a href="#" class="btn btn-lifafa" style="margin-top: var(--space-lg);">
+            Send Your First Lifafa — Free
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .lifafa-hero { min-height: 100vh; display: flex; align-items: center; padding: var(--space-3xl) 0; padding-top: calc(var(--space-3xl) + 80px); background: linear-gradient(180deg, #FFF8E1 0%, var(--color-surface) 60%); }
+  .lifafa-hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+  .lifafa-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+  .btn-lifafa { background: linear-gradient(135deg, #F59E0B, #D97706); color: white; padding: 1rem 2rem; font-size: 1rem; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; border: none; cursor: pointer; transition: all 0.3s var(--ease-smooth); }
+  .btn-lifafa:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(245,158,11,0.35); }
+  .btn-lifafa .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-lifafa:hover .arrow { transform: translateX(4px); }
+
+  .lifafa-envelope { position: relative; width: 340px; margin: 0 auto; }
+  .lifafa-envelope__flap { width: 100%; height: 80px; background: linear-gradient(135deg, #FFCC02, #FFB300); clip-path: polygon(0 0, 50% 100%, 100% 0); position: relative; z-index: 2; }
+  .lifafa-envelope__body { background: linear-gradient(180deg, #FFF8E1, #F9E8D0); border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 2rem; margin-top: -2px; position: relative; box-shadow: var(--shadow-lg); min-height: 300px; }
+  .lifafa-envelope__pattern { position: absolute; inset: 0; opacity: 0.05; background-image: radial-gradient(circle at 25% 25%, #8D6E63 1px, transparent 1px), radial-gradient(circle at 75% 75%, #8D6E63 1px, transparent 1px); background-size: 20px 20px; }
+  .lifafa-envelope__content { position: relative; z-index: 1; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .lifafa-envelope__badge { background: rgba(245,158,11,0.15); color: #B45309; padding: 0.3rem 0.8rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; }
+  .lifafa-envelope__amount { display: flex; flex-direction: column; align-items: center; margin-top: 0.75rem; padding: 0.75rem 1.5rem; background: rgba(245,158,11,0.08); border-radius: var(--radius-md); }
+  .lifafa-envelope__receipt { margin-top: 0.5rem; background: rgba(16,185,129,0.1); color: #065F46; padding: 0.3rem 0.8rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; }
+  .lifafa-envelope__from { margin-top: 0.5rem; }
+  .lifafa-sparkles { position: absolute; inset: -20px; pointer-events: none; }
+
+  .lifafa-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .lf-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; transition: transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth), border-color 0.35s; }
+  .lf-card:hover { border-color: rgba(245,158,11,0.3); }
+
+  .lifafa-steps { display: flex; align-items: flex-start; justify-content: center; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .ls-step { flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .ls-step__icon { font-size: 2.5rem; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); margin-bottom: 0.5rem; }
+  .ls-step__arrow { padding-top: 2rem; font-size: 1.5rem; color: var(--color-text-light); }
+
+  .lifafa-cta { background: linear-gradient(135deg, #92400E, #B45309, #D97706); border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); position: relative; overflow: hidden; }
+  .lifafa-cta__decor { position: absolute; width: 300px; height: 300px; top: -80px; right: -60px; background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%); border-radius: 50%; }
+
+  @media (max-width: 900px) {
+    .lifafa-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .lifafa-hero__content { align-items: center; }
+    .lifafa-envelope { width: 280px; }
+    .lifafa-features { grid-template-columns: 1fr; }
+    .lifafa-steps { flex-direction: column; }
+    .ls-step__arrow { transform: rotate(90deg); }
+  }
+</style>

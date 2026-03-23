@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Lumhe Moments — Shared Photo Memories for Your Celebrations" description="A permanent photo timeline for your events. Guests upload moments, all beautifully collected in one place.">
+  <Navbar />
+
+  <section class="moments-hero">
+    <div class="container">
+      <div class="moments-hero__inner">
+        <div class="moments-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="label" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(139,92,246,0.08); color: var(--color-violet); padding: 0.4rem 1rem; border-radius: var(--radius-full);">
+              <span style="width:6px;height:6px;background:var(--color-violet);border-radius:50%;"></span>
+              Shared Memories
+            </span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            Every Memory<br/>
+            <span class="underline-wave">Collected</span>,
+            <em class="font-serif" style="color: var(--color-violet);">Forever</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 520px;">
+            A permanent, shared photo timeline for your event. Guests upload their photos —
+            all collected beautifully in one place. Not a WhatsApp group. Organised, permanent, beautiful.
+          </p>
+          <div class="anim-first-hit delay-4" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: var(--space-sm);">
+            <a href="#" class="btn btn-moments magnetic">
+              Start Collecting Moments
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+          <p class="body-sm text-muted anim-first-hit delay-5" style="margin-top: var(--space-xs);">
+            Completely free. No app downloads for guests.
+          </p>
+        </div>
+
+        <div class="moments-hero__visual anim-first-hit delay-3">
+          <div class="moments-grid-preview">
+            <div class="moment-thumb moment-thumb--1 tilt-card float" style="background: linear-gradient(135deg, #E8D5F5, #C9B1FF);">
+              <div class="moment-thumb__icon">📸</div>
+              <span class="moment-thumb__label">Mehendi Night</span>
+            </div>
+            <div class="moment-thumb moment-thumb--2 tilt-card float-reverse" style="background: linear-gradient(135deg, #FFE0B2, #FFB74D);">
+              <div class="moment-thumb__icon">🎉</div>
+              <span class="moment-thumb__label">Sangeet</span>
+            </div>
+            <div class="moment-thumb moment-thumb--3 tilt-card float-slow" style="background: linear-gradient(135deg, #FF5252, #FF8A80);">
+              <div class="moment-thumb__icon">💒</div>
+              <span class="moment-thumb__label">The Ceremony</span>
+            </div>
+            <div class="moment-thumb moment-thumb--4 tilt-card float" style="background: linear-gradient(135deg, #A5D6A7, #66BB6A);">
+              <div class="moment-thumb__icon">🥂</div>
+              <span class="moment-thumb__label">Reception</span>
+            </div>
+            <div class="moments-count float-reverse">
+              <span style="font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-violet);">248</span>
+              <span class="body-sm text-muted">Photos shared</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label" style="color: var(--color-violet);">Why Moments</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Better Than a<br/>
+          <em class="font-serif">WhatsApp Group</em>
+        </h2>
+      </div>
+
+      <div class="moments-features stagger-children" style="margin-top: var(--space-2xl);">
+        <div class="mf-card card-hover tilt-card">
+          <span style="font-size: 1.5rem;">📱</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">No App Downloads</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Guests open a link and start uploading. No sign-ups, no app installs, no friction.</p>
+        </div>
+        <div class="mf-card card-hover tilt-card">
+          <span style="font-size: 1.5rem;">♾️</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Permanent — No Expiry</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Unlike WhatsApp media or Instagram Stories, your Moments album stays forever. Come back anytime.</p>
+        </div>
+        <div class="mf-card card-hover tilt-card">
+          <span style="font-size: 1.5rem;">📂</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Organised & Beautiful</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Not a chaotic group chat. A clean, scrollable photo timeline organised by your event.</p>
+        </div>
+        <div class="mf-card card-hover tilt-card">
+          <span style="font-size: 1.5rem;">👥</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Everyone Contributes</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">All guests can upload their photos and videos. A collective memory built together by everyone who was there.</p>
+        </div>
+        <div class="mf-card card-hover tilt-card">
+          <span style="font-size: 1.5rem;">📥</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Easy Downloads</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Download any photo or the entire album. Full resolution, no watermarks, no restrictions.</p>
+        </div>
+        <div class="mf-card card-hover tilt-card">
+          <span style="font-size: 1.5rem;">🔒</span>
+          <h3 class="heading-sm" style="margin-top: 1rem;">Private & Secure</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Only invited guests can view and upload. Your memories stay within your celebration circle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="moments-cta reveal-scale">
+        <div class="moments-cta__decor float" aria-hidden="true"></div>
+        <div style="position: relative; z-index: 1; text-align: center;">
+          <h2 class="heading-xl" style="color: white;">
+            Start Collecting<br/>
+            <em class="font-serif">Memories</em>
+          </h2>
+          <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+            Completely free. Create a Moments album for your next event and let everyone contribute.
+          </p>
+          <a href="#" class="btn btn-moments" style="margin-top: var(--space-lg);">
+            Create Your Album — Free
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .moments-hero { min-height: 100vh; display: flex; align-items: center; padding: var(--space-3xl) 0; padding-top: calc(var(--space-3xl) + 80px); background: linear-gradient(180deg, #F3EEFF 0%, var(--color-surface) 60%); }
+  .moments-hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+  .moments-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+  .btn-moments { background: var(--color-violet); color: white; padding: 1rem 2rem; font-size: 1rem; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; border: none; cursor: pointer; transition: all 0.3s var(--ease-smooth); }
+  .btn-moments:hover { background: #7C3AED; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139,92,246,0.35); }
+  .btn-moments .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-moments:hover .arrow { transform: translateX(4px); }
+
+  .moments-grid-preview { position: relative; width: 400px; height: 420px; }
+  .moment-thumb { position: absolute; border-radius: var(--radius-lg); padding: 1.25rem; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.25rem; box-shadow: var(--shadow-md); }
+  .moment-thumb__icon { font-size: 2rem; }
+  .moment-thumb__label { font-size: 0.75rem; font-weight: 600; color: rgba(0,0,0,0.6); }
+  .moment-thumb--1 { width: 170px; height: 170px; top: 0; left: 0; }
+  .moment-thumb--2 { width: 180px; height: 150px; top: 0; right: 0; }
+  .moment-thumb--3 { width: 200px; height: 180px; bottom: 40px; left: 20px; z-index: 2; }
+  .moment-thumb--3 .moment-thumb__label { color: rgba(255,255,255,0.85); }
+  .moment-thumb--4 { width: 160px; height: 140px; bottom: 60px; right: 10px; }
+  .moments-count { position: absolute; bottom: 0; right: 30px; background: white; padding: 0.75rem 1.25rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; align-items: center; z-index: 3; }
+
+  .moments-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .mf-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; transition: transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth), border-color 0.35s; }
+  .mf-card:hover { border-color: rgba(139,92,246,0.3); }
+
+  .moments-cta { background: linear-gradient(135deg, #4C1D95, #7C3AED); border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); position: relative; overflow: hidden; }
+  .moments-cta__decor { position: absolute; width: 250px; height: 250px; top: -60px; right: -40px; background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%); border-radius: 50%; }
+
+  @media (max-width: 900px) {
+    .moments-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .moments-hero__content { align-items: center; }
+    .moments-grid-preview { width: 300px; height: 340px; margin: 0 auto; }
+    .moment-thumb--1 { width: 130px; height: 130px; }
+    .moment-thumb--2 { width: 140px; height: 120px; }
+    .moment-thumb--3 { width: 160px; height: 140px; }
+    .moment-thumb--4 { width: 120px; height: 110px; }
+    .moments-features { grid-template-columns: 1fr; }
+  }
+</style>

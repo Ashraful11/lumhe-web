@@ -1,0 +1,104 @@
+---
+const products = [
+  {
+    name: 'Invitations',
+    tagline: 'Upload, connect, track RSVPs',
+    description: 'Upload your invitation in any format — image, video, PDF, or text. Find guests by name, phone, or email inside Lumhe. Track RSVPs per function in real time.',
+    emoji: '💌',
+    color: '#FF5252',
+    bg: 'linear-gradient(135deg, #FF5252, #FF8A80)',
+    href: '#features',
+    cta: 'Learn More',
+    features: ['Any Format Upload', 'People Discovery', 'Per-Function RSVP', 'Nudge Reminders'],
+  },
+  {
+    name: 'Moments',
+    tagline: 'Shared photo memories',
+    description: 'A permanent photo timeline for your event. Guests upload memories — all collected beautifully in one place. No expiry like WhatsApp or Instagram Stories.',
+    emoji: '📸',
+    color: '#8B5CF6',
+    bg: 'linear-gradient(135deg, #8B5CF6, #A78BFA)',
+    href: '/moments',
+    cta: 'Explore Moments',
+    features: ['Permanent Album', 'Guest Uploads', 'All in One Place', 'No Expiry'],
+  },
+  {
+    name: 'Digital Lifafa',
+    tagline: 'Cashless shagun via UPI',
+    description: 'Guests send shagun directly via any UPI app — Lumhe never touches the money. Beautiful animated envelopes with personal messages and instant receipts.',
+    emoji: '🎁',
+    color: '#F59E0B',
+    bg: 'linear-gradient(135deg, #F59E0B, #FBBF24)',
+    href: '/lifafa',
+    cta: 'Explore Lifafa',
+    features: ['Direct UPI Transfer', 'Animated Envelopes', 'Personal Messages', 'Instant Receipts'],
+  },
+];
+---
+
+<section id="products" class="section">
+  <div class="container">
+    <div class="text-center reveal" style="max-width: 650px; margin: 0 auto;">
+      <span class="label text-primary">Our Products</span>
+      <h2 class="heading-xl" style="margin-top: 0.5rem;">
+        Three Products,<br/>
+        <em class="font-serif">One Platform</em>
+      </h2>
+      <p class="body-lg text-muted" style="margin-top: 1rem;">
+        From the invitation to the memories to the gift — everything your celebration needs. <strong style="color: var(--color-primary);">Completely free.</strong>
+      </p>
+    </div>
+
+    <div class="products-grid" style="margin-top: var(--space-2xl);">
+      {products.map((p, i) => (
+        <div class={`product-card reveal ${i === 1 ? 'product-card--featured' : ''}`} style={`transition-delay: ${0.1 + i * 0.12}s;`}>
+          <div class="product-card__header" style={`background: ${p.bg};`}>
+            <span style="font-size: 3rem;">{p.emoji}</span>
+            <div class="product-card__header-text">
+              <h3 style="font-size: 1.5rem; font-weight: 800; color: white; font-family: var(--font-heading);">{p.name}</h3>
+              <p style="font-size: 0.85rem; color: rgba(255,255,255,0.85);">{p.tagline}</p>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <p class="body-md text-muted">{p.description}</p>
+            <div class="product-card__tags">
+              {p.features.map(f => (
+                <span class="product-tag" style={`color: ${p.color}; background: ${p.color}12;`}>{f}</span>
+              ))}
+            </div>
+            <a href={p.href} class="btn product-card__cta" style={`background: ${p.color}; color: white;`}>
+              {p.cta}
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
+
+  .product-card {
+    border: 1px solid var(--color-border); border-radius: var(--radius-xl); overflow: hidden;
+    background: var(--color-surface); transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+  }
+  .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+  .product-card--featured { transform: scale(1.03); box-shadow: var(--shadow-lg); border-color: transparent; }
+  .product-card--featured:hover { transform: scale(1.03) translateY(-8px); }
+
+  .product-card__header { padding: 2rem; display: flex; align-items: center; gap: 1rem; }
+  .product-card__header-text { display: flex; flex-direction: column; gap: 0.15rem; }
+  .product-card__body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .product-card__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .product-tag { padding: 0.2rem 0.65rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; }
+  .product-card__cta { width: 100%; justify-content: center; margin-top: 0.25rem; }
+  .product-card__cta:hover { transform: translateY(-2px); filter: brightness(0.9); }
+
+  @media (max-width: 900px) {
+    .products-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .product-card--featured { transform: none; }
+    .product-card--featured:hover { transform: translateY(-8px); }
+  }
+</style>

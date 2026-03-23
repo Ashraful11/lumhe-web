@@ -1,0 +1,1217 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Preloader from '../components/Preloader.astro';
+---
+
+<Layout title="Lumhe — The Story of Your Celebration" description="Follow the thread of your celebration journey. From invitation to memories, see how Lumhe brings everything together.">
+  <Preloader />
+  <Navbar />
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" data-scroll-progress></div>
+
+  <div class="story-page">
+    <!-- ═══ Hero ═══ -->
+    <section class="story-hero">
+      <div class="container">
+        <div class="story-hero__content">
+          <span class="story-label anim-first-hit delay-1">The Celebration Thread</span>
+          <h1 class="story-hero__title anim-first-hit delay-2">
+            One Thread.<br/>
+            <em>Every Moment.</em>
+          </h1>
+          <p class="story-hero__sub anim-first-hit delay-3">
+            Follow the thread of your celebration — from the first invitation to the last shared memory.
+          </p>
+          <div class="story-hero__scroll-hint anim-first-hit delay-5">
+            <div class="scroll-indicator">
+              <div class="scroll-indicator__dot"></div>
+            </div>
+            <span>Scroll to explore</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Thread Container ═══ -->
+    <div class="thread-container">
+      <!-- Desktop thread -->
+      <svg class="thread-svg thread-svg--desktop" viewBox="0 0 1200 6400" fill="none" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+        <path class="thread-main" d="
+          M 600 -50
+          C 600 300, 80 200, 80 550
+          C 80 900, 1120 700, 1120 1100
+          C 1120 1500, 80 1300, 80 1700
+          C 80 2100, 1120 1900, 1120 2300
+          C 1120 2700, 80 2500, 80 2900
+          C 80 3300, 1120 3100, 1120 3500
+          C 1120 3900, 80 3700, 80 4100
+          C 80 4500, 1120 4300, 1120 4700
+          C 1120 5100, 80 4900, 80 5300
+          C 80 5700, 600 5600, 600 6000
+          L 600 6450
+        " stroke="#FF5252" stroke-width="200" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      <!-- Mobile thread — centered S-curves, full opacity -->
+      <svg class="thread-svg thread-svg--mobile" viewBox="0 0 400 7200" fill="none" preserveAspectRatio="none" aria-hidden="true">
+        <path class="thread-main" d="
+          M 360 -50
+          C 360 80, 240 150, 240 300
+          C 240 450, 440 450, 440 600
+          C 440 750, 240 750, 240 900
+          C 240 1050, 440 1050, 440 1200
+          C 440 1350, 240 1350, 240 1500
+          C 240 1650, 440 1650, 440 1800
+          C 440 1950, 240 1950, 240 2100
+          C 240 2250, 440 2250, 440 2400
+          C 440 2550, 240 2550, 240 2700
+          C 240 2850, 440 2850, 440 3000
+          C 440 3150, 240 3150, 240 3300
+          C 240 3450, 440 3450, 440 3600
+          C 440 3750, 240 3750, 240 3900
+          C 240 4050, 440 4050, 440 4200
+          C 440 4350, 360 4400, 360 4500
+          L 360 7200
+        " stroke="#FF5252" stroke-width="70" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      <!-- Floating decorations scattered along the thread -->
+      <div class="thread-decorations" aria-hidden="true">
+        <div class="deco deco--heart" style="top: 5%; left: 25%;">❤️</div>
+        <div class="deco deco--star" style="top: 10%; right: 20%;">⭐</div>
+        <div class="deco deco--confetti" style="top: 18%; left: 60%;">🎊</div>
+        <div class="deco deco--dot" style="top: 22%; left: 12%; background: #FF5252;"></div>
+        <div class="deco deco--dot" style="top: 26%; right: 15%; background: #8B5CF6;"></div>
+        <div class="deco deco--sparkle" style="top: 30%; left: 45%;">✨</div>
+        <div class="deco deco--heart" style="top: 35%; right: 30%;">💕</div>
+        <div class="deco deco--dot" style="top: 40%; left: 20%; background: #F59E0B;"></div>
+        <div class="deco deco--star" style="top: 44%; right: 10%;">🌟</div>
+        <div class="deco deco--confetti" style="top: 48%; left: 70%;">🎉</div>
+        <div class="deco deco--dot" style="top: 52%; left: 8%; background: #10B981;"></div>
+        <div class="deco deco--sparkle" style="top: 56%; right: 25%;">✨</div>
+        <div class="deco deco--heart" style="top: 60%; left: 35%;">❤️</div>
+        <div class="deco deco--dot" style="top: 64%; right: 18%; background: #FF5252;"></div>
+        <div class="deco deco--star" style="top: 68%; left: 55%;">⭐</div>
+        <div class="deco deco--dot" style="top: 72%; left: 15%; background: #8B5CF6;"></div>
+        <div class="deco deco--confetti" style="top: 76%; right: 35%;">🎊</div>
+        <div class="deco deco--sparkle" style="top: 80%; left: 42%;">✨</div>
+        <div class="deco deco--heart" style="top: 84%; right: 12%;">💕</div>
+        <div class="deco deco--dot" style="top: 88%; left: 28%; background: #F59E0B;"></div>
+        <div class="deco deco--star" style="top: 92%; right: 40%;">🌟</div>
+      </div>
+
+      <!-- ═══ Animated Illustrations + Story Nodes ═══ -->
+
+      <!-- Node 1: Upload Invitation -->
+      <div class="story-node story-node--1" data-node>
+        <div class="story-node__visual">
+          <img src="/images/lumhe/invite.png" alt="You're Invited — Lumhe celebration" class="node-img float"/>
+        </div>
+        <div class="story-node__content">
+          <span class="story-label">Step 01</span>
+          <h2 class="story-node__title">Upload Your<br/><em>Invitation</em></h2>
+          <p class="story-node__desc">Designed on Canva? Shot a video? Got a PDF from the printer? Bring it in any format — image, video, PDF, or text. Your invitation, your way.</p>
+        </div>
+      </div>
+
+      <!-- Node 2: Add Functions -->
+      <div class="story-node story-node--2 story-node--reverse" data-node>
+        <div class="story-node__content">
+          <span class="story-label">Step 02</span>
+          <h2 class="story-node__title">Add Every<br/><em>Function</em></h2>
+          <p class="story-node__desc">Haldi, Mehendi, Sangeet, Ceremony, Reception — each with its own date, time, venue, and guest list. One event, multiple functions.</p>
+        </div>
+        <div class="story-node__visual">
+          <div class="illus illus--functions">
+            <div class="illus__scene">
+              <div class="illus__timeline">
+                <div class="tl-item tl-item--anim" style="--delay: 0s; --color: #FFD54F;">
+                  <div class="tl-dot"></div>
+                  <div class="tl-label">Haldi <span>Dec 10</span></div>
+                </div>
+                <div class="tl-item tl-item--anim" style="--delay: 0.15s; --color: #CE93D8;">
+                  <div class="tl-dot"></div>
+                  <div class="tl-label">Mehendi <span>Dec 11</span></div>
+                </div>
+                <div class="tl-item tl-item--anim" style="--delay: 0.3s; --color: #FF5252;">
+                  <div class="tl-dot"></div>
+                  <div class="tl-label">Sangeet <span>Dec 11</span></div>
+                </div>
+                <div class="tl-item tl-item--anim" style="--delay: 0.45s; --color: #64B5F6;">
+                  <div class="tl-dot"></div>
+                  <div class="tl-label">Ceremony <span>Dec 12</span></div>
+                </div>
+                <div class="tl-item tl-item--anim" style="--delay: 0.6s; --color: #81C784;">
+                  <div class="tl-dot"></div>
+                  <div class="tl-label">Reception <span>Dec 12</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 3: Find & Connect -->
+      <div class="story-node story-node--3" data-node>
+        <div class="story-node__visual">
+          <div class="illus illus--connect">
+            <div class="illus__scene">
+              <div class="illus__people-web">
+                <div class="pw-center">You</div>
+                <div class="pw-orbit pw-orbit--1"><div class="pw-person" style="background:#FF8A80;">A</div></div>
+                <div class="pw-orbit pw-orbit--2"><div class="pw-person" style="background:#64B5F6;">V</div></div>
+                <div class="pw-orbit pw-orbit--3"><div class="pw-person" style="background:#81C784;">M</div></div>
+                <div class="pw-orbit pw-orbit--4"><div class="pw-person" style="background:#FFD54F;">R</div></div>
+                <div class="pw-orbit pw-orbit--5"><div class="pw-person" style="background:#CE93D8;">P</div></div>
+                <div class="pw-orbit pw-orbit--6"><div class="pw-person" style="background:#FF8A65;">S</div></div>
+              </div>
+              <div class="illus__lines" aria-hidden="true">
+                <svg viewBox="0 0 200 200" width="200" height="200">
+                  <line x1="100" y1="100" x2="40" y2="30" stroke="var(--color-primary)" stroke-width="1" stroke-opacity="0.15" class="connect-line"/>
+                  <line x1="100" y1="100" x2="170" y2="40" stroke="var(--color-primary)" stroke-width="1" stroke-opacity="0.15" class="connect-line"/>
+                  <line x1="100" y1="100" x2="30" y2="130" stroke="var(--color-primary)" stroke-width="1" stroke-opacity="0.15" class="connect-line"/>
+                  <line x1="100" y1="100" x2="175" y2="150" stroke="var(--color-primary)" stroke-width="1" stroke-opacity="0.15" class="connect-line"/>
+                  <line x1="100" y1="100" x2="55" y2="180" stroke="var(--color-primary)" stroke-width="1" stroke-opacity="0.15" class="connect-line"/>
+                  <line x1="100" y1="100" x2="155" y2="185" stroke="var(--color-primary)" stroke-width="1" stroke-opacity="0.15" class="connect-line"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="story-node__content">
+          <span class="story-label">Step 03</span>
+          <h2 class="story-node__title">Find &<br/><em>Connect</em></h2>
+          <p class="story-node__desc">Search for guests by name, phone, or email right inside Lumhe. Build your celebration circle — your guest list grows with every event. Send invitations directly.</p>
+        </div>
+      </div>
+
+      <!-- Node 4: Track RSVPs -->
+      <div class="story-node story-node--4 story-node--reverse" data-node>
+        <div class="story-node__content">
+          <span class="story-label">Step 04</span>
+          <h2 class="story-node__title">Track Every<br/><em>RSVP</em></h2>
+          <p class="story-node__desc">See who confirmed, who hasn't opened, who declined — for each function separately. Send nudge reminders to non-responders only. Real-time headcount.</p>
+        </div>
+        <div class="story-node__visual">
+          <div class="illus illus--rsvp">
+            <div class="illus__scene">
+              <div class="illus__meter">
+                <svg viewBox="0 0 200 200" width="200" height="200">
+                  <circle cx="100" cy="100" r="85" fill="none" stroke="var(--color-border)" stroke-width="12"/>
+                  <circle cx="100" cy="100" r="85" fill="none" stroke="#10B981" stroke-width="12"
+                    stroke-dasharray="534" stroke-dashoffset="134" stroke-linecap="round"
+                    transform="rotate(-90 100 100)" class="rsvp-ring"/>
+                  <circle cx="100" cy="100" r="85" fill="none" stroke="#F59E0B" stroke-width="12"
+                    stroke-dasharray="534" stroke-dashoffset="414" stroke-linecap="round"
+                    transform="rotate(180 100 100)" class="rsvp-ring"/>
+                </svg>
+                <div class="illus__meter-text">
+                  <span class="meter-num">84</span>
+                  <span class="meter-label">Confirmed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 5: Share -->
+      <div class="story-node story-node--5" data-node>
+        <div class="story-node__visual">
+          <div class="illus illus--share">
+            <div class="illus__scene">
+              <div class="illus__share-burst">
+                <div class="share-ray share-ray--1" style="--angle: -30deg; --color: #25D366;">WhatsApp</div>
+                <div class="share-ray share-ray--2" style="--angle: -10deg; --color: #E1306C;">Instagram</div>
+                <div class="share-ray share-ray--3" style="--angle: 10deg; --color: #0077B5;">Email</div>
+                <div class="share-ray share-ray--4" style="--angle: 30deg; --color: #FF5252;">SMS</div>
+                <div class="share-center">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="story-node__content">
+          <span class="story-label">Also</span>
+          <h2 class="story-node__title">Share<br/><em>Anywhere</em></h2>
+          <p class="story-node__desc">Every invite generates a shareable link. Send on WhatsApp, Instagram, email, SMS — no forwarded tag, no missing details. Guests see everything.</p>
+        </div>
+      </div>
+
+      <!-- Node 6: Moments -->
+      <div class="story-node story-node--6 story-node--reverse" data-node>
+        <div class="story-node__content">
+          <span class="story-label">After the Event</span>
+          <h2 class="story-node__title">Collect<br/><em>Moments</em></h2>
+          <p class="story-node__desc">A permanent, shared photo timeline. Guests upload their photos — all collected beautifully in one place. Not a WhatsApp group. Organised, permanent, beautiful.</p>
+        </div>
+        <div class="story-node__visual">
+          <div class="moments-collage">
+            <img src="/images/lumhe/momets.png" alt="Lumhe Moments — shared celebration photos" class="node-img moments-img--main float"/>
+            <img src="/images/lumhe/momets.png" alt="" class="node-img moments-img--bg1 float-r" aria-hidden="true"/>
+            <img src="/images/lumhe/momets.png" alt="" class="node-img moments-img--bg2 float" aria-hidden="true"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 7: Digital Lifafa -->
+      <div class="story-node story-node--7" data-node>
+        <div class="story-node__visual">
+          <img src="/images/lumhe/digital_lifafa.png" alt="Digital Lifafa — cashless shagun via UPI" class="node-img float"/>
+        </div>
+        <div class="story-node__content">
+          <span class="story-label">The Gift</span>
+          <h2 class="story-node__title">Digital<br/><em>Lifafa</em></h2>
+          <p class="story-node__desc">Guests send shagun directly via any UPI app — Lumhe never touches the money. Beautiful animated envelopes, personal messages, instant receipts.</p>
+        </div>
+      </div>
+
+      <!-- Node 8: Final -->
+      <div class="story-node story-node--8 story-node--center" data-node>
+        <div class="story-node__content" style="text-align: center; max-width: 640px; margin: 0 auto;">
+          <span class="story-label">The Full Picture</span>
+          <h2 class="story-node__title" style="font-size: clamp(2.2rem, 4vw, 3.5rem);"><em>One Platform.</em><br/>Every Celebration.</h2>
+          <p class="story-node__desc" style="max-width: 500px; margin: 0 auto;">Weddings. Birthdays. Kitty parties. Baby showers. Anniversaries. Housewarming. Farewell. Corporate events. — all free. Always.</p>
+          <a href="#" class="btn btn-primary" style="margin-top: 2rem; padding: 1rem 2.5rem; font-size: 1rem;">
+            Start Your Celebration — Free
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<!-- GSAP + ScrollTrigger -->
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Only use Lenis on desktop (pointer: fine) — native scroll on touch devices
+  const isTouchDevice = window.matchMedia('(hover: none)').matches || window.innerWidth <= 900;
+  let lenis: any = null;
+
+  if (isTouchDevice) {
+    // Remove lenis classes so native scroll works
+    document.documentElement.classList.remove('lenis', 'lenis-smooth');
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  }
+
+  if (!isTouchDevice) {
+    lenis = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  } else {
+    // Use native scroll on touch — still update ScrollTrigger
+    window.addEventListener('scroll', () => ScrollTrigger.update());
+  }
+
+  // ═══ Preloader Animation (MindMarket DrawSVG technique) ═══
+  function runPreloader() {
+    const preloader = document.querySelector('[data-preloader]') as HTMLElement;
+    const preloaderInner = document.querySelector('[data-preloader-inner]') as HTMLElement;
+    const preloaderSvg = document.querySelector('[data-preloader-svg]') as SVGElement;
+    const mainPath = document.querySelector('[data-main-path]') as SVGPathElement;
+    const innerPath = document.querySelector('[data-inner-path]') as SVGPathElement;
+    const dot = document.querySelector('[data-dot]') as SVGCircleElement;
+    const shadow1 = document.querySelector('.preloader__shadow--1') as SVGPathElement;
+    const shadow2 = document.querySelector('.preloader__shadow--2') as SVGPathElement;
+    const sparkles = document.querySelectorAll('.preloader__sparkle');
+    const preloaderText = document.querySelector('[data-preloader-text]') as HTMLElement;
+
+    if (!preloader || !mainPath) { init(); return; }
+
+    // Fallback: if preloader doesn't complete in 5s, force it done
+    setTimeout(() => {
+      if (!preloader.classList.contains('is-done')) {
+        preloader.classList.add('is-done');
+        if (lenis) lenis.start();
+        document.documentElement.classList.add('is-first-loaded');
+        init();
+      }
+    }, 5000);
+
+    // Calculate path lengths for draw animation
+    const mainLen = mainPath.getTotalLength();
+    const innerLen = innerPath.getTotalLength();
+    mainPath.style.strokeDasharray = `${mainLen}`;
+    mainPath.style.strokeDashoffset = `${mainLen}`;
+    innerPath.style.strokeDasharray = `${innerLen}`;
+    innerPath.style.strokeDashoffset = `${innerLen}`;
+
+    // Lock scroll during preloader
+    if (lenis) lenis.stop();
+
+    // Build GSAP timeline — mirrors MindMarket's Preloader.js structure
+    const tl = gsap.timeline({
+      paused: false,
+      onComplete: () => {
+        preloader.classList.add('is-done');
+        if (lenis) lenis.start();
+        document.documentElement.classList.add('is-first-loaded');
+        init();
+      },
+    });
+
+    tl
+      // 1. Fade in the wrapper
+      .set(preloaderInner, { opacity: 1 })
+      .addLabel('start')
+
+      // 2. Slide SVG in from below (MindMarket: y 15% → 0%)
+      .fromTo(preloaderSvg,
+        { y: '20%', opacity: 0 },
+        { y: '0%', opacity: 1, ease: 'power2.inOut', duration: 0.8 }
+      )
+
+      // 3. Draw main heart path (0% → 100%) — the core DrawSVG technique
+      .to(mainPath,
+        { strokeDashoffset: 0, ease: 'power1.inOut', duration: 1.2 },
+        'start'
+      )
+
+      // 4. Reveal shadow paths with staggered timing (MindMarket: start+=0.39, start+=0.58)
+      .fromTo(shadow1,
+        { opacity: 0 },
+        { opacity: 1, ease: 'none', duration: 0.3 },
+        'start+=0.45'
+      )
+      .fromTo(shadow2,
+        { opacity: 0 },
+        { opacity: 1, ease: 'none', duration: 0.3 },
+        'start+=0.65'
+      )
+
+      // 5. Draw inner decorative path
+      .to(innerPath,
+        { strokeDashoffset: 0, ease: 'power1.inOut', duration: 0.8 },
+        'start+=0.4'
+      )
+
+      // 6. Scale dot with elastic easing (MindMarket: elastic.out(1, 0.3))
+      .to(dot,
+        { scaleY: 1, scaleX: 1, ease: 'elastic.out(1, 0.3)', duration: 1 },
+        '-=0.4'
+      )
+
+      // 7. Pop in sparkles
+      .to(sparkles,
+        { opacity: 1, scale: 1, ease: 'back.out(3)', duration: 0.4, stagger: 0.1 },
+        '-=0.6'
+      )
+
+      // 8. Fade in brand text
+      .to(preloaderText,
+        { opacity: 1, y: 0, ease: 'power2.out', duration: 0.5 },
+        '-=0.5'
+      )
+
+      // 9. Hold for a moment, then slide everything up and out (MindMarket: y 0% → -15%)
+      .to({}, { duration: 0.3 })
+      .to(preloaderInner,
+        { y: '-20%', opacity: 0, ease: 'power2.inOut', duration: 0.6 }
+      );
+  }
+
+  function init() {
+    // ── Thread drawing — all 4 layers locked to scroll ──
+    // Initialize only the visible thread (desktop or mobile)
+    const visibleSvg = isTouchDevice
+      ? document.querySelector('.thread-svg--mobile')
+      : document.querySelector('.thread-svg--desktop');
+    const threadPath = visibleSvg?.querySelector('.thread-main') as SVGPathElement | null;
+
+    if (threadPath) {
+      const length = threadPath.getTotalLength();
+      threadPath.style.strokeDasharray = `${length}`;
+      threadPath.style.strokeDashoffset = `${length}`;
+    }
+
+    if (!threadPath) { /* no thread to animate */ }
+    else gsap.to(threadPath, {
+      strokeDashoffset: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.thread-container',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1.5,
+      },
+    });
+
+    // ── Story nodes — entrance animations ──
+    document.querySelectorAll<HTMLElement>('[data-node]').forEach((node) => {
+      const visual = node.querySelector('.story-node__visual') as HTMLElement;
+      const content = node.querySelector('.story-node__content') as HTMLElement;
+      const isReverse = node.classList.contains('story-node--reverse');
+      const isCenter = node.classList.contains('story-node--center');
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: node,
+          start: isTouchDevice ? 'top 85%' : 'top 80%',
+          end: isTouchDevice ? 'top 60%' : 'top 35%',
+          scrub: isTouchDevice ? false : 1,
+          toggleActions: isTouchDevice ? 'play none none none' : undefined,
+        },
+      });
+
+      if (isCenter) {
+        tl.from(content, { opacity: 0, y: 60, scale: 0.95, duration: 0.8, ease: 'power3.out' });
+      } else {
+        tl.from(visual, { opacity: 0, y: isTouchDevice ? 40 : 0, x: isTouchDevice ? 0 : (isReverse ? 100 : -100), scale: 0.9, duration: 0.8, ease: 'power3.out' }, 0);
+        tl.from(content, { opacity: 0, y: 40, duration: 0.8, ease: 'power3.out' }, 0.15);
+      }
+    });
+
+    // ── Illustration trigger animations ──
+    // Timeline items cascade when node enters
+    document.querySelectorAll('.tl-item--anim').forEach((item) => {
+      const el = item as HTMLElement;
+      const delay = parseFloat(getComputedStyle(el).getPropertyValue('--delay')) || 0;
+      gsap.from(el, {
+        opacity: 0, x: -30, duration: 0.5, delay,
+        scrollTrigger: { trigger: el.closest('[data-node]')!, start: 'top 70%' }
+      });
+    });
+
+    // Connect lines draw
+    document.querySelectorAll('.connect-line').forEach((line, i) => {
+      const el = line as SVGLineElement;
+      const len = Math.sqrt(Math.pow(Number(el.getAttribute('x2')) - Number(el.getAttribute('x1')), 2) + Math.pow(Number(el.getAttribute('y2')) - Number(el.getAttribute('y1')), 2));
+      el.style.strokeDasharray = `${len}`;
+      el.style.strokeDashoffset = `${len}`;
+      gsap.to(el, {
+        strokeDashoffset: 0, duration: 0.6, delay: i * 0.1,
+        scrollTrigger: { trigger: el.closest('[data-node]')!, start: 'top 65%' }
+      });
+    });
+
+    // RSVP ring fill
+    document.querySelectorAll('.rsvp-ring').forEach((ring) => {
+      const el = ring as SVGCircleElement;
+      const target = el.getAttribute('stroke-dashoffset') || '0';
+      el.style.strokeDashoffset = '534';
+      gsap.to(el, {
+        strokeDashoffset: target, duration: 1.5, ease: 'power2.out',
+        scrollTrigger: { trigger: el.closest('[data-node]')!, start: 'top 65%' }
+      });
+    });
+
+    // ── First-hit hero ──
+    setTimeout(() => {
+      document.querySelectorAll('.anim-first-hit').forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-visible');
+      });
+    }, 100);
+
+    // ── Scroll Progress Bar ──
+    const progressBar = document.querySelector<HTMLElement>('[data-scroll-progress]');
+    function updateProgress() {
+      if (!progressBar) return;
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = `${progress}%`;
+    }
+    if (lenis) { lenis.on('scroll', updateProgress); }
+    else { window.addEventListener('scroll', updateProgress, { passive: true }); }
+
+    // ── Floating Decorations — reveal on scroll ──
+    const decoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Stagger the reveal with a random delay for organic feel
+            const delay = Math.random() * 300;
+            setTimeout(() => entry.target.classList.add('is-visible'), delay);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px 100px 0px' }
+    );
+    document.querySelectorAll('.deco').forEach((el) => decoObserver.observe(el));
+
+    // ── Navbar ──
+    const nav = document.querySelector<HTMLElement>('.navbar');
+    if (nav) {
+      let lastScroll = 0;
+      function updateNav() {
+        const s = window.scrollY;
+        nav!.classList.toggle('navbar--scrolled', s > 80);
+        nav!.classList.toggle('navbar--hidden', s > lastScroll && s > 400);
+        lastScroll = s;
+      }
+      if (lenis) { lenis.on('scroll', updateNav); }
+      else { window.addEventListener('scroll', updateNav, { passive: true }); }
+    }
+
+    // Fallback: ensure all node content is visible after 4s even if GSAP scrub hasn't triggered
+    setTimeout(() => {
+      document.querySelectorAll('[data-node] .story-node__visual, [data-node] .story-node__content').forEach((el) => {
+        const htmlEl = el as HTMLElement;
+        if (parseFloat(getComputedStyle(htmlEl).opacity) < 0.5) {
+          gsap.to(htmlEl, { opacity: 1, x: 0, y: 0, scale: 1, rotation: 0, duration: 0.6, ease: 'power2.out' });
+        }
+      });
+    }, 4000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runPreloader);
+  } else {
+    runPreloader();
+  }
+</script>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
+
+<style>
+  .story-page { background: #FDFBF7; position: relative; overflow-x: hidden; }
+
+  /* ═══ 1. Scroll Progress Bar ═══ */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #FF5252, #8B5CF6, #F59E0B);
+    z-index: 9999;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(255, 82, 82, 0.4);
+  }
+
+  /* ═══ 2. Background Color Shift Sections ═══ */
+  .story-node--1 { --section-bg: rgba(255, 82, 82, 0.03); }
+  .story-node--2 { --section-bg: rgba(139, 92, 246, 0.03); }
+  .story-node--3 { --section-bg: rgba(59, 130, 246, 0.03); }
+  .story-node--4 { --section-bg: rgba(16, 185, 129, 0.03); }
+  .story-node--5 { --section-bg: rgba(20, 184, 166, 0.03); }
+  .story-node--6 { --section-bg: rgba(139, 92, 246, 0.04); }
+  .story-node--7 { --section-bg: rgba(245, 158, 11, 0.04); }
+  .story-node--8 { --section-bg: rgba(255, 82, 82, 0.03); }
+
+  .thread-container {
+    background:
+      linear-gradient(180deg,
+        #FDFBF7 0%,
+        #FFF5F5 10%,
+        #FDF5FF 25%,
+        #F5F8FF 40%,
+        #F0FFF4 55%,
+        #FDF5FF 70%,
+        #FFFBF0 82%,
+        #FFF5F5 92%,
+        #FDFBF7 100%
+      );
+  }
+
+  /* ═══ 3. Floating Decorations ═══ */
+  .thread-decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .deco {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+    transform: scale(0.5) translateY(20px);
+  }
+
+  .deco.is-visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  .deco--heart, .deco--star, .deco--sparkle, .deco--confetti {
+    font-size: 1.2rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06));
+  }
+
+  .deco--dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  .deco--dot.is-visible {
+    opacity: 0.4;
+  }
+
+  /* Float animations for decorations */
+  .deco--heart { animation: deco-float-1 5s ease-in-out infinite; }
+  .deco--star { animation: deco-float-2 6s ease-in-out infinite; }
+  .deco--sparkle { animation: deco-float-3 4s ease-in-out infinite; }
+  .deco--confetti { animation: deco-float-1 7s ease-in-out infinite 0.5s; }
+
+  @keyframes deco-float-1 { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(8deg); } }
+  @keyframes deco-float-2 { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(-5deg); } }
+  @keyframes deco-float-3 { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-12px) scale(1.15); } }
+
+  /* ── Hero ── */
+  .story-hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding-top: 100px; background: linear-gradient(180deg, #FFF5EE 0%, #FDFBF7 100%);
+  }
+  .story-hero__content { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+
+  .story-label {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-primary);
+    background: rgba(255,82,82,0.06); padding: 0.4rem 1.2rem; border-radius: var(--radius-full);
+  }
+
+  .story-hero__title {
+    font-family: var(--font-heading); font-size: clamp(3rem, 7vw, 6rem); font-weight: 700;
+    line-height: 1.05; letter-spacing: -0.04em; color: var(--color-charcoal);
+  }
+  .story-hero__title em { color: var(--color-primary); font-style: italic; }
+
+  .story-hero__sub { font-size: clamp(1rem, 1.5vw, 1.25rem); color: var(--color-text-muted); max-width: 480px; line-height: 1.6; }
+
+  .story-hero__scroll-hint { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-top: 2rem; color: var(--color-text-light); font-size: 0.8rem; font-weight: 500; }
+  .scroll-indicator { width: 24px; height: 40px; border: 2px solid var(--color-border); border-radius: 12px; display: flex; justify-content: center; padding-top: 6px; }
+  .scroll-indicator__dot { width: 4px; height: 8px; background: var(--color-primary); border-radius: 2px; animation: scroll-bounce 2s ease-in-out infinite; }
+  @keyframes scroll-bounce { 0%,100%{transform:translateY(0);opacity:1;} 50%{transform:translateY(12px);opacity:0.3;} }
+
+  /* ── Thread ── */
+  .thread-container { position: relative; min-height: 6400px; padding: 0 clamp(1rem, 3vw, 2rem); }
+
+  .thread-svg {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 100%; max-width: 1200px; height: 100%; pointer-events: none; z-index: 0;
+  }
+  .thread-svg--mobile { display: none; }
+
+  /* ── Story Nodes ── */
+  .story-node {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    width: 100%; max-width: 1000px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; z-index: 2;
+  }
+  .story-node--reverse { direction: rtl; }
+  .story-node--reverse > * { direction: ltr; }
+  .story-node--center { display: flex; justify-content: center; }
+
+  .story-node--1 { top: 300px; }
+  .story-node--2 { top: 1050px; }
+  .story-node--3 { top: 1800px; }
+  .story-node--4 { top: 2550px; }
+  .story-node--5 { top: 3300px; }
+  .story-node--6 { top: 4050px; }
+  .story-node--7 { top: 4800px; }
+  .story-node--8 { top: 5600px; }
+
+  .story-node__content {
+    display: flex; flex-direction: column; gap: 0.75rem;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.04);
+    transform: rotate(-2deg);
+    transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+  }
+  .story-node--reverse .story-node__content { transform: rotate(2deg); }
+  .story-node__content:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.04); }
+  .story-node--reverse .story-node__content:hover { transform: rotate(0deg) translateY(-4px); }
+  .story-node--center .story-node__content { transform: rotate(0deg); }
+  .story-node__title {
+    font-family: var(--font-heading); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700;
+    line-height: 1.1; letter-spacing: -0.03em; color: var(--color-charcoal);
+  }
+  .story-node__title em { color: var(--color-primary); font-style: italic; }
+  .story-node__desc { font-size: clamp(0.95rem, 1.1vw, 1.1rem); color: var(--color-text-muted); line-height: 1.65; max-width: 400px; }
+
+  /* ═══ Animated Illustrations ═══ */
+  .illus { display: flex; justify-content: center; align-items: center; }
+
+  /* Real illustration images */
+  .node-img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  /* Moments collage — stacked copies */
+  .moments-collage {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .moments-img--main {
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+  .moments-img--bg1 {
+    position: absolute;
+    top: -15px;
+    left: -20px;
+    z-index: 2;
+    transform: rotate(-6deg) scale(0.92);
+    opacity: 0.6;
+    filter: blur(1px);
+  }
+  .moments-img--bg2 {
+    position: absolute;
+    top: -25px;
+    right: -15px;
+    z-index: 1;
+    transform: rotate(5deg) scale(0.85);
+    opacity: 0.35;
+    filter: blur(2px);
+  }
+  .illus__scene {
+    width: 280px; height: 280px; position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Upload — phone with sliding formats */
+  .illus__phone {
+    width: 120px; height: 200px; background: var(--color-charcoal); border-radius: 20px;
+    padding: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); position: relative; z-index: 2;
+  }
+  .illus__screen { width: 100%; height: 100%; background: white; border-radius: 14px; overflow: hidden; }
+  .illus__card-anim { display: flex; animation: slide-formats 4s ease-in-out infinite; }
+  .illus__card-slide { min-width: 100%; height: 184px; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+  .illus__card-slide--1 { background: linear-gradient(135deg, #FFF5EE, #FFE0B2); }
+  .illus__card-slide--2 { background: linear-gradient(135deg, #E3F2FD, #90CAF9); }
+  .illus__card-slide--3 { background: linear-gradient(135deg, #FFF8E1, #FFECB3); }
+  @keyframes slide-formats { 0%,30%{transform:translateX(0)} 35%,65%{transform:translateX(-100%)} 70%,100%{transform:translateX(-200%)} }
+
+  .illus__arrow-up {
+    position: absolute; top: 15px; right: 40px; z-index: 1;
+    animation: arrow-bounce 2s ease-in-out infinite;
+  }
+  @keyframes arrow-bounce { 0%,100%{transform:translateY(0);opacity:0.6;} 50%{transform:translateY(-15px);opacity:1;} }
+
+  .illus__sparkle {
+    position: absolute; width: 8px; height: 8px; border-radius: 50%;
+    animation: sparkle-pulse 3s ease-in-out infinite;
+  }
+  .illus__sparkle--1 { top: 20%; left: 15%; background: var(--color-primary); animation-delay: 0s; }
+  .illus__sparkle--2 { bottom: 25%; right: 15%; background: #8B5CF6; animation-delay: 1.5s; }
+  @keyframes sparkle-pulse { 0%,100%{opacity:0;transform:scale(0);} 50%{opacity:0.7;transform:scale(1);} }
+
+  /* Functions — vertical timeline */
+  .illus__timeline { display: flex; flex-direction: column; gap: 0.6rem; width: 200px; }
+  .tl-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0.75rem; background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-left: 3px solid var(--color); }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color); flex-shrink: 0; }
+  .tl-label { font-size: 0.8rem; font-weight: 600; color: var(--color-text); }
+  .tl-label span { font-weight: 400; color: var(--color-text-muted); font-size: 0.7rem; margin-left: 0.25rem; }
+
+  /* Connect — people orbit */
+  .illus__people-web { position: relative; width: 200px; height: 200px; }
+  .illus__lines { position: absolute; inset: 0; }
+  .pw-center {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 44px; height: 44px; background: var(--color-primary); color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 800; z-index: 2; box-shadow: 0 4px 15px rgba(255,82,82,0.3);
+  }
+  .pw-orbit { position: absolute; animation: orbit-float 6s ease-in-out infinite; }
+  .pw-person {
+    width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; font-weight: 700; color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .pw-orbit--1 { top: 5%; left: 15%; animation-delay: 0s; }
+  .pw-orbit--2 { top: 10%; right: 10%; animation-delay: 0.5s; }
+  .pw-orbit--3 { top: 50%; left: 0; animation-delay: 1s; }
+  .pw-orbit--4 { top: 55%; right: 0; animation-delay: 1.5s; }
+  .pw-orbit--5 { bottom: 5%; left: 20%; animation-delay: 2s; }
+  .pw-orbit--6 { bottom: 0; right: 15%; animation-delay: 2.5s; }
+  @keyframes orbit-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+  /* RSVP — donut meter */
+  .illus__meter { position: relative; }
+  .illus__meter-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center; display: flex; flex-direction: column;
+  }
+  .meter-num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: #10B981; line-height: 1; }
+  .meter-label { font-size: 0.7rem; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* Share — burst rays */
+  .illus__share-burst { position: relative; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; }
+  .share-center {
+    width: 56px; height: 56px; background: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(255,82,82,0.15); z-index: 2;
+  }
+  .share-ray {
+    position: absolute; top: 50%; left: 50%;
+    transform: rotate(var(--angle)) translateX(90px);
+    background: white; padding: 0.3rem 0.7rem; border-radius: var(--radius-full);
+    font-size: 0.65rem; font-weight: 700; color: var(--color);
+    box-shadow: var(--shadow-sm); white-space: nowrap;
+    animation: ray-pulse 3s ease-in-out infinite;
+  }
+  .share-ray--1 { animation-delay: 0s; }
+  .share-ray--2 { animation-delay: 0.5s; }
+  .share-ray--3 { animation-delay: 1s; }
+  .share-ray--4 { animation-delay: 1.5s; }
+  @keyframes ray-pulse { 0%,100%{opacity:0.7;transform:rotate(var(--angle)) translateX(85px)} 50%{opacity:1;transform:rotate(var(--angle)) translateX(95px)} }
+
+  /* Moments — polaroids */
+  .illus__polaroids { position: relative; width: 220px; height: 200px; }
+  .polaroid {
+    position: absolute; background: white; padding: 6px 6px 24px; border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.5s var(--ease-smooth);
+  }
+  .polaroid__img { width: 100px; height: 80px; border-radius: 2px; }
+  .polaroid--1 { top: 10px; left: 0; transform: rotate(-8deg); animation: polaroid-float 5s ease-in-out infinite; }
+  .polaroid--2 { top: 0; right: 10px; transform: rotate(5deg); animation: polaroid-float 6s ease-in-out infinite 0.5s; }
+  .polaroid--3 { bottom: 0; left: 50px; transform: rotate(-2deg); animation: polaroid-float 5.5s ease-in-out infinite 1s; }
+  @keyframes polaroid-float { 0%,100%{transform:rotate(var(--r, -8deg)) translateY(0)} 50%{transform:rotate(var(--r, -8deg)) translateY(-10px)} }
+
+  .illus__heart-float {
+    position: absolute; top: 10%; right: 10%; font-size: 1.5rem;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* Lifafa — envelope animation */
+  .illus__envelope { position: relative; width: 160px; }
+  .envelope-flap-anim {
+    width: 100%; height: 50px;
+    background: linear-gradient(135deg, #FFCC02, #FFB300);
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    animation: flap-open 4s ease-in-out infinite;
+    transform-origin: top center;
+  }
+  @keyframes flap-open { 0%,100%{transform:rotateX(0deg)} 40%,60%{transform:rotateX(180deg)} }
+
+  .envelope-body-anim {
+    background: linear-gradient(180deg, #FFF8E1, #F9E8D0);
+    border-radius: 0 0 12px 12px; padding: 1.5rem; margin-top: -4px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  .envelope-inner { text-align: center; }
+  .envelope-rupee { font-size: 1rem; color: #8D6E63; }
+  .envelope-amount { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: #5D4037; display: block; }
+
+  .illus__coins { position: absolute; top: 0; right: 0; }
+  .coin { position: absolute; animation: coin-float 3s ease-in-out infinite; }
+  .coin--1 { top: -10px; right: -20px; font-size: 1.5rem; animation-delay: 0s; }
+  .coin--2 { top: 20px; right: -40px; font-size: 1rem; animation-delay: 0.5s; }
+  .coin--3 { top: 50px; right: -15px; font-size: 1.2rem; animation-delay: 1s; }
+  @keyframes coin-float { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-15px) rotate(10deg)} }
+
+  /* ── Responsive ── */
+  /* ═══ Tablet & Mobile (max 900px) — MindMarket mobile style ═══ */
+  @media (max-width: 900px) {
+    .nav__links { display: none; }
+    .story-hero__title { font-size: clamp(2.5rem, 8vw, 4rem); }
+
+    /* Swap to mobile thread — thick and prominent like MindMarket */
+    .thread-svg--desktop { display: none; }
+    .thread-svg--mobile {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 1;
+    }
+
+    .thread-container {
+      min-height: auto;
+      padding: 0;
+      margin-top: -1rem;
+      overflow-x: clip;
+      overflow-y: visible;
+      position: relative;
+    }
+
+    .thread-decorations { display: none; }
+
+    /* Nodes: always visual on top, card below overlapping — MindMarket mobile */
+    .story-node {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      position: relative;
+      top: auto !important;
+      left: auto;
+      transform: none;
+      margin-bottom: 4.5rem;
+      max-width: 100%;
+      z-index: 2;
+    }
+    /* Force visual always first on mobile (even for reverse nodes) */
+    .story-node--reverse { direction: ltr; }
+    .story-node--reverse .story-node__visual { order: -1; }
+    .story-node--center { display: flex; margin-bottom: 2rem; }
+
+    /* Illustrations: full-bleed with background tint */
+    .story-node__visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 0;
+      width: 100%;
+      padding: 2.5rem 1rem;
+      position: relative;
+      z-index: 1;
+      min-height: 260px;
+    }
+
+    /* Cream background, curvy illustration box */
+    .story-node__visual {
+      background: #FDFBF7 !important;
+      padding: 2rem 1.5rem !important;
+      border-radius: 32px;
+      margin: 0 0.5rem;
+    }
+
+    /* Real images get curvy corners */
+    .story-node__visual .node-img {
+      border-radius: 24px;
+    }
+
+    /* CSS illustration scenes get curvy container */
+    .story-node__visual .illus__scene {
+      background: white;
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    /* Real images: full width */
+    .node-img {
+      width: 85%;
+      max-width: 320px;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .moments-collage { max-width: 85%; width: 85%; }
+    .moments-img--main { border-radius: 16px; }
+    .moments-img--bg1, .moments-img--bg2 { display: none; }
+
+    /* CSS illustrations: bigger on mobile */
+    .illus { width: 100%; }
+    .illus__scene {
+      width: 100%;
+      max-width: 260px;
+      height: 220px;
+      margin: 0 auto;
+    }
+
+    /* Timeline items wider */
+    .illus__timeline { width: 240px; }
+    .tl-item { padding: 0.5rem 0.8rem; }
+
+    /* People orbit bigger */
+    .illus__people-web { width: 200px; height: 200px; }
+
+    /* RSVP meter */
+    .illus__meter svg { width: 180px; height: 180px; }
+
+    /* Cards: overlap the illustration, pull up */
+    .story-node__content {
+      padding: 2rem 1.5rem 2.5rem;
+      margin: -1.5rem 0.75rem 0;
+      transform: none !important;
+      position: relative;
+      z-index: 2;
+      border-radius: 20px;
+      box-shadow: 0 -4px 30px rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    .story-node--center .story-node__content {
+      text-align: center;
+      margin: 0 0.75rem;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .story-node__title { font-size: clamp(1.5rem, 6vw, 2rem); }
+    .story-node__desc { font-size: 0.95rem; max-width: 100%; }
+  }
+
+  /* ═══ Small mobile (max 480px) ═══ */
+  @media (max-width: 480px) {
+    .story-hero { padding-top: 70px; min-height: auto; padding-bottom: 2rem; }
+    .story-hero__title { font-size: clamp(2rem, 9vw, 3rem); }
+    .story-hero__sub { font-size: 0.9rem; }
+    .story-label { font-size: 0.6rem; }
+
+    .story-node__content { padding: 1.5rem 1.25rem 2.5rem; margin: -1.5rem 0.75rem 0; }
+    .story-node__title { font-size: clamp(1.3rem, 5.5vw, 1.7rem); }
+    .story-node__desc { font-size: 0.88rem; }
+
+    .nav__cta { padding: 0.5rem 1rem; font-size: 0.75rem; }
+  }
+
+  /* ═══ Mobile (max 600px) ═══ */
+  @media (max-width: 600px) {
+    .story-hero {
+      padding-top: 80px;
+      min-height: auto;
+      padding-bottom: 3rem;
+    }
+
+    .story-hero__title {
+      font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .story-hero__sub {
+      font-size: 0.95rem;
+    }
+
+    .story-label {
+      font-size: 0.6rem;
+      padding: 0.3rem 0.8rem;
+    }
+
+    .scroll-indicator {
+      width: 20px;
+      height: 34px;
+    }
+
+    .story-node {
+      padding: 0 1rem;
+      margin-bottom: 3rem;
+      max-width: 100%;
+    }
+
+    .story-node__content {
+      padding: 1.5rem;
+      border-radius: 16px;
+      transform: rotate(-1deg) !important;
+    }
+    .story-node--reverse .story-node__content {
+      transform: rotate(1deg) !important;
+    }
+    .story-node--center .story-node__content {
+      transform: rotate(0deg) !important;
+    }
+
+    .story-node__title {
+      font-size: clamp(1.4rem, 5vw, 1.8rem);
+    }
+
+    .story-node__desc {
+      font-size: 0.9rem;
+      max-width: 100%;
+    }
+
+    .node-img {
+      max-width: 280px;
+      border-radius: 16px;
+    }
+
+    .moments-collage {
+      max-width: 280px;
+    }
+    .moments-img--bg1 { display: none; }
+    .moments-img--bg2 { display: none; }
+
+    .illus__scene { width: 200px; height: 200px; }
+
+    /* Timeline items smaller */
+    .tl-item { padding: 0.35rem 0.6rem; font-size: 0.75rem; }
+    .illus__timeline { width: 180px; }
+
+    /* People orbit smaller */
+    .illus__people-web { width: 160px; height: 160px; }
+    .pw-center { width: 36px; height: 36px; font-size: 0.6rem; }
+    .pw-person { width: 26px; height: 26px; font-size: 0.55rem; }
+
+    /* RSVP meter smaller */
+    .illus__meter svg { width: 160px; height: 160px; }
+    .meter-num { font-size: 2rem; }
+
+    /* Share burst smaller */
+    .share-ray { transform: rotate(var(--angle)) translateX(70px); font-size: 0.6rem; padding: 0.2rem 0.5rem; }
+    .share-center { width: 44px; height: 44px; }
+
+    /* Lifafa envelope smaller */
+    .illus__envelope { width: 130px; }
+
+    /* Final CTA */
+    .story-node--center .story-node__content .btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    /* Nav mobile */
+    .nav__cta {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  /* ═══ Small mobile (max 380px) ═══ */
+  @media (max-width: 380px) {
+    .story-hero__title {
+      font-size: 1.8rem;
+    }
+
+    .story-node__content {
+      padding: 1.25rem;
+    }
+
+    .story-node__title {
+      font-size: 1.3rem;
+    }
+
+    .node-img {
+      max-width: 240px;
+    }
+
+    .illus__scene { width: 170px; height: 170px; }
+  }
+
+  /* ═══ Large desktop (1600px+) ═══ */
+  @media (min-width: 1600px) {
+    .story-node {
+      max-width: 1200px;
+      gap: 5rem;
+    }
+
+    .story-node__content {
+      padding: 3rem;
+    }
+
+    .node-img {
+      max-width: 420px;
+    }
+
+    .moments-collage {
+      max-width: 420px;
+    }
+  }
+</style>
