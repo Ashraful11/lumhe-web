@@ -9,24 +9,134 @@
           <path d="M14 7C10.5 7 8 10 8 13.5C8 18 14 22 14 22C14 22 20 18 20 13.5C20 10 17.5 7 14 7Z" fill="white" fill-opacity="0.9"/>
         </svg>
       </div>
-      <span class="navbar__name">
-        <span class="navbar__name-lumhe">Lumhe</span>
-        <span class="navbar__name-invites"></span>
-      </span>
+      <span class="navbar__name">Lumhe</span>
     </a>
 
     <div class="navbar__links hide-mobile">
-      <a href="/story" class="link-animated">Our Story</a>
-      <a href="/moments" class="link-animated">Moments</a>
-      <a href="/lifafa" class="link-animated">Lifafa</a>
-      <a href="/templates" class="link-animated">Templates</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown__trigger" type="button">Invitations <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown__menu">
+          <a href="/invitations/creating-templates">
+            <span class="nav-dropdown__icon">&#9997;</span>
+            <div><strong>Creating Templates</strong><span class="nav-dropdown__desc">Design invitations your way</span></div>
+          </a>
+          <a href="/invitations/rsvp-tips">
+            <span class="nav-dropdown__icon">&#9993;</span>
+            <div><strong>RSVP Tips</strong><span class="nav-dropdown__desc">Get better response rates</span></div>
+          </a>
+          <a href="/invitations/guest-management">
+            <span class="nav-dropdown__icon">&#128101;</span>
+            <div><strong>Guest Management</strong><span class="nav-dropdown__desc">Track and manage your guests</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown__trigger" type="button">Celebrations <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown__menu">
+          <a href="/celebrations/wedding-planning">
+            <span class="nav-dropdown__icon">&#128141;</span>
+            <div><strong>Wedding Planning</strong><span class="nav-dropdown__desc">Plan your dream celebration</span></div>
+          </a>
+          <a href="/celebrations/birthday-ideas">
+            <span class="nav-dropdown__icon">&#127874;</span>
+            <div><strong>Birthday Ideas</strong><span class="nav-dropdown__desc">Creative party inspiration</span></div>
+          </a>
+          <a href="/celebrations/festival-guide">
+            <span class="nav-dropdown__icon">&#127878;</span>
+            <div><strong>Festival Guide</strong><span class="nav-dropdown__desc">Celebrate every occasion</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown__trigger" type="button">Moments <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown__menu">
+          <a href="/moments-features/photography-tips">
+            <span class="nav-dropdown__icon">&#128247;</span>
+            <div><strong>Photography Tips</strong><span class="nav-dropdown__desc">Capture better memories</span></div>
+          </a>
+          <a href="/moments-features/video-memories">
+            <span class="nav-dropdown__icon">&#127909;</span>
+            <div><strong>Video Memories</strong><span class="nav-dropdown__desc">Preserve moments in motion</span></div>
+          </a>
+          <a href="/moments-features/creating-albums">
+            <span class="nav-dropdown__icon">&#128218;</span>
+            <div><strong>Creating Albums</strong><span class="nav-dropdown__desc">Curate shared photo albums</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown__trigger" type="button">Digital Gifts <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dropdown__menu">
+          <a href="/digital-gifts/gifting-guide">
+            <span class="nav-dropdown__icon">&#127873;</span>
+            <div><strong>Gifting Guide</strong><span class="nav-dropdown__desc">Modern celebration gifts</span></div>
+          </a>
+          <a href="/digital-gifts/lifafa-tips">
+            <span class="nav-dropdown__icon">&#128176;</span>
+            <div><strong>Lifafa Tips</strong><span class="nav-dropdown__desc">Digital shagun made easy</span></div>
+          </a>
+          <a href="/digital-gifts/occasion-ideas">
+            <span class="nav-dropdown__icon">&#127881;</span>
+            <div><strong>Occasion Ideas</strong><span class="nav-dropdown__desc">Gift for every occasion</span></div>
+          </a>
+        </div>
+      </div>
+
+      <a href="/story" class="nav-link">Our Story</a>
     </div>
+
+    <!-- Mobile hamburger -->
+    <button class="navbar__hamburger hide-desktop" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
 
     <div class="navbar__actions">
       <a href="#cta" class="btn btn-primary magnetic">
         Get Started
         <span class="arrow">&rarr;</span>
       </a>
+    </div>
+  </div>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu hide-desktop">
+    <div class="mobile-menu__inner">
+      <details class="mobile-accordion">
+        <summary>Invitations</summary>
+        <div class="mobile-accordion__links">
+          <a href="/invitations/creating-templates">Creating Templates</a>
+          <a href="/invitations/rsvp-tips">RSVP Tips</a>
+          <a href="/invitations/guest-management">Guest Management</a>
+        </div>
+      </details>
+      <details class="mobile-accordion">
+        <summary>Celebrations</summary>
+        <div class="mobile-accordion__links">
+          <a href="/celebrations/wedding-planning">Wedding Planning</a>
+          <a href="/celebrations/birthday-ideas">Birthday Ideas</a>
+          <a href="/celebrations/festival-guide">Festival Guide</a>
+        </div>
+      </details>
+      <details class="mobile-accordion">
+        <summary>Moments</summary>
+        <div class="mobile-accordion__links">
+          <a href="/moments-features/photography-tips">Photography Tips</a>
+          <a href="/moments-features/video-memories">Video Memories</a>
+          <a href="/moments-features/creating-albums">Creating Albums</a>
+        </div>
+      </details>
+      <details class="mobile-accordion">
+        <summary>Digital Gifts</summary>
+        <div class="mobile-accordion__links">
+          <a href="/digital-gifts/gifting-guide">Gifting Guide</a>
+          <a href="/digital-gifts/lifafa-tips">Lifafa Tips</a>
+          <a href="/digital-gifts/occasion-ideas">Occasion Ideas</a>
+        </div>
+      </details>
+      <a href="/story" class="mobile-menu__link">Our Story</a>
     </div>
   </div>
 </nav>
@@ -38,15 +148,15 @@
     left: 0;
     right: 0;
     z-index: 100;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     transition: all 0.4s var(--ease-smooth);
   }
 
   .navbar--scrolled {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    padding: 0.6rem 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0.5rem 0;
     box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
   }
 
@@ -58,6 +168,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
   }
 
   .navbar__brand {
@@ -66,6 +177,7 @@
     gap: 0.6rem;
     text-decoration: none;
     color: var(--color-text);
+    flex-shrink: 0;
   }
 
   .navbar__logo {
@@ -78,30 +190,297 @@
 
   .navbar__name {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
   }
 
-  .navbar__name-invites {
+  /* ── Nav links container ── */
+  .navbar__links {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--color-primary);
+    background: rgba(255, 82, 82, 0.04);
+  }
+
+  /* ── Dropdown ── */
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown__trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background: none;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .nav-dropdown__trigger:hover {
+    color: var(--color-primary);
+    background: rgba(255, 82, 82, 0.04);
+  }
+
+  .nav-chevron {
+    transition: transform 0.25s var(--ease-smooth);
+    flex-shrink: 0;
+  }
+
+  .nav-dropdown:hover .nav-chevron {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown__menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 0.5rem;
+    min-width: 260px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.25s var(--ease-smooth);
+    z-index: 200;
+  }
+
+  /* Invisible bridge so hover doesn't break when moving to dropdown */
+  .nav-dropdown__menu::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+  }
+
+  .nav-dropdown:hover .nav-dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-dropdown__menu a {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+
+  .nav-dropdown__menu a:hover {
+    background: var(--color-surface-alt);
+  }
+
+  .nav-dropdown__menu a:hover strong {
     color: var(--color-primary);
   }
 
-  .navbar__links {
+  .nav-dropdown__menu a div {
     display: flex;
-    gap: 2rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    flex-direction: column;
+    gap: 0.1rem;
   }
 
+  .nav-dropdown__menu a strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown__icon {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .nav-dropdown__desc {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  /* ── Actions ── */
   .navbar__actions {
     display: flex;
     gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  /* ── Hamburger ── */
+  .navbar__hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .navbar__hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .navbar__hamburger.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .navbar__hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar__hamburger.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* ── Mobile Menu ── */
+  .mobile-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 99;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s var(--ease-smooth);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-menu__inner {
+    padding: 1rem 1.5rem 2rem;
+  }
+
+  .mobile-accordion {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobile-accordion summary {
+    list-style: none;
+    padding: 1rem 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-accordion summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-accordion summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    transition: transform 0.2s;
+  }
+
+  .mobile-accordion[open] summary::after {
+    content: '−';
+  }
+
+  .mobile-accordion__links {
+    padding: 0 0 0.75rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .mobile-accordion__links a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+
+  .mobile-accordion__links a:hover {
+    background: var(--color-surface-alt);
+    color: var(--color-primary);
+  }
+
+  .mobile-menu__link {
+    display: block;
+    padding: 1rem 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
   }
 
   @media (max-width: 768px) {
     .navbar__actions .btn {
-      padding: 0.6rem 1.2rem;
+      padding: 0.55rem 1rem;
       font-size: 0.8rem;
     }
   }
 </style>
+
+<script>
+  // Mobile hamburger toggle
+  const hamburger = document.querySelector('.navbar__hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-open');
+      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    });
+  }
+</script>

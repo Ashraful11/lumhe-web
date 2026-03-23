@@ -1,27 +1,4 @@
 ---
-const testimonials = [
-  {
-    name: 'Ananya Sharma',
-    role: 'Wedding Host',
-    quote: 'Managing RSVPs for 5 different functions was a nightmare on WhatsApp. With Lumhe, I knew exactly who was coming to which function. The nudge reminders saved me dozens of follow-up calls.',
-    avatar: 'A',
-    color: '#FF8A80',
-  },
-  {
-    name: 'Vikram Patel',
-    role: 'Birthday Organiser',
-    quote: 'I uploaded my Canva-designed invite, found all my friends inside Lumhe, and had RSVPs within hours. The Moments feature meant all party photos were in one beautiful album — not scattered across 5 WhatsApp groups.',
-    avatar: 'V',
-    color: '#64B5F6',
-  },
-  {
-    name: 'Meera Iyer',
-    role: 'Kitty Party Host',
-    quote: 'Our kitty group uses Lumhe every month now. Upload the invite, everyone gets notified, RSVPs with one tap. Digital Lifafa made collecting contributions so easy — no cash tracking!',
-    avatar: 'M',
-    color: '#81C784',
-  },
-];
 ---
 
 <section id="testimonials" class="section">
@@ -33,32 +10,191 @@ const testimonials = [
       </h2>
     </div>
 
-    <div class="testimonials__grid stagger-children" style="margin-top: var(--space-2xl);">
-      {testimonials.map((t) => (
-        <div class="testimonial-card card-hover">
-          <div class="testimonial__stars" aria-label="5 stars">★★★★★</div>
-          <blockquote class="body-lg" style="margin-top: 1rem; font-style: italic; color: var(--color-text);">
-            &ldquo;{t.quote}&rdquo;
+    <div class="testi-layout stagger-children" style="margin-top: var(--space-2xl);">
+      <!-- Featured testimonial -->
+      <div class="testi-featured">
+        <div class="testi-featured__quote">
+          <svg class="testi-quote-mark" width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.08">
+            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 5.219-2.176 5.954-2.734 5.954-.183 0-.28.126-.28.283v.526c0 .13.094.237.224.237zm14 0c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 5.219-2.176 5.954-2.734 5.954-.183 0-.28.126-.28.283v.526c0 .13.094.237.224.237z"/>
+          </svg>
+          <blockquote class="heading-sm" style="line-height: 1.6; color: var(--color-charcoal); font-style: italic;">
+            Managing RSVPs for 5 different functions was a nightmare on WhatsApp. With Lumhe, I knew exactly who was coming to which function. The nudge reminders saved me dozens of follow-up calls.
           </blockquote>
-          <div class="testimonial__author" style="margin-top: 1.5rem;">
-            <div class="testimonial__avatar" style={`background: ${t.color};`}>{t.avatar}</div>
+          <div class="testi-author" style="margin-top: 2rem;">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #FF5252, #ff8a80);">A</div>
             <div>
-              <p style="font-weight: 600;">{t.name}</p>
-              <p class="body-sm text-muted">{t.role}</p>
+              <p class="heading-xs">Ananya Sharma</p>
+              <p class="body-sm text-muted">Wedding Host</p>
             </div>
           </div>
         </div>
-      ))}
+        <div class="testi-featured__visual">
+          <div class="testi-stat-card">
+            <span class="testi-stat__number" style="color: var(--color-primary);">5</span>
+            <span class="testi-stat__label">functions managed</span>
+          </div>
+          <div class="testi-stat-card">
+            <span class="testi-stat__number" style="color: #8B5CF6;">250+</span>
+            <span class="testi-stat__label">guests tracked</span>
+          </div>
+          <div class="testi-stat-card">
+            <span class="testi-stat__number" style="color: #14B8A6;">0</span>
+            <span class="testi-stat__label">follow-up calls</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two smaller side-by-side -->
+      <div class="testi-pair">
+        <div class="testi-card">
+          <blockquote class="body-lg" style="font-style: italic; color: var(--color-text); line-height: 1.7;">
+            &ldquo;I uploaded my Canva-designed invite, found all my friends inside Lumhe, and had RSVPs within hours. The Moments feature meant all party photos were in one beautiful album.&rdquo;
+          </blockquote>
+          <div class="testi-author" style="margin-top: 1.25rem;">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #3B82F6, #93c5fd);">V</div>
+            <div>
+              <p style="font-weight: 600;">Vikram Patel</p>
+              <p class="body-sm text-muted">Birthday Organiser</p>
+            </div>
+          </div>
+          <div class="testi-tag" style="background: rgba(59,130,246,0.06); color: #3B82F6;">Moments</div>
+        </div>
+
+        <div class="testi-card testi-card--accent">
+          <blockquote class="body-lg" style="font-style: italic; color: white; line-height: 1.7;">
+            &ldquo;Our kitty group uses Lumhe every month now. Upload the invite, everyone gets notified, RSVPs with one tap. Digital Lifafa made collecting contributions so easy — no cash tracking!&rdquo;
+          </blockquote>
+          <div class="testi-author" style="margin-top: 1.25rem;">
+            <div class="testi-avatar" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3);">M</div>
+            <div>
+              <p style="font-weight: 600; color: white;">Meera Iyer</p>
+              <p class="body-sm" style="color: rgba(255,255,255,0.7);">Kitty Party Host</p>
+            </div>
+          </div>
+          <div class="testi-tag" style="background: rgba(255,255,255,0.15); color: white;">Digital Lifafa</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .testimonials__header { max-width: 500px; margin: 0 auto; }
-  .testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .testimonial-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; }
-  .testimonial__stars { color: var(--color-amber); font-size: 1.1rem; letter-spacing: 2px; }
-  .testimonial__author { display: flex; align-items: center; gap: 0.75rem; }
-  .testimonial__avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 1rem; flex-shrink: 0; }
-  @media (max-width: 900px) { .testimonials__grid { grid-template-columns: 1fr; max-width: 550px; margin-left: auto; margin-right: auto; } }
+
+  .testi-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Featured — wide with stats on right */
+  .testi-featured {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: clamp(2rem, 4vw, 3rem);
+    align-items: center;
+  }
+
+  .testi-featured__quote {
+    position: relative;
+  }
+
+  .testi-quote-mark {
+    position: absolute;
+    top: -8px;
+    left: -4px;
+    color: var(--color-primary);
+  }
+
+  .testi-featured__visual {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .testi-stat-card {
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .testi-stat__number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .testi-stat__label {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Pair — two side-by-side */
+  .testi-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .testi-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: clamp(1.75rem, 3vw, 2.25rem);
+    position: relative;
+  }
+
+  .testi-card--accent {
+    background: linear-gradient(160deg, var(--color-charcoal), #2d1b4e);
+    border-color: transparent;
+  }
+
+  .testi-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+  }
+
+  /* Shared */
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .testi-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 900px) {
+    .testi-featured { grid-template-columns: 1fr; }
+    .testi-pair { grid-template-columns: 1fr; }
+  }
 </style>

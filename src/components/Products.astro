@@ -1,39 +1,4 @@
 ---
-const products = [
-  {
-    name: 'Invitations',
-    tagline: 'Upload, connect, track RSVPs',
-    description: 'Upload your invitation in any format — image, video, PDF, or text. Find guests by name, phone, or email inside Lumhe. Track RSVPs per function in real time.',
-    emoji: '💌',
-    color: '#FF5252',
-    bg: 'linear-gradient(135deg, #FF5252, #FF8A80)',
-    href: '#features',
-    cta: 'Learn More',
-    features: ['Any Format Upload', 'People Discovery', 'Per-Function RSVP', 'Nudge Reminders'],
-  },
-  {
-    name: 'Moments',
-    tagline: 'Shared photo memories',
-    description: 'A permanent photo timeline for your event. Guests upload memories — all collected beautifully in one place. No expiry like WhatsApp or Instagram Stories.',
-    emoji: '📸',
-    color: '#8B5CF6',
-    bg: 'linear-gradient(135deg, #8B5CF6, #A78BFA)',
-    href: '/moments',
-    cta: 'Explore Moments',
-    features: ['Permanent Album', 'Guest Uploads', 'All in One Place', 'No Expiry'],
-  },
-  {
-    name: 'Digital Lifafa',
-    tagline: 'Cashless shagun via UPI',
-    description: 'Guests send shagun directly via any UPI app — Lumhe never touches the money. Beautiful animated envelopes with personal messages and instant receipts.',
-    emoji: '🎁',
-    color: '#F59E0B',
-    bg: 'linear-gradient(135deg, #F59E0B, #FBBF24)',
-    href: '/lifafa',
-    cta: 'Explore Lifafa',
-    features: ['Direct UPI Transfer', 'Animated Envelopes', 'Personal Messages', 'Instant Receipts'],
-  },
-];
 ---
 
 <section id="products" class="section">
@@ -49,56 +14,279 @@ const products = [
       </p>
     </div>
 
-    <div class="products-grid" style="margin-top: var(--space-2xl);">
-      {products.map((p, i) => (
-        <div class={`product-card reveal ${i === 1 ? 'product-card--featured' : ''}`} style={`transition-delay: ${0.1 + i * 0.12}s;`}>
-          <div class="product-card__header" style={`background: ${p.bg};`}>
-            <span style="font-size: 3rem;">{p.emoji}</span>
-            <div class="product-card__header-text">
-              <h3 style="font-size: 1.5rem; font-weight: 800; color: white; font-family: var(--font-heading);">{p.name}</h3>
-              <p style="font-size: 0.85rem; color: rgba(255,255,255,0.85);">{p.tagline}</p>
+    <!-- Bento: featured Invitations on left, Moments + Lifafa stacked on right -->
+    <div class="prod-bento reveal" style="margin-top: var(--space-2xl);">
+
+      <!-- Featured: Invitations -->
+      <div class="prod-tile prod-tile--hero">
+        <div class="prod-tile__label">
+          <span class="prod-dot" style="background: #FF5252;"></span>
+          Invitations
+        </div>
+        <h3 class="heading-lg" style="color: white; margin-top: 1rem;">
+          Upload, Connect,<br/>Track RSVPs
+        </h3>
+        <p class="body-md" style="color: rgba(255,255,255,0.8); margin-top: 0.75rem; max-width: 340px;">
+          Upload your invitation in any format. Find guests by name, phone, or email inside Lumhe. Track RSVPs per function in real time.
+        </p>
+        <!-- Mockup: mini invite card -->
+        <div class="prod-mockup-invite">
+          <div class="prod-mockup-invite__card">
+            <div class="prod-mockup-invite__img"></div>
+            <div class="prod-mockup-invite__lines">
+              <div class="prod-line" style="width: 60%;"></div>
+              <div class="prod-line prod-line--sm" style="width: 40%;"></div>
             </div>
-          </div>
-          <div class="product-card__body">
-            <p class="body-md text-muted">{p.description}</p>
-            <div class="product-card__tags">
-              {p.features.map(f => (
-                <span class="product-tag" style={`color: ${p.color}; background: ${p.color}12;`}>{f}</span>
-              ))}
+            <div class="prod-mockup-invite__rsvp">
+              <span class="prod-rsvp-dot" style="background: #4CAF50;"></span>
+              <div class="prod-line" style="width: 50%;"></div>
             </div>
-            <a href={p.href} class="btn product-card__cta" style={`background: ${p.color}; color: white;`}>
-              {p.cta}
-              <span class="arrow">&rarr;</span>
-            </a>
           </div>
         </div>
-      ))}
+        <a href="#features" class="prod-link prod-link--light">Learn More <span class="arrow">&rarr;</span></a>
+      </div>
+
+      <!-- Moments -->
+      <div class="prod-tile prod-tile--moments">
+        <div class="prod-tile__label">
+          <span class="prod-dot" style="background: #8B5CF6;"></span>
+          Moments
+        </div>
+        <h3 class="heading-md" style="margin-top: 0.75rem;">Shared Photo Memories</h3>
+        <p class="body-sm text-muted" style="margin-top: 0.5rem;">
+          A permanent photo timeline for your event. Guests upload memories — all collected beautifully in one place.
+        </p>
+        <!-- Mockup: photo grid -->
+        <div class="prod-photo-grid">
+          <div class="prod-photo" style="background: linear-gradient(135deg, #EDE7F6, #D1C4E9);"></div>
+          <div class="prod-photo" style="background: linear-gradient(135deg, #E8EAF6, #C5CAE9);"></div>
+          <div class="prod-photo" style="background: linear-gradient(135deg, #F3E5F5, #CE93D8);"></div>
+          <div class="prod-photo" style="background: linear-gradient(135deg, #E1F5FE, #81D4FA);"></div>
+        </div>
+        <a href="/moments-features/creating-albums" class="prod-link">Explore Moments <span class="arrow">&rarr;</span></a>
+      </div>
+
+      <!-- Digital Lifafa -->
+      <div class="prod-tile prod-tile--lifafa">
+        <div class="prod-tile__label">
+          <span class="prod-dot" style="background: #F59E0B;"></span>
+          Digital Lifafa
+        </div>
+        <h3 class="heading-md" style="margin-top: 0.75rem;">Cashless Shagun via UPI</h3>
+        <p class="body-sm text-muted" style="margin-top: 0.5rem;">
+          Guests send shagun directly via UPI — Lumhe never touches the money. Beautiful animated envelopes with personal messages.
+        </p>
+        <!-- Mockup: envelope -->
+        <div class="prod-envelope">
+          <div class="prod-envelope__flap"></div>
+          <div class="prod-envelope__body">
+            <div class="prod-line" style="width: 70%; background: rgba(245,158,11,0.3);"></div>
+            <span class="prod-envelope__amount">&#8377;5,100</span>
+          </div>
+        </div>
+        <a href="/digital-gifts/lifafa-tips" class="prod-link">Explore Lifafa <span class="arrow">&rarr;</span></a>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
-
-  .product-card {
-    border: 1px solid var(--color-border); border-radius: var(--radius-xl); overflow: hidden;
-    background: var(--color-surface); transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+  .prod-bento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.25rem;
   }
-  .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
-  .product-card--featured { transform: scale(1.03); box-shadow: var(--shadow-lg); border-color: transparent; }
-  .product-card--featured:hover { transform: scale(1.03) translateY(-8px); }
 
-  .product-card__header { padding: 2rem; display: flex; align-items: center; gap: 1rem; }
-  .product-card__header-text { display: flex; flex-direction: column; gap: 0.15rem; }
-  .product-card__body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
-  .product-card__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .product-tag { padding: 0.2rem 0.65rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 600; }
-  .product-card__cta { width: 100%; justify-content: center; margin-top: 0.25rem; }
-  .product-card__cta:hover { transform: translateY(-2px); filter: brightness(0.9); }
+  .prod-tile {
+    border-radius: var(--radius-xl);
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
+  .prod-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+  }
+
+  /* Featured — spans full left column */
+  .prod-tile--hero {
+    grid-row: 1 / 3;
+    background-color: #1a1a3e;
+    background-image: linear-gradient(160deg, #1a1a3e 0%, #2d1b4e 60%, #3a1a3e 100%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Right tiles */
+  .prod-tile--moments {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  .prod-tile--lifafa {
+    background-color: #FFFDE7;
+    background-image: linear-gradient(160deg, #FFFDE7, #FFF8E1);
+    border: 1px solid #FFF0C2;
+  }
+
+  /* Label with dot */
+  .prod-tile__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+  }
+
+  .prod-tile--hero .prod-tile__label { color: rgba(255,255,255,0.6); }
+
+  .prod-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Links */
+  .prod-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    transition: gap 0.3s ease;
+  }
+
+  .prod-link:hover { gap: 0.7rem; }
+  .prod-link .arrow { transition: transform 0.3s ease; }
+  .prod-link:hover .arrow { transform: translateX(3px); }
+
+  .prod-link--light { color: rgba(255,255,255,0.85); }
+  .prod-link--light:hover { color: white; }
+
+  /* ── Invite mockup ── */
+  .prod-mockup-invite {
+    margin-top: 1.5rem;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .prod-mockup-invite__card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .prod-mockup-invite__img {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(255,82,82,0.3), rgba(255,138,128,0.2));
+    border-radius: var(--radius-md);
+    margin-bottom: 0.75rem;
+  }
+
+  .prod-mockup-invite__lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prod-line {
+    height: 6px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 3px;
+  }
+
+  .prod-line--sm { height: 5px; }
+
+  .prod-mockup-invite__rsvp {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .prod-rsvp-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── Photo grid mockup ── */
+  .prod-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 1rem;
+  }
+
+  .prod-photo {
+    aspect-ratio: 1;
+    border-radius: 6px;
+  }
+
+  /* ── Envelope mockup ── */
+  .prod-envelope {
+    margin-top: 1rem;
+    max-width: 200px;
+  }
+
+  .prod-envelope__flap {
+    width: 100%;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 40px solid #FBBF24;
+    opacity: 0.4;
+  }
+
+  .prod-envelope__body {
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.15);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .prod-envelope__amount {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #D97706;
+  }
+
+  /* ── Responsive ── */
   @media (max-width: 900px) {
-    .products-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .product-card--featured { transform: none; }
-    .product-card--featured:hover { transform: translateY(-8px); }
+    .prod-bento {
+      grid-template-columns: 1fr;
+    }
+
+    .prod-tile--hero {
+      grid-row: auto;
+    }
   }
 </style>

@@ -955,7 +955,7 @@ import Preloader from '../components/Preloader.astro';
 
     .thread-decorations { display: none; }
 
-    /* Nodes: always visual on top, card below overlapping — MindMarket mobile */
+    /* Nodes: full-width stacked, illustration → card overlapping */
     .story-node {
       display: flex;
       flex-direction: column;
@@ -969,12 +969,11 @@ import Preloader from '../components/Preloader.astro';
       max-width: 100%;
       z-index: 2;
     }
-    /* Force visual always first on mobile (even for reverse nodes) */
     .story-node--reverse { direction: ltr; }
     .story-node--reverse .story-node__visual { order: -1; }
     .story-node--center { display: flex; margin-bottom: 2rem; }
 
-    /* Illustrations: full-bleed with background tint */
+    /* Illustrations: full-bleed with colored backgrounds */
     .story-node__visual {
       display: flex;
       justify-content: center;
@@ -988,62 +987,45 @@ import Preloader from '../components/Preloader.astro';
       min-height: 260px;
     }
 
-    /* Cream background, curvy illustration box */
-    .story-node__visual {
-      background: #FDFBF7 !important;
-      padding: 2rem 1.5rem !important;
-      border-radius: 32px;
-      margin: 0 0.5rem;
-    }
-
-    /* Real images get curvy corners */
-    .story-node__visual .node-img {
-      border-radius: 24px;
-    }
-
-    /* CSS illustration scenes get curvy container */
-    .story-node__visual .illus__scene {
-      background: white;
-      border-radius: 24px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    }
+    /* Alternate visual backgrounds for rhythm */
+    .story-node--1 .story-node__visual { background: linear-gradient(180deg, #FFF0EE, #FFEAE6); }
+    .story-node--2 .story-node__visual { background: linear-gradient(180deg, #F3EEFF, #EDE5FF); }
+    .story-node--3 .story-node__visual { background: linear-gradient(180deg, #EBF5FF, #DBEAFE); }
+    .story-node--4 .story-node__visual { background: linear-gradient(180deg, #ECFDF5, #D1FAE5); }
+    .story-node--5 .story-node__visual { background: linear-gradient(180deg, #F0FDFA, #CCFBF1); }
+    .story-node--6 .story-node__visual { background: linear-gradient(180deg, #F3EEFF, #EDE5FF); }
+    .story-node--7 .story-node__visual { background: linear-gradient(180deg, #FFFBEB, #FEF3C7); }
 
     /* Real images: full width */
     .node-img {
-      width: 85%;
-      max-width: 320px;
-      border-radius: 16px;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 0;
       object-fit: cover;
     }
 
-    .moments-collage { max-width: 85%; width: 85%; }
-    .moments-img--main { border-radius: 16px; }
+    .moments-collage { max-width: 100%; width: 100%; }
+    .moments-img--main { border-radius: 0; }
     .moments-img--bg1, .moments-img--bg2 { display: none; }
 
     /* CSS illustrations: bigger on mobile */
     .illus { width: 100%; }
     .illus__scene {
       width: 100%;
-      max-width: 260px;
-      height: 220px;
+      max-width: 280px;
+      height: 250px;
       margin: 0 auto;
     }
 
-    /* Timeline items wider */
     .illus__timeline { width: 240px; }
     .tl-item { padding: 0.5rem 0.8rem; }
-
-    /* People orbit bigger */
     .illus__people-web { width: 200px; height: 200px; }
-
-    /* RSVP meter */
     .illus__meter svg { width: 180px; height: 180px; }
 
-    /* Cards: overlap the illustration, pull up */
+    /* Cards: overlap the illustration above, pull up */
     .story-node__content {
-      padding: 2rem 1.5rem 2.5rem;
-      margin: -1.5rem 0.75rem 0;
+      padding: 2rem 1.5rem 3rem;
+      margin: -2rem 1rem 0;
       transform: none !important;
       position: relative;
       z-index: 2;
@@ -1053,8 +1035,7 @@ import Preloader from '../components/Preloader.astro';
 
     .story-node--center .story-node__content {
       text-align: center;
-      margin: 0 0.75rem;
-      padding: 2.5rem 1.5rem;
+      margin: -1rem 1rem 0;
     }
 
     .story-node__title { font-size: clamp(1.5rem, 6vw, 2rem); }

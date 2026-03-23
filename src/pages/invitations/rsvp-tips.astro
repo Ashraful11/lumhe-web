@@ -1,0 +1,658 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="RSVP Tips & Tracking — Lumhe" description="Track RSVPs per function — Mehendi, Sangeet, Ceremony, Reception — in real time. Send nudge reminders and get accurate headcounts for every celebration.">
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="feat-hero">
+    <div class="container">
+      <div class="feat-hero__inner">
+        <div class="feat-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="feat-badge">RSVP Tracking</span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            Know Who's Coming<br/>
+            <em>To Every Function</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 520px;">
+            Track RSVPs separately for Mehendi, Sangeet, Ceremony, Reception — or any function you create. Real-time headcounts. Nudge reminders. No guesswork.
+          </p>
+          <div class="feat-hero__cta anim-first-hit delay-4">
+            <a href="#" class="btn btn-primary magnetic">Start Tracking RSVPs — Free <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="feat-hero__visual anim-first-hit delay-3">
+          <img src="/images/lumhe/invite.png" alt="RSVP tracking with Lumhe" class="feat-hero__img"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Dashboard Bento -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Live Dashboard</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Your RSVP Numbers<br/><em class="font-serif">At a Glance</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Catering, seating, decor, logistics — everything depends on knowing exactly how many guests are coming. For each function.
+        </p>
+      </div>
+
+      <div class="dash-grid stagger-children" style="margin-top: var(--space-2xl);">
+        <!-- Response Rate — ring chart -->
+        <div class="dash-tile dash-tile--rate">
+          <span class="dash-tile__label">Response Rate</span>
+          <div class="ring-chart">
+            <div class="ring-chart__circle">
+              <span class="ring-chart__value">78%</span>
+            </div>
+          </div>
+          <p class="dash-tile__sub">of invited guests have responded</p>
+        </div>
+
+        <!-- Avg Response Time -->
+        <div class="dash-tile dash-tile--time">
+          <span class="dash-tile__label">Avg. Response Time</span>
+          <div class="dash-tile__big-num">2.4<span class="dash-tile__unit">days</span></div>
+          <p class="dash-tile__sub">Guests respond fast on Lumhe</p>
+        </div>
+
+        <!-- Per-Function Tracking with bars -->
+        <div class="dash-tile dash-tile--bars">
+          <span class="dash-tile__label">Per-Function Tracking</span>
+          <div class="dash-bars">
+            <div class="dash-bar">
+              <span class="dash-bar__name">Mehendi</span>
+              <div class="dash-bar__track">
+                <div class="dash-bar__fill" style="width: 65%; background: var(--color-primary);"></div>
+              </div>
+              <span class="dash-bar__val">85</span>
+            </div>
+            <div class="dash-bar">
+              <span class="dash-bar__name">Sangeet</span>
+              <div class="dash-bar__track">
+                <div class="dash-bar__fill" style="width: 78%; background: #f59e0b;"></div>
+              </div>
+              <span class="dash-bar__val">102</span>
+            </div>
+            <div class="dash-bar">
+              <span class="dash-bar__name">Ceremony</span>
+              <div class="dash-bar__track">
+                <div class="dash-bar__fill" style="width: 92%; background: #10b981;"></div>
+              </div>
+              <span class="dash-bar__val">120</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Breakdown -->
+        <div class="dash-tile dash-tile--status">
+          <span class="dash-tile__label">Status Breakdown</span>
+          <div class="status-list">
+            <div class="status-row">
+              <span class="status-dot" style="background: #10b981;"></span>
+              <span class="status-name">Accepted</span>
+              <span class="status-val">186</span>
+            </div>
+            <div class="status-row">
+              <span class="status-dot" style="background: #f59e0b;"></span>
+              <span class="status-name">Pending</span>
+              <span class="status-val">54</span>
+            </div>
+            <div class="status-row">
+              <span class="status-dot" style="background: var(--color-primary);"></span>
+              <span class="status-name">Declined</span>
+              <span class="status-val">12</span>
+            </div>
+          </div>
+          <div class="status-total">
+            <span>Total Invited</span>
+            <strong>252</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips as Stacked Fan Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Pro Tips</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Tips for Better<br/><em class="font-serif">Response Rates</em>
+        </h2>
+      </div>
+
+      <div class="tip-stack reveal" style="margin-top: var(--space-2xl);">
+        <div class="tip-card" style="--fan-rotate: -3deg; --fan-y: 0px;">
+          <span class="tip-card__num">01</span>
+          <h3 class="heading-md">Send Invitations Early</h3>
+          <p class="body-md text-muted">Send invitations 3-4 weeks before the event. Guests need time to plan, especially for multi-day celebrations.</p>
+        </div>
+        <div class="tip-card" style="--fan-rotate: -1.5deg; --fan-y: 0px;">
+          <span class="tip-card__num">02</span>
+          <h3 class="heading-md">Be Specific With Details</h3>
+          <p class="body-md text-muted">Include dates, times, and venues for each function. The clearer you are, the faster guests respond.</p>
+        </div>
+        <div class="tip-card" style="--fan-rotate: 0deg; --fan-y: 0px;">
+          <span class="tip-card__num">03</span>
+          <h3 class="heading-md">Follow Up Kindly</h3>
+          <p class="body-md text-muted">Use Lumhe's nudge feature 1 week before the event. A gentle reminder goes a long way — without awkwardness.</p>
+        </div>
+        <div class="tip-card" style="--fan-rotate: 1.5deg; --fan-y: 0px;">
+          <span class="tip-card__num">04</span>
+          <h3 class="heading-md">Keep Functions Clear</h3>
+          <p class="body-md text-muted">Name your functions clearly — "Saturday Evening Sangeet" works better than just "Event 2". Context helps guests decide.</p>
+        </div>
+        <div class="tip-card" style="--fan-rotate: 3deg; --fan-y: 0px;">
+          <span class="tip-card__num">05</span>
+          <h3 class="heading-md">Set a Soft Deadline</h3>
+          <p class="body-md text-muted">Mention "Please RSVP by [date]" in your invitation. Deadlines create urgency without being pushy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Comparison -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">The Difference</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Before & After<br/><em class="font-serif">Lumhe RSVP</em>
+        </h2>
+      </div>
+
+      <div class="compare-grid reveal" style="margin-top: var(--space-2xl);">
+        <!-- Without Lumhe -->
+        <div class="compare-col compare-col--before">
+          <div class="compare-header compare-header--before">
+            <span class="compare-icon">😩</span>
+            <h3 class="heading-md">Without Lumhe</h3>
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item">
+              <span class="compare-x">&#10005;</span>
+              Endless WhatsApp messages asking "are you coming?"
+            </li>
+            <li class="compare-item">
+              <span class="compare-x">&#10005;</span>
+              Spreadsheet chaos with outdated numbers
+            </li>
+            <li class="compare-item">
+              <span class="compare-x">&#10005;</span>
+              No idea who's attending which function
+            </li>
+            <li class="compare-item">
+              <span class="compare-x">&#10005;</span>
+              Over-ordering or under-ordering catering
+            </li>
+            <li class="compare-item">
+              <span class="compare-x">&#10005;</span>
+              Last-minute surprises and empty seats
+            </li>
+          </ul>
+        </div>
+
+        <!-- With Lumhe -->
+        <div class="compare-col compare-col--after">
+          <div class="compare-header compare-header--after">
+            <span class="compare-icon">😌</span>
+            <h3 class="heading-md">With Lumhe RSVP</h3>
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item">
+              <span class="compare-check">&#10003;</span>
+              One-tap RSVP for guests, no back-and-forth
+            </li>
+            <li class="compare-item">
+              <span class="compare-check">&#10003;</span>
+              Real-time dashboard with live numbers
+            </li>
+            <li class="compare-item">
+              <span class="compare-check">&#10003;</span>
+              Per-function tracking — Mehendi, Sangeet, all of it
+            </li>
+            <li class="compare-item">
+              <span class="compare-check">&#10003;</span>
+              Accurate headcounts for every vendor
+            </li>
+            <li class="compare-item">
+              <span class="compare-check">&#10003;</span>
+              Gentle nudge reminders for pending guests
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="feat-cta reveal-scale">
+        <h2 class="heading-xl" style="color: white;">
+          Ready to Track<br/><em class="font-serif">Every RSVP?</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+          Per-function RSVP tracking. Nudge reminders. Real-time headcounts. All free. Always.
+        </p>
+        <a href="#" class="btn btn-cta-white" style="margin-top: var(--space-lg);">
+          Start Tracking — Free <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .feat-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+    padding-top: calc(var(--space-3xl) + 80px);
+    background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 60%);
+  }
+
+  .feat-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .feat-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .feat-badge {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary);
+    background: rgba(255,82,82,0.06); padding: 0.4rem 1.2rem; border-radius: var(--radius-full);
+    display: inline-block;
+  }
+
+  .feat-hero__content h1 { color: var(--color-charcoal); }
+  .feat-hero__content h1 em { color: var(--color-primary); font-style: italic; }
+
+  .feat-hero__cta { margin-top: var(--space-sm); }
+
+  .feat-hero__img {
+    width: 100%; max-width: 440px; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg); margin: 0 auto; display: block;
+  }
+
+  /* ========================================
+     STATS DASHBOARD BENTO
+     ======================================== */
+  .dash-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dash-tile {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth);
+  }
+  .dash-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+
+  .dash-tile__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+
+  .dash-tile__sub {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    margin-top: 0.75rem;
+  }
+
+  /* Ring Chart (CSS conic-gradient) */
+  .ring-chart {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ring-chart__circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(
+      var(--color-primary) 0deg 281deg,
+      var(--color-border) 281deg 360deg
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ring-chart__circle::after {
+    content: '';
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    position: absolute;
+  }
+
+  .ring-chart__value {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-charcoal);
+  }
+
+  /* Big number stat */
+  .dash-tile__big-num {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-charcoal);
+    line-height: 1;
+  }
+
+  .dash-tile__unit {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-left: 0.35rem;
+  }
+
+  /* Bar charts */
+  .dash-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dash-bar {
+    display: grid;
+    grid-template-columns: 80px 1fr 36px;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .dash-bar__name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+  }
+
+  .dash-bar__track {
+    height: 10px;
+    background: var(--color-border);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .dash-bar__fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 1s var(--ease-smooth);
+  }
+
+  .dash-bar__val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    text-align: right;
+  }
+
+  /* Status breakdown */
+  .status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .status-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .status-name {
+    font-size: 0.9rem;
+    color: var(--color-charcoal);
+    flex: 1;
+  }
+
+  .status-val {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+  }
+
+  .status-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .status-total strong {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-charcoal);
+  }
+
+  /* ========================================
+     STACKED FAN TIP CARDS
+     ======================================== */
+  .tip-stack {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: relative;
+  }
+
+  .tip-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem 2.25rem;
+    position: relative;
+    transform: rotate(var(--fan-rotate, 0deg)) translateY(var(--fan-y, 0));
+    transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+    cursor: default;
+  }
+
+  .tip-card:hover {
+    transform: rotate(0deg) translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    z-index: 2;
+  }
+
+  .tip-card__num {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(255,82,82,0.12);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  /* ========================================
+     BEFORE / AFTER COMPARISON
+     ======================================== */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .compare-col {
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--color-border);
+  }
+
+  .compare-col--before {
+    background: linear-gradient(180deg, #f5f5f5, #fafafa);
+    border-color: #e0e0e0;
+  }
+
+  .compare-col--after {
+    background: linear-gradient(180deg, rgba(255,82,82,0.03), rgba(255,82,82,0.01));
+    border-color: rgba(255,82,82,0.2);
+  }
+
+  .compare-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .compare-header--before h3 { color: #888; }
+  .compare-header--after h3 { color: var(--color-primary); }
+
+  .compare-icon {
+    font-size: 1.6rem;
+  }
+
+  .compare-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .compare-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--color-charcoal);
+  }
+
+  .compare-x {
+    color: #ccc;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .compare-check {
+    color: #10b981;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ========================================
+     CTA
+     ======================================== */
+  .feat-cta {
+    background: linear-gradient(135deg, var(--color-charcoal), var(--color-dark));
+    border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .btn-cta-white {
+    background: white; color: var(--color-charcoal);
+    padding: 1rem 2.5rem; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.3s var(--ease-smooth); border: none; cursor: pointer;
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-cta-white .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-cta-white:hover .arrow { transform: translateX(4px); }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 900px) {
+    .feat-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .feat-hero__content { align-items: center; }
+
+    .dash-grid { grid-template-columns: 1fr; }
+
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .feat-hero { min-height: auto; padding-bottom: 2rem; }
+    .feat-hero__img { max-width: 300px; }
+
+    .dash-tile { padding: 1.5rem; }
+    .dash-tile__big-num { font-size: 2.5rem; }
+    .ring-chart__circle { width: 100px; height: 100px; }
+    .ring-chart__circle::after { width: 70px; height: 70px; }
+    .ring-chart__value { font-size: 1.3rem; }
+
+    .dash-bar { grid-template-columns: 65px 1fr 30px; }
+
+    .tip-card {
+      transform: rotate(0deg);
+      padding: 1.5rem;
+    }
+    .tip-card__num { font-size: 2rem; }
+
+    .compare-col { padding: 1.75rem 1.5rem; }
+  }
+</style>

@@ -1,48 +1,4 @@
 ---
-const features = [
-  {
-    icon: '📤',
-    title: 'Upload Any Format',
-    description: 'Bring your own invitation — image, video, PDF, or text. Designed on Canva, a phone, or by a professional. Lumhe handles the rest.',
-    color: '#FF5252',
-    bg: 'rgba(255, 82, 82, 0.06)',
-  },
-  {
-    icon: '🔍',
-    title: 'Find & Connect Guests',
-    description: 'Discover people by name, phone number, or email. Build your celebration circle — your guest list grows with every event.',
-    color: '#8B5CF6',
-    bg: 'rgba(139, 92, 246, 0.06)',
-  },
-  {
-    icon: '📋',
-    title: 'Per-Function RSVP',
-    description: 'Track RSVPs for each function separately — Mehendi, Sangeet, Ceremony, Reception. Know exactly who\'s coming to what.',
-    color: '#3B82F6',
-    bg: 'rgba(59, 130, 246, 0.06)',
-  },
-  {
-    icon: '📸',
-    title: 'Shared Moments',
-    description: 'A permanent photo timeline for your event. Guests upload memories, all collected beautifully in one place — no expiry, no clutter.',
-    color: '#14B8A6',
-    bg: 'rgba(20, 184, 166, 0.06)',
-  },
-  {
-    icon: '🎁',
-    title: 'Digital Lifafa',
-    description: 'Guests send shagun directly via UPI — Lumhe never touches the money. Animated envelopes, personal messages, instant receipts.',
-    color: '#F59E0B',
-    bg: 'rgba(245, 158, 11, 0.06)',
-  },
-  {
-    icon: '🔗',
-    title: 'Share Anywhere Too',
-    description: 'Every invite generates a shareable link. Send on WhatsApp, Instagram, or any platform — no "Forwarded" tag, no missing details.',
-    color: '#10B981',
-    bg: 'rgba(16, 185, 129, 0.06)',
-  },
-];
 ---
 
 <section id="features" class="section bg-surface-alt">
@@ -58,21 +14,114 @@ const features = [
       </p>
     </div>
 
-    <div class="features__grid stagger-children" style="margin-top: var(--space-2xl);">
-      {features.map((f) => (
-        <div class="feature-card card-hover tilt-card">
-          <div class="feature-card__icon" style={`background: ${f.bg}; color: ${f.color};`}>
-            <span style="font-size: 1.5rem;">{f.icon}</span>
-          </div>
-          <h3 class="heading-sm" style="margin-top: 1rem;">{f.title}</h3>
-          <p class="body-md text-muted" style="margin-top: 0.5rem;">{f.description}</p>
-          <div class="feature-card__arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <path d="M5 10H15M15 10L10 5M15 10L10 15"/>
-            </svg>
+    <!-- Zigzag feature rows — alternating visual + text -->
+    <div class="feat-rows" style="margin-top: var(--space-2xl);">
+
+      <!-- Row 1: Upload -->
+      <div class="feat-row reveal">
+        <div class="feat-row__visual" style="background: linear-gradient(135deg, #fff0f0, #ffe0e0);">
+          <div class="feat-format-stack">
+            <div class="feat-format" style="--fmt-color: #FF5252;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              Image
+            </div>
+            <div class="feat-format" style="--fmt-color: #8B5CF6;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Video
+            </div>
+            <div class="feat-format" style="--fmt-color: #3B82F6;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+            <div class="feat-format" style="--fmt-color: #14B8A6;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+              Text
+            </div>
           </div>
         </div>
-      ))}
+        <div class="feat-row__text">
+          <h3 class="heading-md">Upload Any Format</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Bring your own invitation — image, video, PDF, or text. Designed on Canva, a phone, or by a professional. Lumhe handles the rest.</p>
+        </div>
+      </div>
+
+      <!-- Row 2: Find Guests — flipped -->
+      <div class="feat-row feat-row--flip reveal">
+        <div class="feat-row__visual" style="background: linear-gradient(135deg, #f3f0ff, #ede7ff);">
+          <div class="feat-search-mock">
+            <div class="feat-search-bar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Search by name...</span>
+            </div>
+            <div class="feat-search-result">
+              <div class="feat-avatar" style="background: #8B5CF6;">P</div>
+              <div class="feat-result-line" style="width: 60%;"></div>
+              <span class="feat-status-dot" style="background: #4CAF50;"></span>
+            </div>
+            <div class="feat-search-result">
+              <div class="feat-avatar" style="background: #F59E0B;">R</div>
+              <div class="feat-result-line" style="width: 50%;"></div>
+              <span class="feat-status-dot" style="background: #FF9800;"></span>
+            </div>
+          </div>
+        </div>
+        <div class="feat-row__text">
+          <h3 class="heading-md">Find & Connect Guests</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Discover people by name, phone number, or email. Build your celebration circle — your guest list grows with every event.</p>
+        </div>
+      </div>
+
+      <!-- Row 3: Per-Function RSVP -->
+      <div class="feat-row reveal">
+        <div class="feat-row__visual" style="background: linear-gradient(135deg, #e8f4ff, #d4edff);">
+          <div class="feat-rsvp-bars">
+            <div class="feat-bar-row">
+              <span class="feat-bar-label">Mehendi</span>
+              <div class="feat-bar-track"><div class="feat-bar-fill" style="width: 72%; background: #FF5252;"></div></div>
+              <span class="feat-bar-count">42</span>
+            </div>
+            <div class="feat-bar-row">
+              <span class="feat-bar-label">Sangeet</span>
+              <div class="feat-bar-track"><div class="feat-bar-fill" style="width: 85%; background: #E040FB;"></div></div>
+              <span class="feat-bar-count">78</span>
+            </div>
+            <div class="feat-bar-row">
+              <span class="feat-bar-label">Reception</span>
+              <div class="feat-bar-track"><div class="feat-bar-fill" style="width: 95%; background: #3B82F6;"></div></div>
+              <span class="feat-bar-count">250</span>
+            </div>
+          </div>
+        </div>
+        <div class="feat-row__text">
+          <h3 class="heading-md">Per-Function RSVP</h3>
+          <p class="body-md text-muted" style="margin-top: 0.5rem;">Track RSVPs for each function separately — Mehendi, Sangeet, Ceremony, Reception. Know exactly who's coming to what.</p>
+        </div>
+      </div>
+
+      <!-- Bottom row: 3 compact cards -->
+      <div class="feat-compact-row reveal">
+        <div class="feat-compact">
+          <div class="feat-compact__icon" style="background: rgba(20,184,166,0.08);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+          <h4 class="heading-xs" style="margin-top: 0.75rem;">Shared Moments</h4>
+          <p class="body-sm text-muted" style="margin-top: 0.35rem;">Permanent photo timeline. Guests upload, everything stays.</p>
+        </div>
+        <div class="feat-compact">
+          <div class="feat-compact__icon" style="background: rgba(245,158,11,0.08);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4h-4z"/></svg>
+          </div>
+          <h4 class="heading-xs" style="margin-top: 0.75rem;">Digital Lifafa</h4>
+          <p class="body-sm text-muted" style="margin-top: 0.35rem;">Cashless shagun via UPI. Lumhe never touches the money.</p>
+        </div>
+        <div class="feat-compact">
+          <div class="feat-compact__icon" style="background: rgba(16,185,129,0.08);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h4 class="heading-xs" style="margin-top: 0.75rem;">Share Anywhere</h4>
+          <p class="body-sm text-muted" style="margin-top: 0.35rem;">Shareable link for WhatsApp, Instagram, or any platform.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -80,26 +129,200 @@ const features = [
 <style>
   .features__header { max-width: 700px; margin: 0 auto; }
 
-  .features__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-
-  .feature-card {
-    background: var(--color-surface); border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg); padding: 2rem; position: relative; cursor: default;
-    transition: transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth), border-color 0.35s;
-  }
-  .feature-card:hover { border-color: var(--color-primary-light); }
-
-  .feature-card__icon {
-    width: 52px; height: 52px; border-radius: var(--radius-md);
-    display: flex; align-items: center; justify-content: center;
+  .feat-rows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .feature-card__arrow {
-    position: absolute; top: 2rem; right: 2rem; color: var(--color-text-light);
-    opacity: 0; transform: translateX(-8px); transition: all 0.3s var(--ease-smooth);
+  .feat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
   }
-  .feature-card:hover .feature-card__arrow { opacity: 1; transform: translateX(0); }
 
-  @media (max-width: 900px) { .features__grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .features__grid { grid-template-columns: 1fr; } }
+  .feat-row--flip .feat-row__visual { order: 2; }
+  .feat-row--flip .feat-row__text { order: 1; }
+
+  .feat-row__visual {
+    border-radius: var(--radius-xl);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+  }
+
+  .feat-row__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Format Stack ── */
+  .feat-format-stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .feat-format {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 0.65rem 0.85rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--fmt-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .feat-format svg { color: var(--fmt-color); flex-shrink: 0; }
+
+  /* ── Search Mock ── */
+  .feat-search-mock {
+    width: 100%;
+    max-width: 280px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .feat-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+
+  .feat-search-result {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .feat-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .feat-result-line {
+    height: 6px;
+    background: var(--color-border);
+    border-radius: 3px;
+    flex: 1;
+  }
+
+  .feat-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── RSVP Bars ── */
+  .feat-rsvp-bars {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .feat-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .feat-bar-label {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+    width: 70px;
+    flex-shrink: 0;
+  }
+
+  .feat-bar-track {
+    flex: 1;
+    height: 8px;
+    background: rgba(0,0,0,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .feat-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.8s ease;
+  }
+
+  .feat-bar-count {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--color-charcoal);
+    width: 32px;
+    text-align: right;
+  }
+
+  /* ── Compact bottom row ── */
+  .feat-compact-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: var(--space-md);
+  }
+
+  .feat-compact {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feat-compact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .feat-compact__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .feat-row { grid-template-columns: 1fr; }
+    .feat-row--flip .feat-row__visual { order: 0; }
+    .feat-row--flip .feat-row__text { order: 0; }
+    .feat-compact-row { grid-template-columns: 1fr; }
+  }
 </style>

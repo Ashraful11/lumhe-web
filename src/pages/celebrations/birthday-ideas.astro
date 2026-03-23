@@ -1,0 +1,580 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Birthday Celebration Ideas — Lumhe" description="Plan the perfect birthday celebration with Lumhe. Upload your own invite, find and invite friends, track RSVPs, and share Moments after the party. Kids, milestone, or surprise — completely free.">
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="feat-hero">
+    <div class="container">
+      <div class="feat-hero__inner">
+        <div class="feat-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="feat-badge">Birthdays</span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            Birthday Celebrations<br/>
+            <em>Made Simple</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 520px;">
+            From your kid's first birthday to a milestone 50th — Lumhe helps you invite guests, track RSVPs, and share the celebration. Upload any invite you love. Completely free.
+          </p>
+          <div class="feat-hero__cta anim-first-hit delay-4">
+            <a href="#" class="btn btn-primary magnetic">Plan Your Birthday — Free <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="feat-hero__visual anim-first-hit delay-3">
+          <img src="/images/lumhe/invite.png" alt="Plan birthday celebrations with Lumhe" class="feat-hero__img"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Birthday Type Masonry -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 640px; margin: 0 auto;">
+        <span class="label text-primary">Every Birthday</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          From First to Fiftieth,<br/><em class="font-serif">We Have You Covered</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Every birthday is different. Find your type below and see how Lumhe makes it effortless.
+        </p>
+      </div>
+
+      <div class="hscroll-cards stagger-children" style="margin-top: var(--space-2xl);">
+        <div class="hscroll-card" style="--card-grad: linear-gradient(135deg, #FF5252, #ff8a80);">
+          <div class="hscroll-card__age">1st</div>
+          <div class="hscroll-card__content">
+            <h3 class="heading-sm">First Birthday</h3>
+            <ul class="hscroll-tips">
+              <li>Pick a theme the baby will look back on fondly</li>
+              <li>Invite extended family — it is a big milestone</li>
+              <li>Use Moments so every uncle and aunty can upload photos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hscroll-card" style="--card-grad: linear-gradient(135deg, #E040FB, #ea80fc);">
+          <div class="hscroll-card__age">2-12</div>
+          <div class="hscroll-card__content">
+            <h3 class="heading-sm">Kids' Party</h3>
+            <ul class="hscroll-tips">
+              <li>Superhero, princess, or outdoor adventure themes</li>
+              <li>Send fun, colourful invites to parents</li>
+              <li>Track RSVPs so you know how many goodie bags to prepare</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hscroll-card" style="--card-grad: linear-gradient(135deg, #FF6D00, #ffab40);">
+          <div class="hscroll-card__age">25/50/75</div>
+          <div class="hscroll-card__content">
+            <h3 class="heading-sm">Milestone Birthday</h3>
+            <ul class="hscroll-tips">
+              <li>Grand invitations and proper planning — they deserve it</li>
+              <li>Create a video invite for that extra wow factor</li>
+              <li>Collect Digital Lifafa blessings from distant relatives</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hscroll-card" style="--card-grad: linear-gradient(135deg, #00BFA5, #64ffda);">
+          <div class="hscroll-card__age">Any</div>
+          <div class="hscroll-card__content">
+            <h3 class="heading-sm">Surprise Birthday</h3>
+            <ul class="hscroll-tips">
+              <li>Invite guests secretly — only planners see the invite</li>
+              <li>Track who is in on the surprise</li>
+              <li>Coordinate arrival times with RSVP details</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hscroll-card" style="--card-grad: linear-gradient(135deg, #2979FF, #82b1ff);">
+          <div class="hscroll-card__age">18+</div>
+          <div class="hscroll-card__content">
+            <h3 class="heading-sm">Adult Birthday</h3>
+            <ul class="hscroll-tips">
+              <li>Dinner parties, rooftop celebrations, or intimate gatherings</li>
+              <li>Upload an elegant invite and let Lumhe handle logistics</li>
+              <li>Share the evening's photos in a permanent Moments album</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hscroll-card" style="--card-grad: linear-gradient(135deg, #FFD600, #fff176);">
+          <div class="hscroll-card__age" style="color: var(--color-charcoal);">All</div>
+          <div class="hscroll-card__content">
+            <h3 class="heading-sm" style="color: var(--color-charcoal);">Family Gathering</h3>
+            <ul class="hscroll-tips" style="color: rgba(30,30,30,0.7);">
+              <li>Grandparents, parents, cousins — everyone together</li>
+              <li>One invite for the whole family celebration</li>
+              <li>Moments becomes the family photo album everyone contributes to</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Party Planning Checklist -->
+  <section class="section">
+    <div class="container">
+      <div class="checklist-layout reveal">
+        <div class="checklist-text">
+          <span class="label text-primary">Party Planning</span>
+          <h2 class="heading-xl" style="margin-top: 0.5rem;">
+            Your Birthday<br/><em class="font-serif">Checklist</em>
+          </h2>
+          <p class="body-lg text-muted" style="margin-top: 1rem;">
+            Stay on track with everything you need to do. Lumhe handles the invitation and RSVP side — you focus on the fun parts.
+          </p>
+        </div>
+
+        <div class="checklist-items stagger-children">
+          <label class="checklist-row">
+            <input type="checkbox" class="checklist-input" />
+            <span class="checklist-box"></span>
+            <span class="checklist-label">Choose a theme and colour palette</span>
+          </label>
+          <label class="checklist-row">
+            <input type="checkbox" class="checklist-input" />
+            <span class="checklist-box"></span>
+            <span class="checklist-label">Design or pick your invitation</span>
+          </label>
+          <label class="checklist-row">
+            <input type="checkbox" class="checklist-input" />
+            <span class="checklist-box"></span>
+            <span class="checklist-label">Upload invite to Lumhe and send</span>
+          </label>
+          <label class="checklist-row">
+            <input type="checkbox" class="checklist-input" />
+            <span class="checklist-box"></span>
+            <span class="checklist-label">Track RSVPs and finalise headcount</span>
+          </label>
+          <label class="checklist-row">
+            <input type="checkbox" class="checklist-input" />
+            <span class="checklist-box"></span>
+            <span class="checklist-label">Assign cake duty to someone reliable</span>
+          </label>
+          <label class="checklist-row">
+            <input type="checkbox" class="checklist-input" />
+            <span class="checklist-box"></span>
+            <span class="checklist-label">Set up a photo booth or backdrop</span>
+          </label>
+          <label class="checklist-row">
+            <input type="checkbox" class="checklist-input" />
+            <span class="checklist-box"></span>
+            <span class="checklist-label">After the party — share Moments album</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Moment Preview -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 640px; margin: 0 auto;">
+        <span class="label text-primary">Moments</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Relive the Party<br/><em class="font-serif">Through Shared Photos</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          After the candles are blown and the cake is cut, the memories live on. Moments creates a permanent shared album where every guest contributes their favourite shots.
+        </p>
+      </div>
+
+      <div class="polaroid-grid reveal" style="margin-top: var(--space-2xl);">
+        <div class="polaroid" style="--rotate: -4deg;">
+          <div class="polaroid-img">
+            <div class="polaroid-placeholder" style="background: linear-gradient(135deg, #FFE0B2, #FFCC80);">
+              <span>&#x1F382;</span>
+            </div>
+          </div>
+          <p class="polaroid-caption">The cake moment!</p>
+        </div>
+        <div class="polaroid" style="--rotate: 2deg;">
+          <div class="polaroid-img">
+            <div class="polaroid-placeholder" style="background: linear-gradient(135deg, #F8BBD0, #F48FB1);">
+              <span>&#x1F388;</span>
+            </div>
+          </div>
+          <p class="polaroid-caption">Balloon surprise worked!</p>
+        </div>
+        <div class="polaroid" style="--rotate: -1deg;">
+          <div class="polaroid-img">
+            <div class="polaroid-placeholder" style="background: linear-gradient(135deg, #B3E5FC, #81D4FA);">
+              <span>&#x1F973;</span>
+            </div>
+          </div>
+          <p class="polaroid-caption">Best crew ever</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="feat-cta reveal-scale">
+        <h2 class="heading-xl" style="color: white;">
+          Ready to Plan the<br/><em class="font-serif">Perfect Birthday?</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+          Upload your invite. Find your friends. Track RSVPs. Share Moments. All free. Always.
+        </p>
+        <a href="#" class="btn btn-cta-white" style="margin-top: var(--space-lg);">
+          Start Planning — Free <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  @import '../../styles/global.css';
+
+  /* ── Hero (unchanged) ── */
+  .feat-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+    padding-top: calc(var(--space-3xl) + 80px);
+    background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 60%);
+  }
+
+  .feat-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .feat-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .feat-badge {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary);
+    background: rgba(255,82,82,0.06); padding: 0.4rem 1.2rem; border-radius: var(--radius-full);
+    display: inline-block;
+  }
+
+  .feat-hero__content h1 { color: var(--color-charcoal); }
+  .feat-hero__content h1 em { color: var(--color-primary); font-style: italic; }
+
+  .feat-hero__cta { margin-top: var(--space-sm); }
+
+  .feat-hero__img {
+    width: 100%; max-width: 440px; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg); margin: 0 auto; display: block;
+  }
+
+  /* ── CTA (unchanged) ── */
+  .feat-cta {
+    background: linear-gradient(135deg, var(--color-charcoal), var(--color-dark));
+    border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .btn-cta-white {
+    background: white; color: var(--color-charcoal);
+    padding: 1rem 2.5rem; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.3s var(--ease-smooth); border: none; cursor: pointer;
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-cta-white .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-cta-white:hover .arrow { transform: translateX(4px); }
+
+  /* ═══════════════════════════════════════════════
+     1. HORIZONTAL SCROLL BIRTHDAY CARDS
+     ═══════════════════════════════════════════════ */
+  .hscroll-cards {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-border);
+  }
+
+  .hscroll-cards::-webkit-scrollbar { height: 6px; }
+  .hscroll-cards::-webkit-scrollbar-track { background: var(--color-border); border-radius: 3px; }
+  .hscroll-cards::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
+
+  .hscroll-card {
+    flex: 0 0 420px;
+    min-height: 200px;
+    max-height: 280px;
+    scroll-snap-align: start;
+    background: var(--card-grad);
+    border-radius: var(--radius-xl);
+    padding: 2rem 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth);
+  }
+
+  .hscroll-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 20%, rgba(0,0,0,0.15) 100%);
+    pointer-events: none;
+  }
+
+  .hscroll-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+  }
+
+  .hscroll-card__age {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    letter-spacing: -0.03em;
+    max-width: 120px;
+  }
+
+  .hscroll-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    min-width: 0;
+  }
+
+  .hscroll-card__content h3 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  .hscroll-tips {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .hscroll-tips li {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .hscroll-tips li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+  }
+
+  /* ═══════════════════════════════════════════════
+     2. PARTY PLANNING CHECKLIST
+     ═══════════════════════════════════════════════ */
+  .checklist-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+  .checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .checklist-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    user-select: none;
+  }
+
+  .checklist-row:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .checklist-row:hover {
+    background: var(--color-surface-alt);
+  }
+
+  .checklist-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .checklist-box {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.25s var(--ease-smooth);
+  }
+
+  .checklist-box::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s var(--ease-smooth);
+  }
+
+  .checklist-input:checked ~ .checklist-box {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .checklist-input:checked ~ .checklist-box::after {
+    transform: rotate(45deg) scale(1);
+  }
+
+  .checklist-label {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    transition: all 0.25s ease;
+    line-height: 1.4;
+  }
+
+  .checklist-input:checked ~ .checklist-label {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+  }
+
+  /* ═══════════════════════════════════════════════
+     3. POLAROID PHOTO PREVIEW
+     ═══════════════════════════════════════════════ */
+  .polaroid-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .polaroid {
+    background: white;
+    padding: 0.75rem 0.75rem 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.06);
+    transform: rotate(var(--rotate));
+    transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+    width: 240px;
+  }
+
+  .polaroid:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    z-index: 2;
+  }
+
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .polaroid-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-charcoal);
+    text-align: center;
+    padding: 0.75rem 0.5rem 1rem;
+    line-height: 1.3;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .feat-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .feat-hero__content { align-items: center; }
+
+    .hscroll-card { flex: 0 0 360px; padding: 1.75rem 1.5rem; gap: 1.25rem; max-height: none; }
+
+    .checklist-layout { grid-template-columns: 1fr; text-align: center; }
+
+    .polaroid { width: 200px; }
+    .polaroid-grid { gap: 1rem; }
+  }
+
+  @media (max-width: 600px) {
+    .feat-hero { min-height: auto; padding-bottom: 2rem; }
+    .feat-hero__img { max-width: 300px; }
+
+    .hscroll-card { flex: 0 0 85vw; min-height: auto; }
+    .hscroll-card__age { font-size: 2.5rem; }
+
+    .polaroid-grid {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .polaroid {
+      width: 260px;
+      transform: rotate(0deg);
+    }
+
+    .polaroid:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+  }
+</style>

@@ -1,0 +1,818 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Guest Management Made Simple — Lumhe" description="Find and connect with guests by name, phone, or email inside Lumhe. Build your celebration circle. Manage different guest lists for different functions.">
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="feat-hero">
+    <div class="container">
+      <div class="feat-hero__inner">
+        <div class="feat-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="feat-badge">Guest Management</span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            Find Your Guests<br/>
+            <em>Inside Lumhe</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 520px;">
+            Search by name, phone, or email to find and connect with your guests directly inside Lumhe. Build different guest lists for different functions. No contact imports needed.
+          </p>
+          <div class="feat-hero__cta anim-first-hit delay-4">
+            <a href="#" class="btn btn-primary magnetic">Start Managing Guests — Free <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="feat-hero__visual anim-first-hit delay-3">
+          <img src="/images/lumhe/invite.png" alt="Guest management with Lumhe" class="feat-hero__img"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Demo: Command Palette -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">People Discovery</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Find Anyone by<br/><em class="font-serif">Name, Phone, or Email</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Lumhe's primary way to connect with guests is through in-app search. Find people already on Lumhe and invite them directly.
+        </p>
+      </div>
+
+      <div class="cmd-palette reveal" style="margin-top: var(--space-2xl);">
+        <!-- Search bar -->
+        <div class="cmd-search">
+          <svg class="cmd-search__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <span class="cmd-search__text">Search by name, phone, or email...</span>
+          <span class="cmd-search__shortcut">
+            <kbd>&#8984;</kbd><kbd>K</kbd>
+          </span>
+        </div>
+
+        <!-- Mock results -->
+        <div class="cmd-results stagger-children">
+          <div class="cmd-result">
+            <div class="cmd-avatar" style="background: linear-gradient(135deg, #FF5252, #ff8a80);">
+              <span>PS</span>
+            </div>
+            <div class="cmd-result__info">
+              <span class="cmd-result__name">Priya Sharma</span>
+              <span class="cmd-result__detail">+91 98765 43210</span>
+            </div>
+            <span class="cmd-tag cmd-tag--accepted">Accepted</span>
+            <span class="cmd-group">Family</span>
+          </div>
+          <div class="cmd-result">
+            <div class="cmd-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+              <span>RK</span>
+            </div>
+            <div class="cmd-result__info">
+              <span class="cmd-result__name">Rahul Kapoor</span>
+              <span class="cmd-result__detail">rahul.k@email.com</span>
+            </div>
+            <span class="cmd-tag cmd-tag--pending">Pending</span>
+            <span class="cmd-group">Friends</span>
+          </div>
+          <div class="cmd-result">
+            <div class="cmd-avatar" style="background: linear-gradient(135deg, #10b981, #6ee7b7);">
+              <span>AM</span>
+            </div>
+            <div class="cmd-result__info">
+              <span class="cmd-result__name">Anita Mehta</span>
+              <span class="cmd-result__detail">+91 87654 32109</span>
+            </div>
+            <span class="cmd-tag cmd-tag--accepted">Accepted</span>
+            <span class="cmd-group">Colleagues</span>
+          </div>
+          <div class="cmd-result">
+            <div class="cmd-avatar" style="background: linear-gradient(135deg, #8b5cf6, #c4b5fd);">
+              <span>VD</span>
+            </div>
+            <div class="cmd-result__info">
+              <span class="cmd-result__name">Vikram Desai</span>
+              <span class="cmd-result__detail">vikram.d@work.com</span>
+            </div>
+            <span class="cmd-tag cmd-tag--declined">Declined</span>
+            <span class="cmd-group">Family</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Showcase — alternating zigzag rows -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Powerful Features</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Everything You Need to<br/><em class="font-serif">Manage Guests</em>
+        </h2>
+      </div>
+
+      <div class="zigzag" style="margin-top: var(--space-2xl);">
+        <!-- Row 1 -->
+        <div class="zigzag-row reveal">
+          <div class="zigzag-visual" style="background: linear-gradient(135deg, #fff0f0, #ffe0e0);">
+            <div class="mockup-list">
+              <div class="mockup-list__row"><span class="mockup-check mockup-check--on"></span><span class="mockup-bar" style="width: 65%;"></span></div>
+              <div class="mockup-list__row"><span class="mockup-check mockup-check--on"></span><span class="mockup-bar" style="width: 50%;"></span></div>
+              <div class="mockup-list__row"><span class="mockup-check"></span><span class="mockup-bar" style="width: 72%;"></span></div>
+              <div class="mockup-list__row"><span class="mockup-check mockup-check--on"></span><span class="mockup-bar" style="width: 58%;"></span></div>
+            </div>
+          </div>
+          <div class="zigzag-content">
+            <span class="zigzag-num" style="color: #FF5252;">01</span>
+            <h3 class="heading-md">Bulk Actions</h3>
+            <p class="body-md text-muted">Select multiple guests and send invitations, nudge reminders, or assign to functions all at once.</p>
+          </div>
+        </div>
+
+        <!-- Row 2 — reversed -->
+        <div class="zigzag-row zigzag-row--flip reveal">
+          <div class="zigzag-visual" style="background: linear-gradient(135deg, #f8f0ff, #f0e0ff);">
+            <div class="mockup-groups">
+              <span class="mockup-group-pill" style="background: rgba(224,64,251,0.15); color: #9C27B0;">Family</span>
+              <span class="mockup-group-pill" style="background: rgba(41,121,255,0.12); color: #1565C0;">Friends</span>
+              <span class="mockup-group-pill" style="background: rgba(0,191,165,0.12); color: #00897B;">Colleagues</span>
+              <span class="mockup-group-pill" style="background: rgba(255,109,0,0.12); color: #E65100;">Neighbours</span>
+            </div>
+          </div>
+          <div class="zigzag-content">
+            <span class="zigzag-num" style="color: #E040FB;">02</span>
+            <h3 class="heading-md">Smart Groups</h3>
+            <p class="body-md text-muted">Organise guests into groups — Family, Friends, Colleagues, Neighbours. Invite entire groups to specific functions.</p>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="zigzag-row reveal">
+          <div class="zigzag-visual" style="background: linear-gradient(135deg, #e8f0ff, #d0e0ff);">
+            <div class="mockup-export">
+              <div class="mockup-file"><span class="mockup-file__ext">.csv</span></div>
+              <div class="mockup-file"><span class="mockup-file__ext">.pdf</span></div>
+            </div>
+          </div>
+          <div class="zigzag-content">
+            <span class="zigzag-num" style="color: #2979FF;">03</span>
+            <h3 class="heading-md">Export Lists</h3>
+            <p class="body-md text-muted">Download your guest lists anytime. Share with caterers, decorators, or anyone who needs the numbers.</p>
+          </div>
+        </div>
+
+        <!-- Row 4 — reversed -->
+        <div class="zigzag-row zigzag-row--flip reveal">
+          <div class="zigzag-visual" style="background: linear-gradient(135deg, #e0fff8, #ccf5ee);">
+            <div class="mockup-link">
+              <span class="mockup-link__url">lumhe.app/invite/abc123</span>
+              <span class="mockup-link__btn">Copy</span>
+            </div>
+          </div>
+          <div class="zigzag-content">
+            <span class="zigzag-num" style="color: #00BFA5;">04</span>
+            <h3 class="heading-md">Link Sharing</h3>
+            <p class="body-md text-muted">Generate a shareable link for WhatsApp, Instagram, or any platform — for guests who are not on Lumhe yet.</p>
+          </div>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="zigzag-row reveal">
+          <div class="zigzag-visual" style="background: linear-gradient(135deg, #fff5e6, #ffe8cc);">
+            <div class="mockup-functions">
+              <div class="mockup-fn"><span class="mockup-fn__dot" style="background: #FF5252;"></span><span class="mockup-fn__name">Mehendi</span><span class="mockup-fn__count">42</span></div>
+              <div class="mockup-fn"><span class="mockup-fn__dot" style="background: #E040FB;"></span><span class="mockup-fn__name">Sangeet</span><span class="mockup-fn__count">78</span></div>
+              <div class="mockup-fn"><span class="mockup-fn__dot" style="background: #2979FF;"></span><span class="mockup-fn__name">Reception</span><span class="mockup-fn__count">250</span></div>
+            </div>
+          </div>
+          <div class="zigzag-content">
+            <span class="zigzag-num" style="color: #FF6D00;">05</span>
+            <h3 class="heading-md">Per-Function Lists</h3>
+            <p class="body-md text-muted">Different guests for different functions. Close family to Mehendi, everyone to Reception — you decide.</p>
+          </div>
+        </div>
+
+        <!-- Row 6 — reversed -->
+        <div class="zigzag-row zigzag-row--flip reveal">
+          <div class="zigzag-visual" style="background: linear-gradient(135deg, #fffde7, #fff9c4);">
+            <div class="mockup-circle">
+              <div class="mockup-circle__ring mockup-circle__ring--outer"></div>
+              <div class="mockup-circle__ring mockup-circle__ring--mid"></div>
+              <div class="mockup-circle__ring mockup-circle__ring--inner"></div>
+              <span class="mockup-circle__label">You</span>
+            </div>
+          </div>
+          <div class="zigzag-content">
+            <span class="zigzag-num" style="color: #FFD600;">06</span>
+            <h3 class="heading-md">Circle Building</h3>
+            <p class="body-md text-muted">Every connection stays. Next celebration, your circle is already there. No rebuilding guest lists from scratch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="social-proof-card reveal-scale">
+        <div class="social-proof__content">
+          <span class="label text-primary">Your Circle Grows</span>
+          <h2 class="heading-lg" style="margin-top: 0.5rem;">
+            Your guest list grows with<br/><em class="font-serif">every celebration</em>
+          </h2>
+          <p class="body-lg text-muted" style="margin-top: 1rem; max-width: 440px;">
+            From your engagement to your wedding to your anniversary — connections stay and your celebration circle keeps growing.
+          </p>
+        </div>
+        <div class="social-proof__visual">
+          <div class="avatar-stack">
+            <div class="avatar-circle" style="background: linear-gradient(135deg, #FF5252, #ff8a80); z-index: 6;">PS</div>
+            <div class="avatar-circle" style="background: linear-gradient(135deg, #f59e0b, #fbbf24); z-index: 5;">RK</div>
+            <div class="avatar-circle" style="background: linear-gradient(135deg, #10b981, #6ee7b7); z-index: 4;">AM</div>
+            <div class="avatar-circle" style="background: linear-gradient(135deg, #8b5cf6, #c4b5fd); z-index: 3;">VD</div>
+            <div class="avatar-circle" style="background: linear-gradient(135deg, #ec4899, #f9a8d4); z-index: 2;">NK</div>
+            <div class="avatar-circle avatar-circle--more" style="z-index: 1;">+2.5k</div>
+          </div>
+          <div class="social-proof__counter">
+            <span class="social-proof__number">2,500+</span>
+            <span class="social-proof__label">families trust Lumhe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="feat-cta reveal-scale">
+        <h2 class="heading-xl" style="color: white;">
+          Ready to Build Your<br/><em class="font-serif">Celebration Circle?</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+          Find guests by name, phone, or email. Manage per-function lists. Share via link too. All free. Always.
+        </p>
+        <a href="#" class="btn btn-cta-white" style="margin-top: var(--space-lg);">
+          Start Managing Guests — Free <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .feat-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+    padding-top: calc(var(--space-3xl) + 80px);
+    background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 60%);
+  }
+
+  .feat-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .feat-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .feat-badge {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary);
+    background: rgba(255,82,82,0.06); padding: 0.4rem 1.2rem; border-radius: var(--radius-full);
+    display: inline-block;
+  }
+
+  .feat-hero__content h1 { color: var(--color-charcoal); }
+  .feat-hero__content h1 em { color: var(--color-primary); font-style: italic; }
+
+  .feat-hero__cta { margin-top: var(--space-sm); }
+
+  .feat-hero__img {
+    width: 100%; max-width: 440px; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg); margin: 0 auto; display: block;
+  }
+
+  /* ========================================
+     COMMAND PALETTE SEARCH DEMO
+     ======================================== */
+  .cmd-palette {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .cmd-search {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cmd-search__icon {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .cmd-search__text {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+  }
+
+  .cmd-search__shortcut {
+    display: flex;
+    gap: 3px;
+  }
+
+  .cmd-search__shortcut kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 6px;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+  }
+
+  .cmd-results {
+    padding: 0.5rem;
+  }
+
+  .cmd-result {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-md);
+    transition: background 0.2s ease;
+    cursor: default;
+  }
+
+  .cmd-result:hover {
+    background: var(--color-surface-alt);
+  }
+
+  .cmd-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cmd-avatar span {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.02em;
+  }
+
+  .cmd-result__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .cmd-result__name {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--color-charcoal);
+  }
+
+  .cmd-result__detail {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .cmd-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+
+  .cmd-tag--accepted { background: rgba(16,185,129,0.1); color: #059669; }
+  .cmd-tag--pending { background: rgba(245,158,11,0.1); color: #d97706; }
+  .cmd-tag--declined { background: rgba(255,82,82,0.1); color: var(--color-primary); }
+
+  .cmd-group {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    display: none;
+  }
+
+  @media (min-width: 601px) {
+    .cmd-group { display: block; }
+  }
+
+  /* ========================================
+     ZIGZAG FEATURE ROWS
+     ======================================== */
+  .zigzag {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .zigzag-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .zigzag-row--flip .zigzag-visual { order: 2; }
+  .zigzag-row--flip .zigzag-content { order: 1; }
+
+  .zigzag-visual {
+    border-radius: var(--radius-xl);
+    padding: clamp(2rem, 4vw, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+  }
+
+  .zigzag-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .zigzag-num {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.25;
+  }
+
+  .zigzag-content h3 {
+    color: var(--color-charcoal);
+    margin-top: -0.5rem;
+  }
+
+  /* Mockup internals */
+  .mockup-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .mockup-list__row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: white;
+    border-radius: var(--radius-md);
+  }
+
+  .mockup-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 2px solid var(--color-border);
+    flex-shrink: 0;
+  }
+
+  .mockup-check--on {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .mockup-bar {
+    height: 8px;
+    background: var(--color-border);
+    border-radius: 4px;
+  }
+
+  .mockup-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .mockup-group-pill {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .mockup-export {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .mockup-file {
+    width: 72px;
+    height: 88px;
+    background: white;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    position: relative;
+  }
+
+  .mockup-file::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 0;
+    border-color: transparent var(--color-surface-alt) transparent transparent;
+  }
+
+  .mockup-file__ext {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+  }
+
+  .mockup-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .mockup-link__url {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+
+  .mockup-link__btn {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: white;
+    background: var(--color-primary);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+  }
+
+  .mockup-functions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mockup-fn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.75rem;
+    background: white;
+    border-radius: var(--radius-md);
+  }
+
+  .mockup-fn__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .mockup-fn__name {
+    flex: 1;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+  }
+
+  .mockup-fn__count {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--color-text-muted);
+  }
+
+  .mockup-circle {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mockup-circle__ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px dashed var(--color-border);
+  }
+
+  .mockup-circle__ring--outer { width: 120px; height: 120px; }
+  .mockup-circle__ring--mid { width: 80px; height: 80px; border-color: rgba(255,82,82,0.3); }
+  .mockup-circle__ring--inner { width: 40px; height: 40px; background: rgba(255,82,82,0.1); border-style: solid; border-color: var(--color-primary); }
+
+  .mockup-circle__label {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ========================================
+     SOCIAL PROOF CARD
+     ======================================== */
+  .social-proof-card {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .social-proof__content {
+    flex: 1;
+  }
+
+  .social-proof__visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .avatar-stack {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    border: 3px solid var(--color-surface);
+    margin-left: -16px;
+    position: relative;
+    transition: transform 0.3s var(--ease-smooth);
+  }
+
+  .avatar-circle:first-child { margin-left: 0; }
+
+  .avatar-circle:hover {
+    transform: translateY(-4px) scale(1.08);
+    z-index: 10 !important;
+  }
+
+  .avatar-circle--more {
+    background: var(--color-charcoal) !important;
+    font-size: 0.65rem;
+    letter-spacing: -0.02em;
+  }
+
+  .social-proof__counter {
+    text-align: center;
+  }
+
+  .social-proof__number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-charcoal);
+    display: block;
+    line-height: 1;
+  }
+
+  .social-proof__label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  /* ========================================
+     CTA
+     ======================================== */
+  .feat-cta {
+    background: linear-gradient(135deg, var(--color-charcoal), var(--color-dark));
+    border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .btn-cta-white {
+    background: white; color: var(--color-charcoal);
+    padding: 1rem 2.5rem; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.3s var(--ease-smooth); border: none; cursor: pointer;
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-cta-white .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-cta-white:hover .arrow { transform: translateX(4px); }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 900px) {
+    .feat-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .feat-hero__content { align-items: center; }
+
+    .zigzag-row { grid-template-columns: 1fr; }
+    .zigzag-row--flip .zigzag-visual { order: 0; }
+    .zigzag-row--flip .zigzag-content { order: 0; }
+
+    .social-proof-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .feat-hero { min-height: auto; padding-bottom: 2rem; }
+    .feat-hero__img { max-width: 300px; }
+
+    .cmd-palette { border-radius: var(--radius-lg); }
+    .cmd-search { padding: 1rem 1.25rem; }
+    .cmd-search__shortcut { display: none; }
+    .cmd-result { padding: 0.75rem 0.85rem; gap: 0.65rem; }
+    .cmd-avatar { width: 36px; height: 36px; }
+    .cmd-avatar span { font-size: 0.7rem; }
+    .cmd-tag { font-size: 0.6rem; padding: 0.2rem 0.5rem; }
+
+    .zigzag-visual { min-height: 160px; padding: 1.5rem; }
+    .zigzag-num { font-size: 2.5rem; }
+
+    .avatar-circle { width: 44px; height: 44px; margin-left: -12px; font-size: 0.7rem; }
+    .avatar-circle:first-child { margin-left: 0; }
+    .social-proof__number { font-size: 1.6rem; }
+
+    .social-proof-card { padding: 2rem 1.5rem; }
+  }
+</style>
