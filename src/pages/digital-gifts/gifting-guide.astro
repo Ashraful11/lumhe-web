@@ -103,76 +103,36 @@ import Footer from '../../components/Footer.astro';
         </p>
       </div>
 
-      <div class="price-ruler reveal" style="margin-top: var(--space-2xl);">
-        <!-- Occasions plotted above/below the bar -->
-        <div class="ruler__occasions ruler__occasions--above">
-          <div class="ruler__occasion" style="left: 5%;">
-            <span class="ruler__occasion-name">Birthday</span>
-            <span class="ruler__occasion-amount">&#8377;251</span>
-            <span class="ruler__occasion-stem"></span>
-          </div>
-          <div class="ruler__occasion" style="left: 12%;">
-            <span class="ruler__occasion-name">Kitty Party</span>
-            <span class="ruler__occasion-amount">&#8377;301</span>
-            <span class="ruler__occasion-stem"></span>
-          </div>
-          <div class="ruler__occasion" style="left: 22%;">
-            <span class="ruler__occasion-name">Farewell</span>
-            <span class="ruler__occasion-amount">&#8377;501</span>
-            <span class="ruler__occasion-stem"></span>
-          </div>
-          <div class="ruler__occasion" style="left: 42%;">
-            <span class="ruler__occasion-name">Baby Shower</span>
-            <span class="ruler__occasion-amount">&#8377;1,001</span>
-            <span class="ruler__occasion-stem"></span>
-          </div>
-          <div class="ruler__occasion" style="left: 68%;">
-            <span class="ruler__occasion-name">Wedding Shagun</span>
-            <span class="ruler__occasion-amount">&#8377;2,101</span>
-            <span class="ruler__occasion-stem"></span>
+      <div class="budget-tiers reveal" style="margin-top: var(--space-2xl);">
+        <!-- Tier 1: Under 500 -->
+        <div class="budget-row">
+          <span class="budget-label budget-label--green">Under &#8377;500</span>
+          <div class="budget-pills">
+            <span class="budget-pill budget-pill--green">Birthday <strong>&#8377;251</strong></span>
+            <span class="budget-pill budget-pill--green">Kitty Party <strong>&#8377;301</strong></span>
+            <span class="budget-pill budget-pill--green">Achievement <strong>&#8377;351</strong></span>
+            <span class="budget-pill budget-pill--green">Farewell <strong>&#8377;501</strong></span>
           </div>
         </div>
 
-        <!-- The gradient bar -->
-        <div class="ruler__bar">
-          <div class="ruler__bar-fill"></div>
-          <div class="ruler__tick" style="left: 0%;"><span>&#8377;0</span></div>
-          <div class="ruler__tick" style="left: 20%;"><span>&#8377;500</span></div>
-          <div class="ruler__tick" style="left: 50%;"><span>&#8377;2,000</span></div>
-          <div class="ruler__tick" style="left: 100%;"><span>&#8377;5,001+</span></div>
+        <!-- Tier 2: 500 – 2,000 -->
+        <div class="budget-row">
+          <span class="budget-label budget-label--amber">&#8377;500 &ndash; &#8377;2,000</span>
+          <div class="budget-pills">
+            <span class="budget-pill budget-pill--amber">Baby Shower <strong>&#8377;1,001</strong></span>
+            <span class="budget-pill budget-pill--amber">Housewarming <strong>&#8377;1,101</strong></span>
+            <span class="budget-pill budget-pill--amber">Milestone Birthday <strong>&#8377;1,001</strong></span>
+            <span class="budget-pill budget-pill--amber">Anniversary <strong>&#8377;1,501</strong></span>
+          </div>
         </div>
 
-        <!-- Occasions below the bar -->
-        <div class="ruler__occasions ruler__occasions--below">
-          <div class="ruler__occasion ruler__occasion--below-item" style="left: 7%;">
-            <span class="ruler__occasion-stem ruler__occasion-stem--down"></span>
-            <span class="ruler__occasion-amount">&#8377;351</span>
-            <span class="ruler__occasion-name">Achievement</span>
-          </div>
-          <div class="ruler__occasion ruler__occasion--below-item" style="left: 36%;">
-            <span class="ruler__occasion-stem ruler__occasion-stem--down"></span>
-            <span class="ruler__occasion-amount">&#8377;1,101</span>
-            <span class="ruler__occasion-name">Housewarming</span>
-          </div>
-          <div class="ruler__occasion ruler__occasion--below-item" style="left: 50%;">
-            <span class="ruler__occasion-stem ruler__occasion-stem--down"></span>
-            <span class="ruler__occasion-amount">&#8377;1,501</span>
-            <span class="ruler__occasion-name">Anniversary</span>
-          </div>
-          <div class="ruler__occasion ruler__occasion--below-item" style="left: 32%;">
-            <span class="ruler__occasion-stem ruler__occasion-stem--down"></span>
-            <span class="ruler__occasion-amount">&#8377;1,001</span>
-            <span class="ruler__occasion-name">Milestone Birthday</span>
-          </div>
-          <div class="ruler__occasion ruler__occasion--below-item" style="left: 85%;">
-            <span class="ruler__occasion-stem ruler__occasion-stem--down"></span>
-            <span class="ruler__occasion-amount">&#8377;5,001</span>
-            <span class="ruler__occasion-name">Silver Jubilee</span>
-          </div>
-          <div class="ruler__occasion ruler__occasion--below-item" style="left: 90%;">
-            <span class="ruler__occasion-stem ruler__occasion-stem--down"></span>
-            <span class="ruler__occasion-amount">&#8377;5,001</span>
-            <span class="ruler__occasion-name">Close Family Event</span>
+        <!-- Tier 3: 2,000+ -->
+        <div class="budget-row">
+          <span class="budget-label budget-label--red">&#8377;2,000+</span>
+          <div class="budget-pills">
+            <span class="budget-pill budget-pill--red">Wedding Shagun <strong>&#8377;2,101</strong></span>
+            <span class="budget-pill budget-pill--red">Silver Jubilee <strong>&#8377;5,001</strong></span>
+            <span class="budget-pill budget-pill--red">Close Family Event <strong>&#8377;5,001+</strong></span>
           </div>
         </div>
       </div>
@@ -373,113 +333,74 @@ import Footer from '../../components/Footer.astro';
     grid-row: 2 / 3;
   }
 
-  /* ===== PRICE RULER / SLIDER VISUAL ===== */
-  .price-ruler {
-    position: relative;
-    max-width: 900px;
+  /* ===== BUDGET TIERS ===== */
+  .budget-tiers {
+    max-width: 820px;
     margin: 0 auto;
-    padding: 160px 2rem 180px;
-  }
-
-  .ruler__bar {
-    position: relative;
-    height: 8px;
-    border-radius: 4px;
-    background: var(--color-border);
-  }
-
-  .ruler__bar-fill {
-    position: absolute;
-    inset: 0;
-    border-radius: 4px;
-    background: linear-gradient(90deg, #4CAF50, #8BC34A, #FFEB3B, #FFC107, #FF9800, #E6A817);
-  }
-
-  .ruler__tick {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 2px;
-    height: 20px;
-    background: var(--color-charcoal);
-  }
-
-  .ruler__tick span {
-    position: absolute;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--font-heading);
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--color-text-muted);
-    white-space: nowrap;
-  }
-
-  .ruler__occasions {
-    position: absolute;
-    left: 2rem;
-    right: 2rem;
-    height: 0;
-  }
-
-  .ruler__occasions--above {
-    top: 0;
-    bottom: auto;
-  }
-
-  .ruler__occasions--below {
-    bottom: 0;
-    top: auto;
-  }
-
-  .ruler__occasion {
-    position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    transform: translateX(-50%);
+    gap: 1.25rem;
   }
 
-  .ruler__occasions--above .ruler__occasion {
-    bottom: 0;
+  .budget-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: box-shadow 0.3s ease;
   }
 
-  .ruler__occasion-name {
-    font-family: var(--font-body);
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--color-charcoal);
-    white-space: nowrap;
+  .budget-row:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   }
 
-  .ruler__occasion-amount {
+  .budget-label {
+    flex-shrink: 0;
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    color: var(--color-primary);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
     white-space: nowrap;
+    line-height: 1.4;
   }
 
-  .ruler__occasion-stem {
-    display: block;
-    width: 1px;
-    height: 32px;
-    background: var(--color-border);
-  }
+  .budget-label--green { background: #E8F5E9; color: #2E7D32; }
+  .budget-label--amber { background: #FFF8E1; color: #F57F17; }
+  .budget-label--red   { background: #FBE9E7; color: #C62828; }
 
-  .ruler__occasion-stem--down {
-    display: block;
-    width: 1px;
-    height: 32px;
-    background: var(--color-border);
-  }
-
-  .ruler__occasion--below-item {
-    top: 0;
-    flex-direction: column;
+  .budget-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
     align-items: center;
   }
+
+  .budget-pill {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    line-height: 1.4;
+    transition: transform 0.2s ease;
+  }
+
+  .budget-pill:hover {
+    transform: translateY(-2px);
+  }
+
+  .budget-pill strong {
+    font-weight: 700;
+    margin-left: 0.3rem;
+  }
+
+  .budget-pill--green { background: #F1F8E9; color: #33691E; border: 1px solid #C5E1A5; }
+  .budget-pill--amber { background: #FFFDE7; color: #E65100; border: 1px solid #FFE082; }
+  .budget-pill--red   { background: #FFF3E0; color: #BF360C; border: 1px solid #FFAB91; }
 
   /* ===== CONNECTED NODE DIAGRAM ===== */
   .node-diagram {
@@ -618,9 +539,9 @@ import Footer from '../../components/Footer.astro';
     .bento-tile--heart { grid-column: 1 / 2; grid-row: auto; }
     .bento-tile--receipt { grid-column: 2 / 3; grid-row: auto; }
 
-    .price-ruler {
-      padding: 140px 1rem 160px;
-      overflow-x: auto;
+    .budget-row {
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
     .node-diagram {
@@ -652,12 +573,8 @@ import Footer from '../../components/Footer.astro';
     .bento-tile--heart,
     .bento-tile--receipt { grid-column: 1; }
 
-    .price-ruler {
-      padding: 120px 0.5rem 140px;
-    }
-
-    .ruler__occasion-name { font-size: 0.68rem; }
-    .ruler__occasion-amount { font-size: 0.75rem; }
+    .budget-pill { font-size: 0.78rem; padding: 0.3rem 0.75rem; }
+    .budget-label { font-size: 0.72rem; }
 
     .node-circle {
       width: 60px;
