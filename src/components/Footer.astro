@@ -1,4 +1,11 @@
 ---
+import type { CountryCode } from '../data/countries';
+import { getHomeContent } from '../data/content/resolver';
+
+interface Props { country?: CountryCode; }
+const { country = 'global' } = Astro.props;
+const prefix = country === 'global' ? '' : `/${country}`;
+const content = getHomeContent(country);
 ---
 <footer class="footer">
   <div class="container">
@@ -21,36 +28,36 @@
       <div class="footer__col">
         <h4 class="footer__heading">Invitations</h4>
         <ul class="footer__links">
-          <li><a href="/invitations/creating-templates" class="link-animated body-sm">Creating Templates</a></li>
-          <li><a href="/invitations/rsvp-tips" class="link-animated body-sm">RSVP Tips</a></li>
-          <li><a href="/invitations/guest-management" class="link-animated body-sm">Guest Management</a></li>
+          <li><a href={`${prefix}/invitations/creating-templates`} class="link-animated body-sm">Creating Templates</a></li>
+          <li><a href={`${prefix}/invitations/rsvp-tips`} class="link-animated body-sm">RSVP Tips</a></li>
+          <li><a href={`${prefix}/invitations/guest-management`} class="link-animated body-sm">Guest Management</a></li>
         </ul>
       </div>
 
       <div class="footer__col">
         <h4 class="footer__heading">Celebrations</h4>
         <ul class="footer__links">
-          <li><a href="/celebrations/wedding-planning" class="link-animated body-sm">Wedding Planning</a></li>
-          <li><a href="/celebrations/birthday-ideas" class="link-animated body-sm">Birthday Ideas</a></li>
-          <li><a href="/celebrations/festival-guide" class="link-animated body-sm">Festival Guide</a></li>
+          <li><a href={`${prefix}/celebrations/wedding-planning`} class="link-animated body-sm">Wedding Planning</a></li>
+          <li><a href={`${prefix}/celebrations/birthday-ideas`} class="link-animated body-sm">Birthday Ideas</a></li>
+          <li><a href={`${prefix}/celebrations/festival-guide`} class="link-animated body-sm">Festival Guide</a></li>
         </ul>
       </div>
 
       <div class="footer__col">
         <h4 class="footer__heading">Moments</h4>
         <ul class="footer__links">
-          <li><a href="/moments-features/photography-tips" class="link-animated body-sm">Photography Tips</a></li>
-          <li><a href="/moments-features/video-memories" class="link-animated body-sm">Video Memories</a></li>
-          <li><a href="/moments-features/creating-albums" class="link-animated body-sm">Creating Albums</a></li>
+          <li><a href={`${prefix}/moments-features/photography-tips`} class="link-animated body-sm">Photography Tips</a></li>
+          <li><a href={`${prefix}/moments-features/video-memories`} class="link-animated body-sm">Video Memories</a></li>
+          <li><a href={`${prefix}/moments-features/creating-albums`} class="link-animated body-sm">Creating Albums</a></li>
         </ul>
       </div>
 
       <div class="footer__col">
         <h4 class="footer__heading">Digital Gifts</h4>
         <ul class="footer__links">
-          <li><a href="/digital-gifts/gifting-guide" class="link-animated body-sm">Gifting Guide</a></li>
-          <li><a href="/digital-gifts/lifafa-tips" class="link-animated body-sm">Lifafa Tips</a></li>
-          <li><a href="/digital-gifts/occasion-ideas" class="link-animated body-sm">Occasion Ideas</a></li>
+          <li><a href={`${prefix}/digital-gifts/gifting-guide`} class="link-animated body-sm">Gifting Guide</a></li>
+          <li><a href={`${prefix}/digital-gifts/lifafa-tips`} class="link-animated body-sm">Lifafa Tips</a></li>
+          <li><a href={`${prefix}/digital-gifts/occasion-ideas`} class="link-animated body-sm">Occasion Ideas</a></li>
         </ul>
       </div>
 
@@ -67,7 +74,7 @@
 
     <div class="footer__bottom">
       <p class="body-sm text-light">&copy; 2026 Lumhe Invites. All rights reserved.</p>
-      <p class="body-sm text-light">Made with <span style="color: var(--color-primary);">♥</span> in India</p>
+      <p class="body-sm text-light"><Fragment set:html={content.footerTagline} /></p>
     </div>
   </div>
 </footer>

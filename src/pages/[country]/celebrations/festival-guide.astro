@@ -1,0 +1,608 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import type { CountryCode } from '../../../data/countries';
+
+export function getStaticPaths() {
+  return [
+    { params: { country: 'in' } },
+    { params: { country: 'us' } },
+    { params: { country: 'uk' } },
+  ];
+}
+
+const country = Astro.params.country as CountryCode;
+---
+
+<Layout title="Festival & Cultural Celebration Guide — Lumhe" description="Use Lumhe for festival gatherings, cultural celebrations, Griha Pravesh, kitty parties, and more. Upload your invite, connect guests, track RSVPs, and share Moments. Completely free.">
+  <Navbar country={country} />
+
+  <!-- Hero -->
+  <section class="feat-hero">
+    <div class="container">
+      <div class="feat-hero__inner">
+        <div class="feat-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="feat-badge">Festivals & Culture</span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            Celebrate Traditions<br/>
+            <em>Together</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 520px;">
+            From Diwali gatherings to Holi parties, from Griha Pravesh to kitty parties — Lumhe helps you invite guests, track RSVPs, and share celebration Moments. Completely free.
+          </p>
+          <div class="feat-hero__cta anim-first-hit delay-4">
+            <a href="#" class="btn btn-primary magnetic">Plan Your Celebration — Free <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="feat-hero__visual anim-first-hit delay-3">
+          <img src="/images/lumhe/invite.png" alt="Festival celebrations with Lumhe" class="feat-hero__img"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Festival Grid -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 640px; margin: 0 auto;">
+        <span class="label text-primary">Festival Calendar</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Celebrate Every<br/><em class="font-serif">Auspicious Occasion</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          India is a land of festivals. Pick your celebration and start planning your gathering with Lumhe.
+        </p>
+      </div>
+
+      <div class="cal-grid stagger-children" style="margin-top: var(--space-2xl);">
+        <div class="cal-cell cal-cell--active" style="--cal-dot: #E65100;">
+          <span class="cal-month">Jan</span>
+          <div class="cal-event">
+            <span class="cal-dot"></span>
+            <span class="cal-name">Pongal</span>
+          </div>
+          <a href="#" class="cal-link">Plan &rarr;</a>
+        </div>
+        <div class="cal-cell cal-cell--empty">
+          <span class="cal-month">Feb</span>
+        </div>
+        <div class="cal-cell cal-cell--active" style="--cal-dot: #FF5252;">
+          <span class="cal-month">Mar</span>
+          <div class="cal-event">
+            <span class="cal-dot"></span>
+            <span class="cal-name">Holi</span>
+          </div>
+          <a href="#" class="cal-link">Plan &rarr;</a>
+        </div>
+        <div class="cal-cell cal-cell--active" style="--cal-dot: #689F38;">
+          <span class="cal-month">Apr</span>
+          <div class="cal-event">
+            <span class="cal-dot"></span>
+            <span class="cal-name">Baisakhi</span>
+          </div>
+          <a href="#" class="cal-link">Plan &rarr;</a>
+        </div>
+        <div class="cal-cell cal-cell--empty">
+          <span class="cal-month">May</span>
+        </div>
+        <div class="cal-cell cal-cell--empty">
+          <span class="cal-month">Jun</span>
+        </div>
+        <div class="cal-cell cal-cell--empty">
+          <span class="cal-month">Jul</span>
+        </div>
+        <div class="cal-cell cal-cell--active" style="--cal-dot: #F9A825;">
+          <span class="cal-month">Aug</span>
+          <div class="cal-event">
+            <span class="cal-dot"></span>
+            <span class="cal-name">Onam</span>
+          </div>
+          <a href="#" class="cal-link">Plan &rarr;</a>
+        </div>
+        <div class="cal-cell cal-cell--active" style="--cal-dot: #D32F2F;">
+          <span class="cal-month">Sep</span>
+          <div class="cal-event">
+            <span class="cal-dot"></span>
+            <span class="cal-name">Navratri</span>
+          </div>
+          <a href="#" class="cal-link">Plan &rarr;</a>
+        </div>
+        <div class="cal-cell cal-cell--active cal-cell--double" style="--cal-dot: #FFD600; --cal-dot-2: #00897B;">
+          <span class="cal-month">Oct</span>
+          <div class="cal-event">
+            <span class="cal-dot"></span>
+            <span class="cal-name">Diwali</span>
+          </div>
+          <div class="cal-event">
+            <span class="cal-dot" style="background: var(--cal-dot-2);"></span>
+            <span class="cal-name">Eid</span>
+          </div>
+          <a href="#" class="cal-link">Plan &rarr;</a>
+        </div>
+        <div class="cal-cell cal-cell--empty">
+          <span class="cal-month">Nov</span>
+        </div>
+        <div class="cal-cell cal-cell--active" style="--cal-dot: #2E7D32;">
+          <span class="cal-month">Dec</span>
+          <div class="cal-event">
+            <span class="cal-dot"></span>
+            <span class="cal-name">Christmas</span>
+          </div>
+          <a href="#" class="cal-link">Plan &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Lumhe Helps Festivals — Zigzag Layout -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 640px; margin: 0 auto;">
+        <span class="label text-primary">How Lumhe Helps</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          From Invitation to<br/><em class="font-serif">Memories</em>
+        </h2>
+      </div>
+
+      <div class="zigzag" style="margin-top: var(--space-2xl);">
+        <div class="zigzag-row reveal">
+          <div class="zigzag-visual">
+            <div class="zigzag-mockup" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2);">
+              <div class="mockup-invite">
+                <div class="mockup-invite__header"></div>
+                <div class="mockup-invite__line" style="width: 70%;"></div>
+                <div class="mockup-invite__line" style="width: 50%;"></div>
+                <div class="mockup-invite__line" style="width: 60%;"></div>
+                <div class="mockup-invite__btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="zigzag-text">
+            <h3 class="heading-lg">One Invitation, Many Guests</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">
+              Upload your festival invitation in any format — image, video, or PDF. Send it to everyone at once. Guests see a beautiful, personalised invitation with event details, date, and venue. No more forwarding on WhatsApp.
+            </p>
+          </div>
+        </div>
+
+        <div class="zigzag-row zigzag-row--reverse reveal">
+          <div class="zigzag-visual">
+            <div class="zigzag-mockup" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9);">
+              <div class="mockup-rsvp">
+                <div class="mockup-rsvp__row">
+                  <span class="mockup-dot" style="background: #4CAF50;"></span>
+                  <span class="mockup-name"></span>
+                  <span class="mockup-status" style="color: #4CAF50;">Accepted</span>
+                </div>
+                <div class="mockup-rsvp__row">
+                  <span class="mockup-dot" style="background: #FF5252;"></span>
+                  <span class="mockup-name"></span>
+                  <span class="mockup-status" style="color: #FF5252;">Declined</span>
+                </div>
+                <div class="mockup-rsvp__row">
+                  <span class="mockup-dot" style="background: #FFB300;"></span>
+                  <span class="mockup-name"></span>
+                  <span class="mockup-status" style="color: #FFB300;">Pending</span>
+                </div>
+                <div class="mockup-rsvp__row">
+                  <span class="mockup-dot" style="background: #4CAF50;"></span>
+                  <span class="mockup-name"></span>
+                  <span class="mockup-status" style="color: #4CAF50;">Accepted</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="zigzag-text">
+            <h3 class="heading-lg">Track Who's Coming</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">
+              See real-time RSVP status for every guest. Know who accepted, who declined, and who is still deciding. Plan food, seating, and arrangements with an accurate headcount. No more guesswork.
+            </p>
+          </div>
+        </div>
+
+        <div class="zigzag-row reveal">
+          <div class="zigzag-visual">
+            <div class="zigzag-mockup" style="background: linear-gradient(135deg, #F3E5F5, #E1BEE7);">
+              <div class="mockup-photos">
+                <div class="mockup-photo" style="background: #CE93D8;"></div>
+                <div class="mockup-photo" style="background: #BA68C8;"></div>
+                <div class="mockup-photo" style="background: #AB47BC;"></div>
+                <div class="mockup-photo" style="background: #9C27B0;"></div>
+                <div class="mockup-photo" style="background: #E1BEE7;"></div>
+                <div class="mockup-photo" style="background: #D1C4E9;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="zigzag-text">
+            <h3 class="heading-lg">Collect Memories After</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">
+              After the celebration, open Moments so every guest can upload their photos and videos. Build a permanent shared album of the festival gathering. Relive the joy together, anytime.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Occasions Carousel -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 640px; margin: 0 auto;">
+        <span class="label text-primary">And More</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Every Cultural<br/><em class="font-serif">Celebration</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Lumhe works for any gathering where you need to invite people, track who is coming, and share the memories.
+        </p>
+      </div>
+    </div>
+
+    <div class="tag-cloud reveal" style="margin-top: var(--space-xl);">
+      <span class="cloud-tag cloud-tag--lg" style="--tilt: -2deg;">Griha Pravesh</span>
+      <span class="cloud-tag cloud-tag--md" style="--tilt: 1.5deg;">Housewarming</span>
+      <span class="cloud-tag cloud-tag--lg" style="--tilt: -1deg;">Kitty Party</span>
+      <span class="cloud-tag cloud-tag--sm" style="--tilt: 3deg;">Corporate Event</span>
+      <span class="cloud-tag cloud-tag--md" style="--tilt: -2.5deg;">Baby Shower</span>
+      <span class="cloud-tag cloud-tag--sm" style="--tilt: 1deg;">Community Meet</span>
+      <span class="cloud-tag cloud-tag--lg" style="--tilt: -1.5deg;">Auspicious Ceremony</span>
+      <span class="cloud-tag cloud-tag--md" style="--tilt: 2deg;">Cultural Evening</span>
+      <span class="cloud-tag cloud-tag--sm" style="--tilt: -3deg;">Yoga Retreat</span>
+      <span class="cloud-tag cloud-tag--sm" style="--tilt: 1.5deg;">Art Exhibition</span>
+      <span class="cloud-tag cloud-tag--md" style="--tilt: -1deg;">Dinner Party</span>
+      <span class="cloud-tag cloud-tag--sm" style="--tilt: 2.5deg;">Mundan Ceremony</span>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="feat-cta reveal-scale">
+        <h2 class="heading-xl" style="color: white;">
+          Ready to Celebrate<br/><em class="font-serif">Together?</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+          Upload your invite. Connect with guests. Track RSVPs. Share Moments. All free. Always.
+        </p>
+        <a href="#" class="btn btn-cta-white" style="margin-top: var(--space-lg);">
+          Start Celebrating — Free <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer country={country} />
+</Layout>
+
+<style>
+  @import '../../../styles/global.css';
+
+  .feat-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+    padding-top: calc(var(--space-3xl) + 80px);
+    background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 60%);
+  }
+
+  .feat-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .feat-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .feat-badge {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary);
+    background: rgba(255,82,82,0.06); padding: 0.4rem 1.2rem; border-radius: var(--radius-full);
+    display: inline-block;
+  }
+
+  .feat-hero__content h1 { color: var(--color-charcoal); }
+  .feat-hero__content h1 em { color: var(--color-primary); font-style: italic; }
+
+  .feat-hero__cta { margin-top: var(--space-sm); }
+
+  .feat-hero__img {
+    width: 100%; max-width: 440px; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg); margin: 0 auto; display: block;
+  }
+
+  .feat-cta {
+    background: linear-gradient(135deg, var(--color-charcoal), var(--color-dark));
+    border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .btn-cta-white {
+    background: white; color: var(--color-charcoal);
+    padding: 1rem 2.5rem; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.3s var(--ease-smooth); border: none; cursor: pointer;
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-cta-white .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-cta-white:hover .arrow { transform: translateX(4px); }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+
+  .cal-cell {
+    background: var(--color-surface);
+    padding: 1.25rem;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: background 0.25s ease;
+  }
+
+  .cal-cell--empty {
+    background: var(--color-surface-alt);
+    opacity: 0.6;
+  }
+
+  .cal-cell--active:hover {
+    background: var(--color-surface-alt);
+  }
+
+  .cal-month {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+  }
+
+  .cal-cell--active .cal-month {
+    color: var(--color-charcoal);
+  }
+
+  .cal-event {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .cal-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cal-dot);
+    flex-shrink: 0;
+  }
+
+  .cal-name {
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+  }
+
+  .cal-link {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: auto;
+    transition: color 0.2s ease;
+  }
+
+  .cal-link:hover {
+    color: var(--color-charcoal);
+  }
+
+  .zigzag {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .zigzag-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .zigzag-row--reverse .zigzag-visual {
+    order: 1;
+  }
+
+  .zigzag-row--reverse .zigzag-text {
+    order: 0;
+  }
+
+  .zigzag-mockup {
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mockup-invite {
+    width: 70%;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .mockup-invite__header {
+    width: 40%;
+    height: 12px;
+    background: var(--color-primary);
+    border-radius: 6px;
+    opacity: 0.7;
+  }
+
+  .mockup-invite__line {
+    height: 8px;
+    background: var(--color-border);
+    border-radius: 4px;
+  }
+
+  .mockup-invite__btn {
+    width: 45%;
+    height: 28px;
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    margin-top: 0.5rem;
+    opacity: 0.8;
+  }
+
+  .mockup-rsvp {
+    width: 80%;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .mockup-rsvp__row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mockup-rsvp__row:last-child { border-bottom: none; }
+
+  .mockup-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .mockup-name {
+    flex: 1;
+    height: 8px;
+    background: var(--color-border);
+    border-radius: 4px;
+  }
+
+  .mockup-status {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .mockup-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    width: 80%;
+  }
+
+  .mockup-photo {
+    aspect-ratio: 1;
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem calc((100vw - min(1200px, 90vw)) / 2) 1.5rem;
+  }
+
+  .cloud-tag {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    background: var(--color-surface);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-charcoal);
+    cursor: default;
+    white-space: nowrap;
+    transform: rotate(var(--tilt, 0deg));
+    transition: all 0.3s var(--ease-smooth);
+  }
+
+  .cloud-tag:hover {
+    transform: rotate(0deg) scale(1.08);
+    border-color: var(--color-primary);
+    background: rgba(255,82,82,0.04);
+    box-shadow: 0 4px 16px rgba(255,82,82,0.1);
+    z-index: 2;
+    position: relative;
+  }
+
+  .cloud-tag--lg {
+    font-size: 1.05rem;
+    padding: 0.75rem 1.75rem;
+  }
+
+  .cloud-tag--md {
+    font-size: 0.9rem;
+  }
+
+  .cloud-tag--sm {
+    font-size: 0.78rem;
+    padding: 0.5rem 1.1rem;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .feat-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .feat-hero__content { align-items: center; }
+
+    .cal-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .zigzag-row { grid-template-columns: 1fr; text-align: center; }
+    .zigzag-row--reverse .zigzag-visual { order: 0; }
+    .zigzag-row--reverse .zigzag-text { order: 1; }
+
+    .zigzag-mockup { max-width: 400px; margin: 0 auto; }
+  }
+
+  @media (max-width: 600px) {
+    .feat-hero { min-height: auto; padding-bottom: 2rem; }
+    .feat-hero__img { max-width: 300px; }
+
+    .cal-grid { grid-template-columns: repeat(2, 1fr); }
+    .cal-cell { min-height: 110px; padding: 1rem; }
+
+    .zigzag-mockup { padding: 1.25rem; }
+
+    .cloud-tag { transform: rotate(0deg); }
+    .tag-cloud { gap: 0.5rem 0.65rem; }
+  }
+</style>

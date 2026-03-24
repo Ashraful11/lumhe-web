@@ -1,8 +1,13 @@
 ---
+import CountrySwitcher from './CountrySwitcher.astro';
+
+interface Props { country?: string; }
+const { country = 'global' } = Astro.props;
+const prefix = country === 'global' ? '' : `/${country}`;
 ---
 <nav class="navbar">
   <div class="navbar__inner container">
-    <a href="/" class="navbar__brand">
+    <a href={`${prefix}/`} class="navbar__brand">
       <div class="navbar__logo">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
           <rect width="28" height="28" rx="8" fill="#FF5252"/>
@@ -16,15 +21,15 @@
       <div class="nav-dropdown">
         <button class="nav-dropdown__trigger" type="button">Invitations <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="nav-dropdown__menu">
-          <a href="/invitations/creating-templates">
+          <a href={`${prefix}/invitations/creating-templates`}>
             <span class="nav-dropdown__icon">&#9997;</span>
             <div><strong>Creating Templates</strong><span class="nav-dropdown__desc">Design invitations your way</span></div>
           </a>
-          <a href="/invitations/rsvp-tips">
+          <a href={`${prefix}/invitations/rsvp-tips`}>
             <span class="nav-dropdown__icon">&#9993;</span>
             <div><strong>RSVP Tips</strong><span class="nav-dropdown__desc">Get better response rates</span></div>
           </a>
-          <a href="/invitations/guest-management">
+          <a href={`${prefix}/invitations/guest-management`}>
             <span class="nav-dropdown__icon">&#128101;</span>
             <div><strong>Guest Management</strong><span class="nav-dropdown__desc">Track and manage your guests</span></div>
           </a>
@@ -34,15 +39,15 @@
       <div class="nav-dropdown">
         <button class="nav-dropdown__trigger" type="button">Celebrations <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="nav-dropdown__menu">
-          <a href="/celebrations/wedding-planning">
+          <a href={`${prefix}/celebrations/wedding-planning`}>
             <span class="nav-dropdown__icon">&#128141;</span>
             <div><strong>Wedding Planning</strong><span class="nav-dropdown__desc">Plan your dream celebration</span></div>
           </a>
-          <a href="/celebrations/birthday-ideas">
+          <a href={`${prefix}/celebrations/birthday-ideas`}>
             <span class="nav-dropdown__icon">&#127874;</span>
             <div><strong>Birthday Ideas</strong><span class="nav-dropdown__desc">Creative party inspiration</span></div>
           </a>
-          <a href="/celebrations/festival-guide">
+          <a href={`${prefix}/celebrations/festival-guide`}>
             <span class="nav-dropdown__icon">&#127878;</span>
             <div><strong>Festival Guide</strong><span class="nav-dropdown__desc">Celebrate every occasion</span></div>
           </a>
@@ -52,15 +57,15 @@
       <div class="nav-dropdown">
         <button class="nav-dropdown__trigger" type="button">Moments <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="nav-dropdown__menu">
-          <a href="/moments-features/photography-tips">
+          <a href={`${prefix}/moments-features/photography-tips`}>
             <span class="nav-dropdown__icon">&#128247;</span>
             <div><strong>Photography Tips</strong><span class="nav-dropdown__desc">Capture better memories</span></div>
           </a>
-          <a href="/moments-features/video-memories">
+          <a href={`${prefix}/moments-features/video-memories`}>
             <span class="nav-dropdown__icon">&#127909;</span>
             <div><strong>Video Memories</strong><span class="nav-dropdown__desc">Preserve moments in motion</span></div>
           </a>
-          <a href="/moments-features/creating-albums">
+          <a href={`${prefix}/moments-features/creating-albums`}>
             <span class="nav-dropdown__icon">&#128218;</span>
             <div><strong>Creating Albums</strong><span class="nav-dropdown__desc">Curate shared photo albums</span></div>
           </a>
@@ -70,15 +75,15 @@
       <div class="nav-dropdown">
         <button class="nav-dropdown__trigger" type="button">Digital Gifts <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="nav-dropdown__menu">
-          <a href="/digital-gifts/gifting-guide">
+          <a href={`${prefix}/digital-gifts/gifting-guide`}>
             <span class="nav-dropdown__icon">&#127873;</span>
             <div><strong>Gifting Guide</strong><span class="nav-dropdown__desc">Modern celebration gifts</span></div>
           </a>
-          <a href="/digital-gifts/lifafa-tips">
+          <a href={`${prefix}/digital-gifts/lifafa-tips`}>
             <span class="nav-dropdown__icon">&#128176;</span>
-            <div><strong>Lifafa Tips</strong><span class="nav-dropdown__desc">Digital shagun made easy</span></div>
+            <div><strong>Lifafa Tips</strong><span class="nav-dropdown__desc">Digital gifting made easy</span></div>
           </a>
-          <a href="/digital-gifts/occasion-ideas">
+          <a href={`${prefix}/digital-gifts/occasion-ideas`}>
             <span class="nav-dropdown__icon">&#127881;</span>
             <div><strong>Occasion Ideas</strong><span class="nav-dropdown__desc">Gift for every occasion</span></div>
           </a>
@@ -87,6 +92,8 @@
 
       <a href="/story" class="nav-link">Our Story</a>
     </div>
+
+    <CountrySwitcher country={country} />
 
     <!-- Mobile hamburger -->
     <button class="navbar__hamburger hide-desktop" type="button" aria-label="Menu">
@@ -104,36 +111,37 @@
   <!-- Mobile menu overlay -->
   <div class="mobile-menu hide-desktop">
     <div class="mobile-menu__inner">
+      <CountrySwitcher country={country} />
       <details class="mobile-accordion">
         <summary>Invitations</summary>
         <div class="mobile-accordion__links">
-          <a href="/invitations/creating-templates">Creating Templates</a>
-          <a href="/invitations/rsvp-tips">RSVP Tips</a>
-          <a href="/invitations/guest-management">Guest Management</a>
+          <a href={`${prefix}/invitations/creating-templates`}>Creating Templates</a>
+          <a href={`${prefix}/invitations/rsvp-tips`}>RSVP Tips</a>
+          <a href={`${prefix}/invitations/guest-management`}>Guest Management</a>
         </div>
       </details>
       <details class="mobile-accordion">
         <summary>Celebrations</summary>
         <div class="mobile-accordion__links">
-          <a href="/celebrations/wedding-planning">Wedding Planning</a>
-          <a href="/celebrations/birthday-ideas">Birthday Ideas</a>
-          <a href="/celebrations/festival-guide">Festival Guide</a>
+          <a href={`${prefix}/celebrations/wedding-planning`}>Wedding Planning</a>
+          <a href={`${prefix}/celebrations/birthday-ideas`}>Birthday Ideas</a>
+          <a href={`${prefix}/celebrations/festival-guide`}>Festival Guide</a>
         </div>
       </details>
       <details class="mobile-accordion">
         <summary>Moments</summary>
         <div class="mobile-accordion__links">
-          <a href="/moments-features/photography-tips">Photography Tips</a>
-          <a href="/moments-features/video-memories">Video Memories</a>
-          <a href="/moments-features/creating-albums">Creating Albums</a>
+          <a href={`${prefix}/moments-features/photography-tips`}>Photography Tips</a>
+          <a href={`${prefix}/moments-features/video-memories`}>Video Memories</a>
+          <a href={`${prefix}/moments-features/creating-albums`}>Creating Albums</a>
         </div>
       </details>
       <details class="mobile-accordion">
         <summary>Digital Gifts</summary>
         <div class="mobile-accordion__links">
-          <a href="/digital-gifts/gifting-guide">Gifting Guide</a>
-          <a href="/digital-gifts/lifafa-tips">Lifafa Tips</a>
-          <a href="/digital-gifts/occasion-ideas">Occasion Ideas</a>
+          <a href={`${prefix}/digital-gifts/gifting-guide`}>Gifting Guide</a>
+          <a href={`${prefix}/digital-gifts/lifafa-tips`}>Lifafa Tips</a>
+          <a href={`${prefix}/digital-gifts/occasion-ideas`}>Occasion Ideas</a>
         </div>
       </details>
       <a href="/story" class="mobile-menu__link">Our Story</a>
@@ -428,7 +436,7 @@
   }
 
   .mobile-accordion[open] summary::after {
-    content: '−';
+    content: '\2212';
   }
 
   .mobile-accordion__links {

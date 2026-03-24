@@ -1,0 +1,704 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+
+import type { CountryCode } from '../../../data/countries';
+
+export function getStaticPaths() {
+  return [{ params: { country: 'in' } }, { params: { country: 'us' } }, { params: { country: 'uk' } }];
+}
+const country = Astro.params.country as CountryCode;
+---
+
+<Layout title="Create Shared Photo Albums — Lumhe Moments" description="Build collective photo albums for your celebrations. Every guest contributes, everything stays organised by event, and nothing expires. Free with Lumhe Moments.">
+  <Navbar country={country} />
+
+  <!-- Hero -->
+  <section class="feat-hero">
+    <div class="container">
+      <div class="feat-hero__inner">
+        <div class="feat-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="feat-badge">Moments</span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            Shared Photo Albums<br/>
+            <em>For Every Event</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 520px;">
+            Stop chasing guests for photos. Create a shared album where everyone uploads their memories to one beautiful, permanent collection — no app downloads needed.
+          </p>
+          <div class="feat-hero__cta anim-first-hit delay-4">
+            <a href="#" class="btn btn-primary magnetic">Create a Shared Album — Free <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="feat-hero__visual anim-first-hit delay-3">
+          <img src="/images/lumhe/momets.png" alt="Shared photo albums with Lumhe Moments" class="feat-hero__img"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Album Concept — Stacked Books -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Album Types</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          One Album Per Event.<br/><em class="font-serif">Always Organised.</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Every celebration gets its own dedicated album — clean, separate, and easy to find.
+        </p>
+      </div>
+
+      <!-- Bento grid: featured wedding tile + 2 smaller tiles -->
+      <div class="album-bento reveal" style="margin-top: var(--space-2xl);">
+        <!-- Featured: Wedding -->
+        <div class="album-tile album-tile--featured">
+          <div class="album-tile__visual" style="background: linear-gradient(145deg, #fff0f0 0%, #ffe0e0 50%, #ffd4d4 100%);">
+            <!-- Mini photo grid mockup -->
+            <div class="mini-grid">
+              <div class="mini-grid__item mini-grid__item--lg" style="background: linear-gradient(135deg, #ffcdd2, #ef9a9a);"></div>
+              <div class="mini-grid__item" style="background: linear-gradient(135deg, #f8bbd0, #f48fb1);"></div>
+              <div class="mini-grid__item" style="background: linear-gradient(135deg, #ffccbc, #ff8a65);"></div>
+              <div class="mini-grid__item" style="background: linear-gradient(135deg, #ffe0b2, #ffb74d);"></div>
+            </div>
+          </div>
+          <div class="album-tile__body">
+            <h3 class="heading-lg">Wedding Album</h3>
+            <p class="body-md text-muted">Every photo from the ceremony, reception, and celebrations — all in one place.</p>
+            <div class="album-tile__stats">
+              <span class="album-stat album-stat--primary">248 photos</span>
+              <span class="album-stat">42 contributors</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Birthday -->
+        <div class="album-tile album-tile--compact">
+          <div class="album-tile__visual album-tile__visual--sm" style="background: linear-gradient(145deg, #fff8e1, #ffecb3);">
+            <div class="album-icon-row">
+              <div class="album-icon-circle" style="background: #FFB74D;"></div>
+              <div class="album-icon-circle" style="background: #FFA726;"></div>
+              <div class="album-icon-circle" style="background: #FF9800;"></div>
+              <span class="album-icon-more">+121</span>
+            </div>
+          </div>
+          <div class="album-tile__body">
+            <h3 class="heading-md">Birthday Album</h3>
+            <p class="body-sm text-muted">Cake, candles, friends, and fun — capture every moment.</p>
+            <div class="album-tile__stats">
+              <span class="album-stat">124 photos</span>
+              <span class="album-stat">18 contributors</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Festival -->
+        <div class="album-tile album-tile--compact">
+          <div class="album-tile__visual album-tile__visual--sm" style="background: linear-gradient(145deg, #e8f5e9, #c8e6c9);">
+            <div class="album-mosaic">
+              <div class="album-mosaic__sq" style="background: #81C784;"></div>
+              <div class="album-mosaic__sq" style="background: #66BB6A;"></div>
+              <div class="album-mosaic__sq" style="background: #4CAF50;"></div>
+              <div class="album-mosaic__sq" style="background: #A5D6A7;"></div>
+              <div class="album-mosaic__sq" style="background: #43A047;"></div>
+              <div class="album-mosaic__sq" style="background: #388E3C;"></div>
+            </div>
+          </div>
+          <div class="album-tile__body">
+            <h3 class="heading-md">Festival Album</h3>
+            <p class="body-sm text-muted">Diwali, Eid, Christmas, Holi — every festival's memories separate and beautiful.</p>
+            <div class="album-tile__stats">
+              <span class="album-stat">86 photos</span>
+              <span class="album-stat">28 contributors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Polaroid Photo Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Collective Memories</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Every Guest's<br/><em class="font-serif">Perspective</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Guests capture the candid laughs, the quiet conversations, the behind-the-scenes moments you'd otherwise miss.
+        </p>
+      </div>
+
+      <div class="card-deck stagger-children" style="margin-top: var(--space-2xl);">
+        <div class="deck-card deck-card--1">
+          <div class="deck-card__spine" style="background: var(--color-primary);"></div>
+          <div class="deck-card__face">
+            <span class="deck-card__label">The first dance</span>
+            <div class="deck-card__visual deck-grad-1"></div>
+          </div>
+        </div>
+        <div class="deck-card deck-card--2">
+          <div class="deck-card__spine" style="background: #FFB74D;"></div>
+          <div class="deck-card__face">
+            <span class="deck-card__label">Getting ready</span>
+            <div class="deck-card__visual deck-grad-2"></div>
+          </div>
+        </div>
+        <div class="deck-card deck-card--3">
+          <div class="deck-card__spine" style="background: #66BB6A;"></div>
+          <div class="deck-card__face">
+            <span class="deck-card__label">Family portrait</span>
+            <div class="deck-card__visual deck-grad-3"></div>
+          </div>
+        </div>
+        <div class="deck-card deck-card--4">
+          <div class="deck-card__spine" style="background: #42A5F5;"></div>
+          <div class="deck-card__face">
+            <span class="deck-card__label">Cake cutting</span>
+            <div class="deck-card__visual deck-grad-4"></div>
+          </div>
+        </div>
+        <div class="deck-card deck-card--5">
+          <div class="deck-card__spine" style="background: #AB47BC;"></div>
+          <div class="deck-card__face">
+            <span class="deck-card__label">The venue</span>
+            <div class="deck-card__visual deck-grad-5"></div>
+          </div>
+        </div>
+        <div class="deck-card deck-card--6">
+          <div class="deck-card__spine" style="background: #FFCA28;"></div>
+          <div class="deck-card__face">
+            <span class="deck-card__label">Guest selfies</span>
+            <div class="deck-card__visual deck-grad-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Comparison Table -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Comparison</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          How Lumhe Moments<br/><em class="font-serif">Compares</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          See why Lumhe Moments is purpose-built for event photo sharing.
+        </p>
+      </div>
+
+      <div class="table-wrapper reveal" style="margin-top: var(--space-2xl);">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th class="compare-table__feature-header">Feature</th>
+              <th class="compare-table__col-header">WhatsApp Group</th>
+              <th class="compare-table__col-header">Google Photos</th>
+              <th class="compare-table__col-header compare-table__col-header--highlight">Lumhe Moments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="compare-table__feature">Permanent storage</td>
+              <td class="compare-table__cell"><span class="mark mark--no">&#10005;</span></td>
+              <td class="compare-table__cell"><span class="mark mark--partial">~</span></td>
+              <td class="compare-table__cell compare-table__cell--highlight"><span class="mark mark--yes">&#10003;</span></td>
+            </tr>
+            <tr>
+              <td class="compare-table__feature">Guest uploads</td>
+              <td class="compare-table__cell"><span class="mark mark--partial">~</span></td>
+              <td class="compare-table__cell"><span class="mark mark--partial">~</span></td>
+              <td class="compare-table__cell compare-table__cell--highlight"><span class="mark mark--yes">&#10003;</span></td>
+            </tr>
+            <tr>
+              <td class="compare-table__feature">Organized by event</td>
+              <td class="compare-table__cell"><span class="mark mark--no">&#10005;</span></td>
+              <td class="compare-table__cell"><span class="mark mark--partial">~</span></td>
+              <td class="compare-table__cell compare-table__cell--highlight"><span class="mark mark--yes">&#10003;</span></td>
+            </tr>
+            <tr>
+              <td class="compare-table__feature">Privacy controls</td>
+              <td class="compare-table__cell"><span class="mark mark--no">&#10005;</span></td>
+              <td class="compare-table__cell"><span class="mark mark--yes">&#10003;</span></td>
+              <td class="compare-table__cell compare-table__cell--highlight"><span class="mark mark--yes">&#10003;</span></td>
+            </tr>
+            <tr>
+              <td class="compare-table__feature">Download all</td>
+              <td class="compare-table__cell"><span class="mark mark--no">&#10005;</span></td>
+              <td class="compare-table__cell"><span class="mark mark--yes">&#10003;</span></td>
+              <td class="compare-table__cell compare-table__cell--highlight"><span class="mark mark--yes">&#10003;</span></td>
+            </tr>
+            <tr>
+              <td class="compare-table__feature">No app needed</td>
+              <td class="compare-table__cell"><span class="mark mark--no">&#10005;</span></td>
+              <td class="compare-table__cell"><span class="mark mark--no">&#10005;</span></td>
+              <td class="compare-table__cell compare-table__cell--highlight"><span class="mark mark--yes">&#10003;</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="feat-cta reveal-scale">
+        <h2 class="heading-xl" style="color: white;">
+          Create Your Shared<br/><em class="font-serif">Photo Album</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+          One link. Every guest contributes. Every photo collected. Permanent and beautiful. All free. Always.
+        </p>
+        <a href="#" class="btn btn-cta-white" style="margin-top: var(--space-lg);">
+          Create Shared Album — Free <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer country={country} />
+</Layout>
+
+<style>
+  @import '../../../styles/global.css';
+
+  .feat-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+    padding-top: calc(var(--space-3xl) + 80px);
+    background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 60%);
+  }
+
+  .feat-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .feat-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .feat-badge {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary);
+    background: rgba(255,82,82,0.06); padding: 0.4rem 1.2rem; border-radius: var(--radius-full);
+    display: inline-block;
+  }
+
+  .feat-hero__content h1 { color: var(--color-charcoal); }
+  .feat-hero__content h1 em { color: var(--color-primary); font-style: italic; }
+
+  .feat-hero__cta { margin-top: var(--space-sm); }
+
+  .feat-hero__img {
+    width: 100%; max-width: 440px; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg); margin: 0 auto; display: block;
+  }
+
+  /* =============================================
+     ALBUM BENTO GRID
+     ============================================= */
+  .album-bento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-lg);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .album-tile--featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .album-tile--featured:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+  }
+
+  .album-tile--compact {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .album-tile--compact:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  }
+
+  .album-tile__visual {
+    padding: clamp(2rem, 4vw, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 240px;
+  }
+
+  .album-tile__visual--sm {
+    min-height: 160px;
+    padding: 1.5rem;
+  }
+
+  .album-tile__body {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .album-tile__stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .album-stat {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: var(--color-surface-alt);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+  }
+
+  .album-stat--primary {
+    background: rgba(255,82,82,0.08);
+    color: var(--color-primary);
+  }
+
+  /* Mini photo grid mockup */
+  .mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 6px;
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 1;
+  }
+
+  .mini-grid__item {
+    border-radius: var(--radius-md);
+  }
+
+  .mini-grid__item--lg {
+    grid-column: 1 / -1;
+    min-height: 100px;
+  }
+
+  /* Album icon row */
+  .album-icon-row {
+    display: flex;
+    align-items: center;
+    gap: -8px;
+  }
+
+  .album-icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -10px;
+  }
+
+  .album-icon-circle:first-child { margin-left: 0; }
+
+  .album-icon-more {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    margin-left: 0.5rem;
+  }
+
+  /* Album mosaic */
+  .album-mosaic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    width: 100%;
+    max-width: 140px;
+  }
+
+  .album-mosaic__sq {
+    aspect-ratio: 1;
+    border-radius: 4px;
+  }
+
+  /* =============================================
+     STACKED CARD DECK
+     ============================================= */
+  .card-deck {
+    position: relative;
+    max-width: 460px;
+    height: 340px;
+    margin: 0 auto;
+  }
+
+  .deck-card {
+    position: absolute;
+    width: 280px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease, z-index 0s;
+  }
+
+  .deck-card__spine {
+    width: 6px;
+    flex-shrink: 0;
+  }
+
+  .deck-card__face {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .deck-card__label {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+  }
+
+  .deck-card__visual {
+    flex: 1;
+    border-radius: var(--radius-md);
+  }
+
+  .deck-grad-1 { background: linear-gradient(135deg, #FFE0B2, #FFAB91, #FF8A65); }
+  .deck-grad-2 { background: linear-gradient(135deg, #F9E8D0, #FFCCBC, #FF5252); }
+  .deck-grad-3 { background: linear-gradient(135deg, #C8E6C9, #A5D6A7, #81C784); }
+  .deck-grad-4 { background: linear-gradient(135deg, #BBDEFB, #90CAF9, #64B5F6); }
+  .deck-grad-5 { background: linear-gradient(135deg, #E1BEE7, #CE93D8, #BA68C8); }
+  .deck-grad-6 { background: linear-gradient(135deg, #FFE082, #FFD54F, #FFCA28); }
+
+  /* Stacked positions — layered with offsets */
+  .deck-card--1 { transform: translate(-50%, -50%) rotate(-2deg) translateX(-20px); z-index: 6; }
+  .deck-card--2 { transform: translate(-50%, -50%) rotate(1.5deg) translate(10px, 8px); z-index: 5; }
+  .deck-card--3 { transform: translate(-50%, -50%) rotate(-1deg) translate(-8px, 16px); z-index: 4; }
+  .deck-card--4 { transform: translate(-50%, -50%) rotate(2.5deg) translate(16px, 24px); z-index: 3; }
+  .deck-card--5 { transform: translate(-50%, -50%) rotate(-0.5deg) translate(-4px, 32px); z-index: 2; }
+  .deck-card--6 { transform: translate(-50%, -50%) rotate(1deg) translate(6px, 40px); z-index: 1; }
+
+  /* On hover of the deck, fan cards out */
+  .card-deck:hover .deck-card--1 { transform: translate(-50%, -50%) rotate(-12deg) translate(-160px, -40px); z-index: 6; box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
+  .card-deck:hover .deck-card--2 { transform: translate(-50%, -50%) rotate(-6deg) translate(-80px, -10px); z-index: 5; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+  .card-deck:hover .deck-card--3 { transform: translate(-50%, -50%) rotate(0deg) translate(0px, 0px); z-index: 4; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+  .card-deck:hover .deck-card--4 { transform: translate(-50%, -50%) rotate(6deg) translate(80px, -10px); z-index: 3; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+  .card-deck:hover .deck-card--5 { transform: translate(-50%, -50%) rotate(12deg) translate(160px, -40px); z-index: 2; box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
+  .card-deck:hover .deck-card--6 { transform: translate(-50%, -50%) rotate(18deg) translate(220px, -80px); z-index: 1; box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
+
+  /* =============================================
+     FEATURES COMPARISON TABLE
+     ============================================= */
+  .table-wrapper {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: var(--font-body);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .compare-table thead tr {
+    background: var(--color-charcoal);
+  }
+
+  .compare-table__feature-header,
+  .compare-table__col-header {
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .compare-table__feature-header {
+    text-align: left;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .compare-table__col-header--highlight {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .compare-table tbody tr {
+    border-bottom: 1px solid var(--color-border);
+    transition: background 0.2s ease;
+  }
+
+  .compare-table tbody tr:hover {
+    background: var(--color-surface-alt);
+  }
+
+  .compare-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .compare-table__feature {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .compare-table__cell {
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+
+  .compare-table__cell--highlight {
+    background: rgba(255, 82, 82, 0.04);
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .mark--yes {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+  }
+
+  .mark--no {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+  }
+
+  .mark--partial {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    font-weight: 800;
+  }
+
+  /* CTA */
+  .feat-cta {
+    background: linear-gradient(135deg, var(--color-charcoal), var(--color-dark));
+    border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .btn-cta-white {
+    background: white; color: var(--color-charcoal);
+    padding: 1rem 2.5rem; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.3s var(--ease-smooth); border: none; cursor: pointer;
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-cta-white .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-cta-white:hover .arrow { transform: translateX(4px); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .feat-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .feat-hero__content { align-items: center; }
+
+    .card-deck {
+      height: 300px;
+      max-width: 360px;
+    }
+    .deck-card { width: 240px; height: 170px; }
+    .card-deck:hover .deck-card--1 { transform: translate(-50%, -50%) rotate(-10deg) translate(-120px, -30px); }
+    .card-deck:hover .deck-card--2 { transform: translate(-50%, -50%) rotate(-5deg) translate(-60px, -8px); }
+    .card-deck:hover .deck-card--3 { transform: translate(-50%, -50%) rotate(0deg) translate(0, 0); }
+    .card-deck:hover .deck-card--4 { transform: translate(-50%, -50%) rotate(5deg) translate(60px, -8px); }
+    .card-deck:hover .deck-card--5 { transform: translate(-50%, -50%) rotate(10deg) translate(120px, -30px); }
+    .card-deck:hover .deck-card--6 { transform: translate(-50%, -50%) rotate(15deg) translate(160px, -60px); }
+
+    .album-bento { grid-template-columns: 1fr; }
+    .album-tile--featured { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .feat-hero { min-height: auto; padding-bottom: 2rem; }
+    .feat-hero__img { max-width: 300px; }
+
+    /* On mobile, show as a simple vertical list instead of stacked */
+    .card-deck {
+      position: static;
+      height: auto;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .deck-card {
+      position: static;
+      width: 100%;
+      height: auto;
+      min-height: 120px;
+      transform: none !important;
+    }
+    .card-deck:hover .deck-card {
+      transform: none !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+    }
+
+    .album-tile__visual { min-height: 160px; }
+    .album-tile__visual--sm { min-height: 120px; }
+
+    .compare-table__feature-header,
+    .compare-table__col-header {
+      padding: 0.75rem 0.75rem;
+      font-size: 0.75rem;
+    }
+    .compare-table__feature { font-size: 0.8rem; padding: 0.75rem; }
+    .compare-table__cell { padding: 0.75rem 0.5rem; }
+    .mark { width: 24px; height: 24px; font-size: 0.7rem; }
+  }
+</style>

@@ -1,0 +1,580 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import type { CountryCode } from '../../../data/countries';
+
+export function getStaticPaths() {
+  return [
+    { params: { country: 'in' } },
+    { params: { country: 'us' } },
+    { params: { country: 'uk' } },
+  ];
+}
+
+const country = Astro.params.country as CountryCode;
+---
+
+<Layout title="Digital Gifting Guide — Lumhe Lifafa" description="Complete guide to cashless gifting for Indian celebrations. Send digital shagun via UPI — direct to the host, no middlemen, no fees.">
+  <Navbar country={country} />
+
+  <!-- Hero -->
+  <section class="feat-hero">
+    <div class="container">
+      <div class="feat-hero__inner">
+        <div class="feat-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="feat-badge">Digital Lifafa</span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            Cashless Gifting for<br/>
+            <em>Every Celebration</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 520px;">
+            No cash envelopes. No awkward bank transfers. Send digital shagun via any UPI app — directly to the host. Lumhe never touches the money.
+          </p>
+          <div class="feat-hero__cta anim-first-hit delay-4">
+            <a href="#" class="btn btn-primary magnetic">Try Digital Lifafa — Free <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="feat-hero__visual anim-first-hit delay-3">
+          <img src="/images/lumhe/digital_lifafa.png" alt="Digital Lifafa — cashless gifting on Lumhe" class="feat-hero__img"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid: Why Digital -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Why Go Digital</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          The Modern Way to<br/><em class="font-serif">Give Shagun</em>
+        </h2>
+      </div>
+
+      <div class="bento-grid stagger-children" style="margin-top: var(--space-2xl);">
+        <div class="bento-tile bento-tile--featured">
+          <div class="bento-tile__content">
+            <span class="bento-tile__large-text">Zero Middlemen.<br/>100% Direct.</span>
+            <p class="body-md" style="margin-top: 1rem; color: rgba(26,26,46,0.7); max-width: 280px;">
+              Lumhe never touches the money. Every rupee goes directly from the guest's bank to the host's bank via UPI.
+            </p>
+            <div class="bento-pills" style="margin-top: 1.25rem;">
+              <span class="bento-pill">No fees</span>
+              <span class="bento-pill">No wallet</span>
+              <span class="bento-pill">No middleman</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-tile bento-tile--clock">
+          <div class="bento-tile__icon">&#9201;</div>
+          <h3 class="heading-sm">Instant Delivery</h3>
+          <p class="body-sm text-muted">Your gift reaches the host in seconds, not days.</p>
+        </div>
+
+        <div class="bento-tile bento-tile--envelope">
+          <div class="bento-tile__icon">&#9993;</div>
+          <h3 class="heading-sm">Animated Envelopes</h3>
+          <p class="body-sm text-muted">Beautiful designs that open with delight.</p>
+        </div>
+
+        <div class="bento-tile bento-tile--heart">
+          <div class="bento-tile__icon">&#10084;</div>
+          <h3 class="heading-sm">Personal Messages</h3>
+          <p class="body-sm text-muted">Add heartfelt words or a voice note.</p>
+        </div>
+
+        <div class="bento-tile bento-tile--receipt">
+          <div class="bento-tile__icon">&#128203;</div>
+          <h3 class="heading-sm">Full Transparency</h3>
+          <p class="body-sm text-muted">Instant receipts for both sender and host.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Budget Swim Lanes -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Budget Guide</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Gift Ideas by<br/><em class="font-serif">Budget Range</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Not sure how much to gift? Here are common suggestions across budgets and occasions.
+        </p>
+      </div>
+
+      <div class="budget-tiers reveal" style="margin-top: var(--space-2xl);">
+        <div class="budget-row">
+          <span class="budget-label budget-label--green">Under &#8377;500</span>
+          <div class="budget-pills">
+            <span class="budget-pill budget-pill--green">Birthday <strong>&#8377;251</strong></span>
+            <span class="budget-pill budget-pill--green">Kitty Party <strong>&#8377;301</strong></span>
+            <span class="budget-pill budget-pill--green">Achievement <strong>&#8377;351</strong></span>
+            <span class="budget-pill budget-pill--green">Farewell <strong>&#8377;501</strong></span>
+          </div>
+        </div>
+
+        <div class="budget-row">
+          <span class="budget-label budget-label--amber">&#8377;500 &ndash; &#8377;2,000</span>
+          <div class="budget-pills">
+            <span class="budget-pill budget-pill--amber">Baby Shower <strong>&#8377;1,001</strong></span>
+            <span class="budget-pill budget-pill--amber">Housewarming <strong>&#8377;1,101</strong></span>
+            <span class="budget-pill budget-pill--amber">Milestone Birthday <strong>&#8377;1,001</strong></span>
+            <span class="budget-pill budget-pill--amber">Anniversary <strong>&#8377;1,501</strong></span>
+          </div>
+        </div>
+
+        <div class="budget-row">
+          <span class="budget-label budget-label--red">&#8377;2,000+</span>
+          <div class="budget-pills">
+            <span class="budget-pill budget-pill--red">Wedding Shagun <strong>&#8377;2,101</strong></span>
+            <span class="budget-pill budget-pill--red">Silver Jubilee <strong>&#8377;5,001</strong></span>
+            <span class="budget-pill budget-pill--red">Close Family Event <strong>&#8377;5,001+</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works: Numbered Cards -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">How It Works</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Three Simple<br/><em class="font-serif">Steps</em>
+        </h2>
+      </div>
+
+      <div class="node-diagram stagger-children" style="margin-top: var(--space-2xl);">
+        <div class="node-line">
+          <div class="node-connector node-connector--1"></div>
+          <div class="node-connector node-connector--2"></div>
+        </div>
+        <div class="node-step node-step--1 reveal">
+          <div class="node-circle">
+            <span class="node-circle__num">1</span>
+          </div>
+          <div class="node-bubble">
+            <h3 class="heading-md">Guest Opens the Invitation</h3>
+            <p class="body-md text-muted">Your guest receives the Lumhe invitation link and opens it on their phone. The beautiful invitation loads instantly — no app download needed.</p>
+          </div>
+        </div>
+        <div class="node-step node-step--2 reveal">
+          <div class="node-circle">
+            <span class="node-circle__num">2</span>
+          </div>
+          <div class="node-bubble">
+            <h3 class="heading-md">Taps "Send Gift"</h3>
+            <p class="body-md text-muted">Right on the invitation, a beautifully designed "Send Gift" button lets the guest choose an animated envelope, write a personal message, and pick their amount.</p>
+          </div>
+        </div>
+        <div class="node-step node-step--3 reveal">
+          <div class="node-circle">
+            <span class="node-circle__num">3</span>
+          </div>
+          <div class="node-bubble">
+            <h3 class="heading-md">Amount Goes Directly to Host</h3>
+            <p class="body-md text-muted">The guest pays via any UPI app — GPay, PhonePe, Paytm. The money transfers directly to the host's bank account. Zero middlemen. Zero fees.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="feat-cta reveal-scale">
+        <h2 class="heading-xl" style="color: white;">
+          Ready to Send Your<br/><em class="font-serif">Digital Lifafa?</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+          Beautiful envelopes. Personal messages. Direct UPI transfer. No fees. No middlemen.
+        </p>
+        <a href="#" class="btn btn-cta-white" style="margin-top: var(--space-lg);">
+          Send Digital Shagun — Free <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer country={country} />
+</Layout>
+
+<style>
+  @import '../../../styles/global.css';
+
+  .feat-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+    padding-top: calc(var(--space-3xl) + 80px);
+    background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 60%);
+  }
+
+  .feat-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .feat-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .feat-badge {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary);
+    background: rgba(255,82,82,0.06); padding: 0.4rem 1.2rem; border-radius: var(--radius-full);
+    display: inline-block;
+  }
+
+  .feat-hero__content h1 { color: var(--color-charcoal); }
+  .feat-hero__content h1 em { color: var(--color-primary); font-style: italic; }
+
+  .feat-hero__cta { margin-top: var(--space-sm); }
+
+  .feat-hero__img {
+    width: 100%; max-width: 440px; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg); margin: 0 auto; display: block;
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1.25rem;
+  }
+
+  .bento-tile {
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .bento-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+
+  .bento-tile__icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .bento-tile--featured {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    background: linear-gradient(145deg, #F9E8D0 0%, #F5D89A 50%, #F59E0B22 100%);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    display: flex;
+    align-items: flex-end;
+    min-height: 360px;
+  }
+
+  .bento-tile__large-text {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: var(--color-charcoal);
+    line-height: 1.2;
+  }
+
+  .bento-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .bento-pill {
+    padding: 0.25rem 0.7rem;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: rgba(26, 26, 46, 0.08);
+    color: var(--color-charcoal);
+  }
+
+  .bento-tile--clock {
+    background: #EFF6FF;
+    border: 1px solid #DBEAFE;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .bento-tile--envelope {
+    background: #FFF7ED;
+    border: 1px solid #FED7AA;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .bento-tile--heart {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .bento-tile--receipt {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+
+  .budget-tiers {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .budget-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .budget-row:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  .budget-label {
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+
+  .budget-label--green { background: #E8F5E9; color: #2E7D32; }
+  .budget-label--amber { background: #FFF8E1; color: #F57F17; }
+  .budget-label--red   { background: #FBE9E7; color: #C62828; }
+
+  .budget-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .budget-pill {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+    line-height: 1.4;
+    transition: transform 0.2s ease;
+  }
+
+  .budget-pill:hover {
+    transform: translateY(-2px);
+  }
+
+  .budget-pill strong {
+    font-weight: 700;
+    margin-left: 0.3rem;
+  }
+
+  .budget-pill--green { background: #F1F8E9; color: #33691E; border: 1px solid #C5E1A5; }
+  .budget-pill--amber { background: #FFFDE7; color: #E65100; border: 1px solid #FFE082; }
+  .budget-pill--red   { background: #FFF3E0; color: #BF360C; border: 1px solid #FFAB91; }
+
+  .node-diagram {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 1.5rem;
+  }
+
+  .node-line {
+    position: absolute;
+    top: 36px;
+    left: calc(33.33% / 2 + 36px);
+    right: calc(33.33% / 2 + 36px);
+    height: 2px;
+    display: flex;
+  }
+
+  .node-connector {
+    flex: 1;
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-primary) 0,
+      var(--color-primary) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+    background-size: 16px 2px;
+    animation: dashMove 1.2s linear infinite;
+  }
+
+  @keyframes dashMove {
+    from { background-position: 0 0; }
+    to { background-position: 16px 0; }
+  }
+
+  .node-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .node-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(255, 82, 82, 0.25);
+  }
+
+  .node-circle__num {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+  }
+
+  .node-bubble {
+    margin-top: 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .node-bubble::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 14px;
+    height: 14px;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .node-bubble:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .node-bubble h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .feat-cta {
+    background: linear-gradient(135deg, var(--color-charcoal), var(--color-dark));
+    border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .btn-cta-white {
+    background: white; color: var(--color-charcoal);
+    padding: 1rem 2.5rem; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.3s ease; border: none; cursor: pointer;
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-cta-white .arrow { display: inline-block; transition: transform 0.3s ease; }
+  .btn-cta-white:hover .arrow { transform: translateX(4px); }
+
+  @media (max-width: 900px) {
+    .feat-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .feat-hero__content { align-items: center; }
+
+    .bento-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    .bento-tile--featured {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      min-height: 260px;
+    }
+    .bento-tile--clock { grid-column: 1 / 2; grid-row: auto; }
+    .bento-tile--envelope { grid-column: 2 / 3; grid-row: auto; }
+    .bento-tile--heart { grid-column: 1 / 2; grid-row: auto; }
+    .bento-tile--receipt { grid-column: 2 / 3; grid-row: auto; }
+
+    .budget-row {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .node-diagram {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .node-line {
+      display: none;
+    }
+
+    .node-step {
+      max-width: 400px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .feat-hero { min-height: auto; padding-bottom: 2rem; }
+    .feat-hero__img { max-width: 300px; }
+
+    .bento-grid {
+      grid-template-columns: 1fr;
+    }
+    .bento-tile--featured { grid-column: 1; min-height: 220px; }
+    .bento-tile--clock,
+    .bento-tile--envelope,
+    .bento-tile--heart,
+    .bento-tile--receipt { grid-column: 1; }
+
+    .budget-pill { font-size: 0.78rem; padding: 0.3rem 0.75rem; }
+    .budget-label { font-size: 0.72rem; }
+
+    .node-circle {
+      width: 60px;
+      height: 60px;
+    }
+
+    .node-circle__num { font-size: 1.25rem; }
+    .node-bubble { padding: 1.25rem; }
+  }
+</style>

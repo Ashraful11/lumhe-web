@@ -1,0 +1,711 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+
+import type { CountryCode } from '../../../data/countries';
+
+export function getStaticPaths() {
+  return [{ params: { country: 'in' } }, { params: { country: 'us' } }, { params: { country: 'uk' } }];
+}
+const country = Astro.params.country as CountryCode;
+---
+
+<Layout title="Creating Invitation Templates — Lumhe" description="Create beautiful digital invitations for weddings, birthdays, kitty parties, and every celebration. Upload any format — image, video, PDF, or text.">
+  <Navbar country={country} />
+
+  <!-- Hero -->
+  <section class="feat-hero">
+    <div class="container">
+      <div class="feat-hero__inner">
+        <div class="feat-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="feat-badge">Invitations</span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            Create Invitations<br/>
+            <em>Your Way</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 520px;">
+            No design tool lock-in. Create your invitation on Canva, Adobe, your phone, or any tool you love — then upload it to Lumhe in any format. We handle the rest.
+          </p>
+          <div class="feat-hero__cta anim-first-hit delay-4">
+            <a href="#" class="btn btn-primary magnetic">Upload Your Invitation — Free <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="feat-hero__visual anim-first-hit delay-3">
+          <img src="/images/lumhe/invite.png" alt="Create invitations with Lumhe" class="feat-hero__img"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid: Any Format Upload -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Any Format</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Upload in Whatever<br/><em class="font-serif">Format You Have</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          You are not locked into Lumhe-only designs. Create your invitation however you want — on any external platform — and bring it into Lumhe.
+        </p>
+      </div>
+
+      <div class="bento-grid stagger-children" style="margin-top: var(--space-2xl);">
+        <!-- Large tile: device frame mockup -->
+        <div class="bento-tile bento-tile--hero">
+          <div class="device-frame">
+            <div class="device-frame__notch"></div>
+            <div class="device-frame__screen">
+              <div class="device-frame__invite">
+                <div class="device-invite__header"></div>
+                <div class="device-invite__art">
+                  <span class="device-invite__emoji">💐</span>
+                </div>
+                <div class="device-invite__lines">
+                  <div class="device-invite__line" style="width: 60%;"></div>
+                  <div class="device-invite__line" style="width: 80%;"></div>
+                  <div class="device-invite__line" style="width: 45%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bento-tile__content">
+            <h3 class="heading-md">Any Format Upload</h3>
+            <p class="body-md text-muted">Design on Canva, Adobe, your phone, or hire a professional. Upload the result to Lumhe — we accept everything.</p>
+          </div>
+        </div>
+
+        <!-- Small tile: Image -->
+        <div class="bento-tile bento-tile--sm">
+          <div class="bento-tile__icon">📸</div>
+          <h3 class="heading-sm">Image</h3>
+          <p class="body-sm text-muted">JPG, PNG — from any design tool</p>
+        </div>
+
+        <!-- Small tile: Video -->
+        <div class="bento-tile bento-tile--sm">
+          <div class="bento-tile__icon">🎬</div>
+          <h3 class="heading-sm">Video</h3>
+          <p class="body-sm text-muted">MP4, MOV — phone or pro</p>
+        </div>
+
+        <!-- Small tile: PDF -->
+        <div class="bento-tile bento-tile--sm">
+          <div class="bento-tile__icon">📄</div>
+          <h3 class="heading-sm">PDF</h3>
+          <p class="body-sm text-muted">The same design you sent to the printer</p>
+        </div>
+
+        <!-- Small tile: Text -->
+        <div class="bento-tile bento-tile--sm">
+          <div class="bento-tile__icon">📝</div>
+          <h3 class="heading-sm">Text</h3>
+          <p class="body-sm text-muted">No design? Just type your details</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Process: Vertical Timeline -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">How It Works</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          From Design to<br/><em class="font-serif">Delivery</em>
+        </h2>
+      </div>
+
+      <div class="timeline" style="margin-top: var(--space-2xl);">
+        <div class="timeline__item reveal" style="transition-delay: 0.1s;">
+          <div class="timeline__marker">
+            <span class="timeline__num">1</span>
+          </div>
+          <div class="timeline__card">
+            <h3 class="heading-md">Design Anywhere</h3>
+            <p class="body-md text-muted">Use Canva, Photoshop, Figma, InShot, CapCut — or hire a designer. Your creative freedom, your choice of tools.</p>
+          </div>
+        </div>
+        <div class="timeline__item reveal" style="transition-delay: 0.2s;">
+          <div class="timeline__marker">
+            <span class="timeline__num">2</span>
+          </div>
+          <div class="timeline__card">
+            <h3 class="heading-md">Upload to Lumhe</h3>
+            <p class="body-md text-muted">Upload your invitation in any format — image, video, PDF, or text. Add event details, dates, venues, and sub-events.</p>
+          </div>
+        </div>
+        <div class="timeline__item reveal" style="transition-delay: 0.3s;">
+          <div class="timeline__marker">
+            <span class="timeline__num">3</span>
+          </div>
+          <div class="timeline__card">
+            <h3 class="heading-md">Send & Track</h3>
+            <p class="body-md text-muted">Find guests by name, phone, or email inside Lumhe. Send directly. Track RSVPs per function in real time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Occasion Carousel -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 600px; margin: 0 auto;">
+        <span class="label text-primary">Every Occasion</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Templates for<br/><em class="font-serif">Every Celebration</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Whether you're hosting a grand wedding or a small kitty party — Lumhe works for every occasion.
+        </p>
+      </div>
+
+      <div class="marquee-wrapper stagger-children" style="margin-top: var(--space-2xl);">
+        <!-- Row 1: scrolls left -->
+        <div class="marquee-row">
+          <div class="marquee-track marquee-track--left">
+            <div class="marquee-pill" style="--pill-accent: #FF5252;">
+              <span class="marquee-pill__label">Weddings</span>
+              <span class="marquee-pill__sub">Your grand celebration</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #E040FB;">
+              <span class="marquee-pill__label">Engagements</span>
+              <span class="marquee-pill__sub">The big "yes" moment</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #7C4DFF;">
+              <span class="marquee-pill__label">Birthdays</span>
+              <span class="marquee-pill__sub">Another year, another party</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #00BFA5;">
+              <span class="marquee-pill__label">Kitty Parties</span>
+              <span class="marquee-pill__sub">Fun with your circle</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #FF6D00;">
+              <span class="marquee-pill__label">Baby Showers</span>
+              <span class="marquee-pill__sub">Welcoming the little one</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #2979FF;">
+              <span class="marquee-pill__label">Housewarming</span>
+              <span class="marquee-pill__sub">New home, new beginnings</span>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="marquee-pill" style="--pill-accent: #FF5252;">
+              <span class="marquee-pill__label">Weddings</span>
+              <span class="marquee-pill__sub">Your grand celebration</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #E040FB;">
+              <span class="marquee-pill__label">Engagements</span>
+              <span class="marquee-pill__sub">The big "yes" moment</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #7C4DFF;">
+              <span class="marquee-pill__label">Birthdays</span>
+              <span class="marquee-pill__sub">Another year, another party</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #00BFA5;">
+              <span class="marquee-pill__label">Kitty Parties</span>
+              <span class="marquee-pill__sub">Fun with your circle</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #FF6D00;">
+              <span class="marquee-pill__label">Baby Showers</span>
+              <span class="marquee-pill__sub">Welcoming the little one</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #2979FF;">
+              <span class="marquee-pill__label">Housewarming</span>
+              <span class="marquee-pill__sub">New home, new beginnings</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: scrolls right -->
+        <div class="marquee-row">
+          <div class="marquee-track marquee-track--right">
+            <div class="marquee-pill" style="--pill-accent: #FFD600;">
+              <span class="marquee-pill__label">Anniversaries</span>
+              <span class="marquee-pill__sub">Celebrating milestones</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #546E7A;">
+              <span class="marquee-pill__label">Farewell</span>
+              <span class="marquee-pill__sub">Bittersweet goodbyes</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #37474F;">
+              <span class="marquee-pill__label">Corporate</span>
+              <span class="marquee-pill__sub">Professional gatherings</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #D84315;">
+              <span class="marquee-pill__label">Griha Pravesh</span>
+              <span class="marquee-pill__sub">Sacred new beginnings</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #C2185B;">
+              <span class="marquee-pill__label">Haldi & Mehendi</span>
+              <span class="marquee-pill__sub">Colors of celebration</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #388E3C;">
+              <span class="marquee-pill__label">Saakharpuda</span>
+              <span class="marquee-pill__sub">Sweet traditions</span>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="marquee-pill" style="--pill-accent: #FFD600;">
+              <span class="marquee-pill__label">Anniversaries</span>
+              <span class="marquee-pill__sub">Celebrating milestones</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #546E7A;">
+              <span class="marquee-pill__label">Farewell</span>
+              <span class="marquee-pill__sub">Bittersweet goodbyes</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #37474F;">
+              <span class="marquee-pill__label">Corporate</span>
+              <span class="marquee-pill__sub">Professional gatherings</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #D84315;">
+              <span class="marquee-pill__label">Griha Pravesh</span>
+              <span class="marquee-pill__sub">Sacred new beginnings</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #C2185B;">
+              <span class="marquee-pill__label">Haldi & Mehendi</span>
+              <span class="marquee-pill__sub">Colors of celebration</span>
+            </div>
+            <div class="marquee-pill" style="--pill-accent: #388E3C;">
+              <span class="marquee-pill__label">Saakharpuda</span>
+              <span class="marquee-pill__sub">Sweet traditions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-made templates coming soon -->
+  <section class="section">
+    <div class="container">
+      <div class="coming-soon-card reveal-scale">
+        <span class="label" style="color: var(--color-amber);">Coming Soon</span>
+        <h2 class="heading-lg" style="margin-top: 0.5rem;">
+          Pre-Made Templates<br/><em class="font-serif">Inside Lumhe</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+          We're building a library of professionally designed invitation templates for every occasion. Pick a template, customise with your details, and go — no external design tool needed.
+        </p>
+        <div style="margin-top: var(--space-md); display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+          <span class="pill">Wedding</span>
+          <span class="pill">Birthday</span>
+          <span class="pill">Engagement</span>
+          <span class="pill">Baby Shower</span>
+          <span class="pill">Kitty Party</span>
+          <span class="pill">Housewarming</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="feat-cta reveal-scale">
+        <h2 class="heading-xl" style="color: white;">
+          Ready to Create Your<br/><em class="font-serif">Invitation?</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+          Upload your invitation in any format. Connect with guests. Track RSVPs. All free. Always.
+        </p>
+        <a href="#" class="btn btn-cta-white" style="margin-top: var(--space-lg);">
+          Start Creating — Free <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer country={country} />
+</Layout>
+
+<style>
+  @import '../../../styles/global.css';
+
+  .feat-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+    padding-top: calc(var(--space-3xl) + 80px);
+    background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 60%);
+  }
+
+  .feat-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .feat-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .feat-badge {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary);
+    background: rgba(255,82,82,0.06); padding: 0.4rem 1.2rem; border-radius: var(--radius-full);
+    display: inline-block;
+  }
+
+  .feat-hero__content h1 { color: var(--color-charcoal); }
+  .feat-hero__content h1 em { color: var(--color-primary); font-style: italic; }
+
+  .feat-hero__cta { margin-top: var(--space-sm); }
+
+  .feat-hero__img {
+    width: 100%; max-width: 440px; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg); margin: 0 auto; display: block;
+  }
+
+  /* ========================================
+     BENTO GRID — Stacked Card Deck
+     ======================================== */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1.25rem;
+  }
+
+  .bento-tile {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+  }
+  .bento-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Hero tile spans 2 columns, first row */
+  .bento-tile--hero {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--color-surface-warm), var(--color-surface));
+    border-color: rgba(255,82,82,0.15);
+  }
+
+  .bento-tile--sm {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+  }
+
+  .bento-tile__icon {
+    font-size: 2.8rem;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .bento-tile__content h3 { margin-bottom: 0.5rem; }
+
+  /* Device Frame Mockup */
+  .device-frame {
+    width: 160px;
+    min-width: 160px;
+    height: 260px;
+    background: var(--color-charcoal);
+    border-radius: 24px;
+    padding: 8px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  }
+
+  .device-frame__notch {
+    width: 60px;
+    height: 6px;
+    background: #333;
+    border-radius: 4px;
+    margin: 4px auto 6px;
+  }
+
+  .device-frame__screen {
+    background: white;
+    border-radius: 16px;
+    height: calc(100% - 16px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .device-frame__invite {
+    padding: 12px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .device-invite__header {
+    width: 60%;
+    height: 6px;
+    background: var(--color-primary);
+    border-radius: 3px;
+    margin: 0 auto 12px;
+    opacity: 0.6;
+  }
+
+  .device-invite__art {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-secondary), rgba(255,82,82,0.12));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
+
+  .device-invite__emoji {
+    font-size: 2rem;
+  }
+
+  .device-invite__lines {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .device-invite__line {
+    height: 5px;
+    background: var(--color-border);
+    border-radius: 3px;
+  }
+
+  /* ========================================
+     VERTICAL TIMELINE
+     ======================================== */
+  .timeline {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 60px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 24px;
+    bottom: 24px;
+    border-left: 2px dashed var(--color-border);
+  }
+
+  .timeline__item {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+  .timeline__item:last-child { margin-bottom: 0; }
+
+  .timeline__marker {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    box-shadow: 0 0 0 6px var(--color-surface), 0 4px 12px rgba(255,82,82,0.2);
+  }
+
+  .timeline__num {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .timeline__card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2rem;
+    transition: transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth);
+  }
+  .timeline__card:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .timeline__card h3 { margin-bottom: 0.5rem; }
+
+  /* ========================================
+     INFINITE MARQUEE
+     ======================================== */
+  .marquee-wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .marquee-row {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+  }
+
+  .marquee-track--left {
+    animation: marqueeLeft 35s linear infinite;
+  }
+
+  .marquee-track--right {
+    animation: marqueeRight 35s linear infinite;
+  }
+
+  @keyframes marqueeLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes marqueeRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  .marquee-pill {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.9rem 1.6rem;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-left: 3px solid var(--pill-accent);
+    border-radius: 100px;
+    cursor: default;
+    transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+  }
+
+  .marquee-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .marquee-pill__label {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-charcoal);
+    white-space: nowrap;
+  }
+
+  .marquee-pill__sub {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  /* ========================================
+     COMING SOON
+     ======================================== */
+  .coming-soon-card {
+    background: var(--color-surface-alt); border: 2px dashed var(--color-border);
+    border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); text-align: center;
+  }
+
+  .pill {
+    padding: 0.3rem 0.8rem; border-radius: var(--radius-full);
+    font-size: 0.75rem; font-weight: 600;
+    background: rgba(255,82,82,0.06); color: var(--color-primary);
+  }
+
+  /* ========================================
+     CTA
+     ======================================== */
+  .feat-cta {
+    background: linear-gradient(135deg, var(--color-charcoal), var(--color-dark));
+    border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .btn-cta-white {
+    background: white; color: var(--color-charcoal);
+    padding: 1rem 2.5rem; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.3s var(--ease-smooth); border: none; cursor: pointer;
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-cta-white .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-cta-white:hover .arrow { transform: translateX(4px); }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 900px) {
+    .feat-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .feat-hero__content { align-items: center; }
+
+    .bento-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .bento-tile--hero {
+      grid-column: 1 / -1;
+      flex-direction: column;
+      text-align: center;
+    }
+    .bento-tile--sm:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .feat-hero { min-height: auto; padding-bottom: 2rem; }
+    .feat-hero__img { max-width: 300px; }
+
+    .bento-grid {
+      grid-template-columns: 1fr;
+    }
+    .bento-tile--hero {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+    .bento-tile--sm:last-child {
+      grid-column: auto;
+    }
+
+    .device-frame { width: 130px; min-width: 130px; height: 210px; }
+
+    .timeline { padding-left: 50px; }
+    .timeline::before { left: 18px; }
+    .timeline__marker {
+      left: -50px;
+      width: 38px;
+      height: 38px;
+    }
+    .timeline__num { font-size: 0.95rem; }
+    .timeline__card { padding: 1.25rem 1.5rem; }
+
+    .marquee-pill { padding: 0.7rem 1.2rem; }
+    .marquee-pill__label { font-size: 0.85rem; }
+    .marquee-track--left { animation-duration: 25s; }
+    .marquee-track--right { animation-duration: 25s; }
+  }
+</style>

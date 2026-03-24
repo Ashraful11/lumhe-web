@@ -1,4 +1,10 @@
 ---
+import type { CountryCode } from '../data/countries';
+import { getHomeContent } from '../data/content/resolver';
+
+interface Props { country?: CountryCode; }
+const { country = 'global' } = Astro.props;
+const content = getHomeContent(country);
 ---
 <section class="hero">
   <div class="hero__decorations" aria-hidden="true">
@@ -24,10 +30,7 @@
         <em class="gradient-text font-serif">One Place</em>
       </h1>
 
-      <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 560px;">
-        Upload your invitation in any format. Find and connect with guests by name, phone, or email.
-        Track RSVPs per function, share Moments, and collect digital shagun — all in one place. Completely free.
-      </p>
+      <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 560px;" set:html={content.heroDescription} />
 
       <div class="hero__cta anim-first-hit delay-4">
         <a href="#" class="btn btn-primary btn-lg magnetic">
@@ -46,9 +49,7 @@
           <div class="hero__avatar" style="background: #64B5F6;">M</div>
           <div class="hero__avatar" style="background: #FFD54F;">R</div>
         </div>
-        <p class="body-sm text-muted">
-          Trusted by <strong style="color: var(--color-text);">2,500+</strong> families &amp; event hosts
-        </p>
+        <p class="body-sm text-muted" set:html={content.socialProofText} />
       </div>
     </div>
 
@@ -59,9 +60,9 @@
           <div class="hero__card-inner" style="background: linear-gradient(135deg, #F9E8D0, #FFD6A5);">
             <div class="hero__card-pattern"></div>
             <div class="hero__card-text">
-              <span class="label" style="color: #D4A373;">Wedding</span>
-              <h3 class="font-serif" style="font-size: 1.3rem; color: #5D4037;">Mehendi + Sangeet + Reception</h3>
-              <p class="body-sm" style="color: #8D6E63;">3 functions, 1 invite</p>
+              <span class="label" style="color: #D4A373;">{content.heroCards[0].badge}</span>
+              <h3 class="font-serif" style="font-size: 1.3rem; color: #5D4037;">{content.heroCards[0].title}</h3>
+              <p class="body-sm" style="color: #8D6E63;">{content.heroCards[0].subtitle}</p>
             </div>
           </div>
         </div>
@@ -70,9 +71,9 @@
           <div class="hero__card-inner" style="background: linear-gradient(135deg, #E8D5F5, #C9B1FF);">
             <div class="hero__card-pattern"></div>
             <div class="hero__card-text">
-              <span class="label" style="color: #7E57C2;">Birthday</span>
-              <h3 class="font-serif" style="font-size: 1.3rem; color: #311B92;">Isha turns 25</h3>
-              <p class="body-sm" style="color: #5C6BC0;">42 guests confirmed</p>
+              <span class="label" style="color: #7E57C2;">{content.heroCards[1].badge}</span>
+              <h3 class="font-serif" style="font-size: 1.3rem; color: #311B92;">{content.heroCards[1].title}</h3>
+              <p class="body-sm" style="color: #5C6BC0;">{content.heroCards[1].subtitle}</p>
             </div>
           </div>
         </div>
@@ -81,9 +82,9 @@
           <div class="hero__card-inner" style="background: linear-gradient(135deg, #FF5252, #FF8A80);">
             <div class="hero__card-pattern hero__card-pattern--light"></div>
             <div class="hero__card-text" style="color: white;">
-              <span class="label" style="color: rgba(255,255,255,0.8);">Kitty Party</span>
-              <h3 class="font-serif" style="font-size: 1.4rem;">Saturday Brunch</h3>
-              <p class="body-sm" style="color: rgba(255,255,255,0.85);">12/12 confirmed</p>
+              <span class="label" style="color: rgba(255,255,255,0.8);">{content.heroCards[2].badge}</span>
+              <h3 class="font-serif" style="font-size: 1.4rem;">{content.heroCards[2].title}</h3>
+              <p class="body-sm" style="color: rgba(255,255,255,0.85);">{content.heroCards[2].subtitle}</p>
             </div>
             <div class="hero__card-formats">
               <span class="format-tag">📸 Image</span>
@@ -99,8 +100,8 @@
   <!-- Celebration types ticker -->
   <div class="hero__ticker anim-first-hit delay-6">
     <div class="hero__ticker-track" style="display: flex; gap: 1rem;">
-      <span>Weddings</span><span>Birthdays</span><span>Engagements</span><span>Kitty Parties</span><span>Baby Showers</span><span>Anniversaries</span><span>Housewarming</span><span>Farewell Parties</span><span>Corporate Events</span><span>Griha Pravesh</span>
-      <span>Weddings</span><span>Birthdays</span><span>Engagements</span><span>Kitty Parties</span><span>Baby Showers</span><span>Anniversaries</span><span>Housewarming</span><span>Farewell Parties</span><span>Corporate Events</span><span>Griha Pravesh</span>
+      {content.heroTickerItems.map((item) => <span>{item}</span>)}
+      {content.heroTickerItems.map((item) => <span>{item}</span>)}
     </div>
   </div>
 </section>

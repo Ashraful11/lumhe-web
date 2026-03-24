@@ -1,4 +1,11 @@
 ---
+import type { CountryCode } from '../data/countries';
+import { getHomeContent } from '../data/content/resolver';
+
+interface Props { country?: CountryCode; }
+const { country = 'global' } = Astro.props;
+const content = getHomeContent(country);
+const { featured, pair } = content.testimonials;
 ---
 
 <section id="testimonials" class="section">
@@ -18,60 +25,60 @@
             <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 5.219-2.176 5.954-2.734 5.954-.183 0-.28.126-.28.283v.526c0 .13.094.237.224.237zm14 0c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 5.219-2.176 5.954-2.734 5.954-.183 0-.28.126-.28.283v.526c0 .13.094.237.224.237z"/>
           </svg>
           <blockquote class="heading-sm" style="line-height: 1.6; color: var(--color-charcoal); font-style: italic;">
-            Managing RSVPs for 5 different functions was a nightmare on WhatsApp. With Lumhe, I knew exactly who was coming to which function. The nudge reminders saved me dozens of follow-up calls.
+            {featured.quote}
           </blockquote>
           <div class="testi-author" style="margin-top: 2rem;">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #FF5252, #ff8a80);">A</div>
+            <div class="testi-avatar" style={`background: linear-gradient(135deg, ${featured.color}, ${featured.color}80);`}>{featured.avatar}</div>
             <div>
-              <p class="heading-xs">Ananya Sharma</p>
-              <p class="body-sm text-muted">Wedding Host</p>
+              <p class="heading-xs">{featured.name}</p>
+              <p class="body-sm text-muted">{featured.role}</p>
             </div>
           </div>
         </div>
         <div class="testi-featured__visual">
-          <div class="testi-stat-card">
-            <span class="testi-stat__number" style="color: var(--color-primary);">5</span>
-            <span class="testi-stat__label">functions managed</span>
-          </div>
-          <div class="testi-stat-card">
-            <span class="testi-stat__number" style="color: #8B5CF6;">250+</span>
-            <span class="testi-stat__label">guests tracked</span>
-          </div>
-          <div class="testi-stat-card">
-            <span class="testi-stat__number" style="color: #14B8A6;">0</span>
-            <span class="testi-stat__label">follow-up calls</span>
-          </div>
+          {featured.stats.map((stat) => (
+            <div class="testi-stat-card">
+              <span class="testi-stat__number" style={`color: ${stat.color};`}>{stat.number}</span>
+              <span class="testi-stat__label">{stat.label}</span>
+            </div>
+          ))}
         </div>
       </div>
 
       <!-- Two smaller side-by-side -->
       <div class="testi-pair">
-        <div class="testi-card">
-          <blockquote class="body-lg" style="font-style: italic; color: var(--color-text); line-height: 1.7;">
-            &ldquo;I uploaded my Canva-designed invite, found all my friends inside Lumhe, and had RSVPs within hours. The Moments feature meant all party photos were in one beautiful album.&rdquo;
+        <div class={`testi-card${pair[0].accent ? ' testi-card--accent' : ''}`}>
+          <blockquote class="body-lg" style={`font-style: italic; color: ${pair[0].accent ? 'white' : 'var(--color-text)'}; line-height: 1.7;`}>
+            &ldquo;{pair[0].quote}&rdquo;
           </blockquote>
           <div class="testi-author" style="margin-top: 1.25rem;">
-            <div class="testi-avatar" style="background: linear-gradient(135deg, #3B82F6, #93c5fd);">V</div>
+            <div class="testi-avatar" style={pair[0].accent ? `background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3);` : `background: linear-gradient(135deg, ${pair[0].color}, ${pair[0].color}80);`}>{pair[0].avatar}</div>
             <div>
-              <p style="font-weight: 600;">Vikram Patel</p>
-              <p class="body-sm text-muted">Birthday Organiser</p>
+              <p style={`font-weight: 600;${pair[0].accent ? ' color: white;' : ''}`}>{pair[0].name}</p>
+              <p class="body-sm" style={pair[0].accent ? 'color: rgba(255,255,255,0.7);' : ''}>
+                {!pair[0].accent && <Fragment><span class="text-muted">{pair[0].role}</span></Fragment>}
+                {pair[0].accent && pair[0].role}
+              </p>
             </div>
           </div>
-          <div class="testi-tag" style="background: rgba(59,130,246,0.06); color: #3B82F6;">Moments</div>
+          <div class="testi-tag" style={`background: ${pair[0].accent ? 'rgba(255,255,255,0.15)' : `${pair[0].tagColor}10`}; color: ${pair[0].accent ? 'white' : pair[0].tagColor};`}>{pair[0].tag}</div>
         </div>
 
-        <div class="testi-card testi-card--accent">
-          <blockquote class="body-lg" style="font-style: italic; color: white; line-height: 1.7;">
-            &ldquo;Our kitty group uses Lumhe every month now. Upload the invite, everyone gets notified, RSVPs with one tap. Digital Lifafa made collecting contributions so easy — no cash tracking!&rdquo;
+        <div class={`testi-card${pair[1].accent ? ' testi-card--accent' : ''}`}>
+          <blockquote class="body-lg" style={`font-style: italic; color: ${pair[1].accent ? 'white' : 'var(--color-text)'}; line-height: 1.7;`}>
+            &ldquo;{pair[1].quote}&rdquo;
           </blockquote>
           <div class="testi-author" style="margin-top: 1.25rem;">
-            <div class="testi-avatar" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3);">M</div>
+            <div class="testi-avatar" style={pair[1].accent ? `background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3);` : `background: linear-gradient(135deg, ${pair[1].color}, ${pair[1].color}80);`}>{pair[1].avatar}</div>
             <div>
-              <p style="font-weight: 600; color: white;">Meera Iyer</p>
-              <p class="body-sm" style="color: rgba(255,255,255,0.7);">Kitty Party Host</p>
+              <p style={`font-weight: 600;${pair[1].accent ? ' color: white;' : ''}`}>{pair[1].name}</p>
+              <p class="body-sm" style={pair[1].accent ? 'color: rgba(255,255,255,0.7);' : ''}>
+                {!pair[1].accent && <Fragment><span class="text-muted">{pair[1].role}</span></Fragment>}
+                {pair[1].accent && pair[1].role}
+              </p>
             </div>
           </div>
-          <div class="testi-tag" style="background: rgba(255,255,255,0.15); color: white;">Digital Lifafa</div>
+          <div class="testi-tag" style={`background: ${pair[1].accent ? 'rgba(255,255,255,0.15)' : `${pair[1].tagColor}10`}; color: ${pair[1].accent ? 'white' : pair[1].tagColor};`}>{pair[1].tag}</div>
         </div>
       </div>
     </div>

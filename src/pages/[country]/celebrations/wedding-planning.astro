@@ -1,0 +1,1021 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import type { CountryCode } from '../../../data/countries';
+
+export function getStaticPaths() {
+  return [
+    { params: { country: 'in' } },
+    { params: { country: 'us' } },
+    { params: { country: 'uk' } },
+  ];
+}
+
+const country = Astro.params.country as CountryCode;
+---
+
+<Layout title="Wedding Planning with Lumhe" description="Plan your entire wedding on Lumhe — manage multiple functions like Haldi, Mehendi, Sangeet, Ceremony, and Reception. Track RSVPs per function, share Moments, and collect Digital Lifafa. Completely free.">
+  <Navbar country={country} />
+
+  <!-- Hero -->
+  <section class="feat-hero">
+    <div class="container">
+      <div class="feat-hero__inner">
+        <div class="feat-hero__content">
+          <div class="anim-first-hit delay-1">
+            <span class="feat-badge">Weddings</span>
+          </div>
+          <h1 class="heading-2xl anim-first-hit delay-2">
+            Plan Your Wedding<br/>
+            <em>With Lumhe</em>
+          </h1>
+          <p class="body-lg text-muted anim-first-hit delay-3" style="max-width: 520px;">
+            Indian weddings are not one event — they are many. Lumhe lets you manage every function, track RSVPs per event, share Moments, and collect Digital Lifafa. All in one place. Completely free.
+          </p>
+          <div class="feat-hero__cta anim-first-hit delay-4">
+            <a href="#" class="btn btn-primary magnetic">Start Planning Your Wedding — Free <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="feat-hero__visual anim-first-hit delay-3">
+          <img src="/images/lumhe/invite.png" alt="Plan your wedding with Lumhe" class="feat-hero__img"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wedding Journey Timeline -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 640px; margin: 0 auto;">
+        <span class="label text-primary">Your Wedding Journey</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Plan Every Step,<br/><em class="font-serif">One Milestone at a Time</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Swipe through each milestone of your wedding journey. Lumhe guides you from the very first announcement to the final celebration.
+        </p>
+      </div>
+    </div>
+
+    <div class="journey-grid stagger-children" style="margin-top: var(--space-2xl);">
+      <div class="journey-card journey-card--wide" style="--jc-accent: #FF5252; --jc-bg: linear-gradient(135deg, #1a1a3e, #2d1b4e);">
+        <span class="journey-step">01</span>
+        <div class="journey-card__text">
+          <h3 class="heading-md" style="color: white;">Save the Date</h3>
+          <p class="body-md" style="color: rgba(255,255,255,0.7); margin-top: 0.4rem;">Announce your wedding date. Send a digital save-the-date so guests block their calendars early.</p>
+        </div>
+        <div class="journey-card__mockup">
+          <div class="jm-calendar"><span class="jm-cal-month">Dec</span><span class="jm-cal-day">15</span></div>
+        </div>
+      </div>
+      <div class="journey-card" style="--jc-accent: #E040FB; --jc-bg: linear-gradient(135deg, #f8f0ff, #f0e0ff);">
+        <span class="journey-step" style="color: #E040FB;">02</span>
+        <h3 class="heading-sm">Design Invitation</h3>
+        <p class="body-sm text-muted" style="margin-top: 0.3rem;">Create or upload your invite — image, video, PDF. Any format works.</p>
+      </div>
+      <div class="journey-card" style="--jc-accent: #FF6D00; --jc-bg: linear-gradient(135deg, #fff5e6, #ffe8cc);">
+        <span class="journey-step" style="color: #FF6D00;">03</span>
+        <h3 class="heading-sm">Build Guest List</h3>
+        <p class="body-sm text-muted" style="margin-top: 0.3rem;">Add guests and assign them to specific functions.</p>
+      </div>
+      <div class="journey-card" style="--jc-accent: #00BFA5; --jc-bg: linear-gradient(135deg, #e0fff8, #ccf5ee);">
+        <span class="journey-step" style="color: #00BFA5;">04</span>
+        <h3 class="heading-sm">Track RSVPs</h3>
+        <p class="body-sm text-muted" style="margin-top: 0.3rem;">Real-time confirmations per function with accurate headcounts.</p>
+      </div>
+      <div class="journey-card journey-card--wide" style="--jc-accent: #2979FF; --jc-bg: linear-gradient(135deg, #e8f0ff, #d4edff);">
+        <span class="journey-step" style="color: #2979FF;">05</span>
+        <div class="journey-card__text">
+          <h3 class="heading-md">Share Moments</h3>
+          <p class="body-md text-muted" style="margin-top: 0.4rem;">Guests upload photos and videos to a shared wedding album. Every memory stays — permanently.</p>
+        </div>
+        <div class="journey-card__mockup">
+          <div class="jm-photos">
+            <div class="jm-photo" style="background: linear-gradient(135deg, #bbdefb, #64b5f6);"></div>
+            <div class="jm-photo" style="background: linear-gradient(135deg, #c5cae9, #7986cb);"></div>
+            <div class="jm-photo" style="background: linear-gradient(135deg, #b3e5fc, #4fc3f7);"></div>
+          </div>
+        </div>
+      </div>
+      <div class="journey-card" style="--jc-accent: #FFD600; --jc-bg: linear-gradient(135deg, #fffde7, #fff9c4);">
+        <span class="journey-step" style="color: #D4A000;">06</span>
+        <h3 class="heading-sm">Collect Lifafa</h3>
+        <p class="body-sm text-muted" style="margin-top: 0.3rem;">Digital shagun via UPI — goes directly to the couple. Zero fees.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-Function Showcase -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 640px; margin: 0 auto;">
+        <span class="label text-primary">Multi-Function Weddings</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Every Function,<br/><em class="font-serif">Fully Managed</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          Indian weddings have multiple functions — each with different guests, venues, and vibes. Lumhe manages every one.
+        </p>
+      </div>
+
+      <div class="fn-grid stagger-children" style="margin-top: var(--space-2xl);">
+        <!-- Mehendi — wide -->
+        <div class="fn-card fn-card--wide" style="--fn-color: #E040FB; background-image: linear-gradient(135deg, #fdf0ff, #f3e0ff);">
+          <div class="fn-card__content">
+            <span class="fn-tag" style="background-color: rgba(224,64,251,0.1); color: #E040FB;">Mehendi</span>
+            <p class="body-md" style="margin-top: 0.75rem; color: var(--color-charcoal);">Dedicated invite, separate guest list, per-function RSVP. Guests upload henna close-ups into a shared Moments album.</p>
+            <div class="fn-features">
+              <span class="fn-feat" style="border-color: rgba(224,64,251,0.3);">Invite</span>
+              <span class="fn-feat" style="border-color: rgba(224,64,251,0.3);">RSVP</span>
+              <span class="fn-feat" style="border-color: rgba(224,64,251,0.3);">Moments</span>
+            </div>
+          </div>
+          <div class="fn-card__visual">
+            <div class="fn-mockup-rsvp">
+              <div class="fn-rsvp-row"><span class="fn-rsvp-dot" style="background-color: #4CAF50;"></span><div class="fn-rsvp-bar" style="width: 70%;"></div></div>
+              <div class="fn-rsvp-row"><span class="fn-rsvp-dot" style="background-color: #FF9800;"></span><div class="fn-rsvp-bar" style="width: 45%;"></div></div>
+              <div class="fn-rsvp-row"><span class="fn-rsvp-dot" style="background-color: #4CAF50;"></span><div class="fn-rsvp-bar" style="width: 60%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Haldi -->
+        <div class="fn-card" style="--fn-color: #FFB300; background-image: linear-gradient(135deg, #fffde7, #fff8e1);">
+          <span class="fn-tag" style="background-color: rgba(255,179,0,0.1); color: #F57F17;">Haldi</span>
+          <p class="body-sm text-muted" style="margin-top: 0.5rem;">Intimate ceremony. Separate RSVP. Golden turmeric moments captured forever.</p>
+          <div class="fn-features"><span class="fn-feat" style="border-color: rgba(255,179,0,0.3);">RSVP</span><span class="fn-feat" style="border-color: rgba(255,179,0,0.3);">Moments</span></div>
+        </div>
+
+        <!-- Sangeet -->
+        <div class="fn-card" style="--fn-color: #7C4DFF; background-image: linear-gradient(135deg, #ede7f6, #d1c4e9);">
+          <span class="fn-tag" style="background-color: rgba(124,77,255,0.1); color: #7C4DFF;">Sangeet</span>
+          <p class="body-sm text-muted" style="margin-top: 0.5rem;">Own invite with venue and dress code. Dance videos auto-fill the Moments album.</p>
+          <div class="fn-features"><span class="fn-feat" style="border-color: rgba(124,77,255,0.3);">Invite</span><span class="fn-feat" style="border-color: rgba(124,77,255,0.3);">Moments</span></div>
+        </div>
+
+        <!-- Wedding Ceremony — wide -->
+        <div class="fn-card fn-card--wide fn-card--dark" style="--fn-color: #FF5252;">
+          <div class="fn-card__content">
+            <span class="fn-tag" style="background-color: rgba(255,255,255,0.12); color: white;">Wedding Ceremony</span>
+            <p class="body-md" style="margin-top: 0.75rem; color: rgba(255,255,255,0.8);">The main event. Grand invitation, full guest list with precision RSVP. Ceremony photos in Moments. Digital Lifafa blessings flow in.</p>
+            <div class="fn-features">
+              <span class="fn-feat fn-feat--light">Invite</span>
+              <span class="fn-feat fn-feat--light">RSVP</span>
+              <span class="fn-feat fn-feat--light">Moments</span>
+              <span class="fn-feat fn-feat--light">Lifafa</span>
+            </div>
+          </div>
+          <div class="fn-card__visual">
+            <div class="fn-mockup-count">
+              <span class="fn-count-num">250</span>
+              <span class="fn-count-label">guests confirmed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reception -->
+        <div class="fn-card" style="--fn-color: #00BFA5; background-image: linear-gradient(135deg, #e0f2f1, #b2dfdb);">
+          <span class="fn-tag" style="background-color: rgba(0,191,165,0.1); color: #00897B;">Reception</span>
+          <p class="body-sm text-muted" style="margin-top: 0.5rem;">Separate invite and RSVP. Grand entry shots, couple photos, and Lifafa — all in one place.</p>
+          <div class="fn-features"><span class="fn-feat" style="border-color: rgba(0,191,165,0.3);">RSVP</span><span class="fn-feat" style="border-color: rgba(0,191,165,0.3);">Moments</span><span class="fn-feat" style="border-color: rgba(0,191,165,0.3);">Lifafa</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Weddings Grid -->
+  <section class="section bg-surface-alt">
+    <div class="container">
+      <div class="text-center reveal" style="max-width: 640px; margin: 0 auto;">
+        <span class="label text-primary">Every Tradition</span>
+        <h2 class="heading-xl" style="margin-top: 0.5rem;">
+          Built for<br/><em class="font-serif">Every Indian Wedding</em>
+        </h2>
+        <p class="body-lg text-muted" style="margin-top: 1rem;">
+          India celebrates weddings in countless beautiful ways. Lumhe works for every tradition — because you define your own functions and customs.
+        </p>
+      </div>
+
+      <div class="region-tabs reveal" style="margin-top: var(--space-2xl);">
+        <!-- Hidden radio inputs for CSS-only tab switching -->
+        <input type="radio" name="region" id="tab-marathi" class="region-radio" checked />
+        <input type="radio" name="region" id="tab-bengali" class="region-radio" />
+        <input type="radio" name="region" id="tab-south" class="region-radio" />
+        <input type="radio" name="region" id="tab-punjabi" class="region-radio" />
+        <input type="radio" name="region" id="tab-rajasthani" class="region-radio" />
+        <input type="radio" name="region" id="tab-gujarati" class="region-radio" />
+        <input type="radio" name="region" id="tab-tamil" class="region-radio" />
+        <input type="radio" name="region" id="tab-sikh" class="region-radio" />
+        <input type="radio" name="region" id="tab-muslim" class="region-radio" />
+        <input type="radio" name="region" id="tab-christian" class="region-radio" />
+        <input type="radio" name="region" id="tab-sindhi" class="region-radio" />
+        <input type="radio" name="region" id="tab-assamese" class="region-radio" />
+
+        <div class="region-tab-bar">
+          <label for="tab-marathi" class="region-tab" style="--tab-color: #FF6F00;">Marathi</label>
+          <label for="tab-bengali" class="region-tab" style="--tab-color: #D32F2F;">Bengali</label>
+          <label for="tab-south" class="region-tab" style="--tab-color: #1565C0;">South Indian</label>
+          <label for="tab-punjabi" class="region-tab" style="--tab-color: #E91E63;">Punjabi</label>
+          <label for="tab-rajasthani" class="region-tab" style="--tab-color: #F57F17;">Rajasthani</label>
+          <label for="tab-gujarati" class="region-tab" style="--tab-color: #00897B;">Gujarati</label>
+          <label for="tab-tamil" class="region-tab" style="--tab-color: #6A1B9A;">Tamil</label>
+          <label for="tab-sikh" class="region-tab" style="--tab-color: #FF8F00;">Sikh</label>
+          <label for="tab-muslim" class="region-tab" style="--tab-color: #2E7D32;">Muslim (Nikah)</label>
+          <label for="tab-christian" class="region-tab" style="--tab-color: #5C6BC0;">Christian</label>
+          <label for="tab-sindhi" class="region-tab" style="--tab-color: #C62828;">Sindhi</label>
+          <label for="tab-assamese" class="region-tab" style="--tab-color: #AD1457;">Assamese</label>
+        </div>
+
+        <!-- Panel: Marathi -->
+        <div class="region-panel region-panel--1">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #FF6F00;">Marathi</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">Sakhar Puda ceremony, turmeric-filled Haldi, and the sacred mangalsutra tying.</p>
+            <div class="region-panel__tags">
+              <span>Sakhar Puda</span>
+              <span>Haldi</span>
+              <span>Ceremony</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #FF6F00; --motif-2: #FFA726;">
+            <div class="motif-shape motif-shape--circle"></div>
+            <div class="motif-shape motif-shape--diamond"></div>
+            <div class="motif-shape motif-shape--dots"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Bengali -->
+        <div class="region-panel region-panel--2">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #D32F2F;">Bengali</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The vibrant Gaye Holud, the emotional Ashirbaad, and the elegant wedding rituals.</p>
+            <div class="region-panel__tags">
+              <span>Ashirbaad</span>
+              <span>Gaye Holud</span>
+              <span>Wedding</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #D32F2F; --motif-2: #FF8A80;">
+            <div class="motif-shape motif-shape--arch"></div>
+            <div class="motif-shape motif-shape--circle-sm"></div>
+            <div class="motif-shape motif-shape--lines"></div>
+          </div>
+        </div>
+
+        <!-- Panel: South Indian -->
+        <div class="region-panel region-panel--3">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #1565C0;">South Indian</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The auspicious Nischitartham, the sacred Muhurtam, and the grand Reception feast.</p>
+            <div class="region-panel__tags">
+              <span>Nischitartham</span>
+              <span>Muhurtam</span>
+              <span>Reception</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #1565C0; --motif-2: #64B5F6;">
+            <div class="motif-shape motif-shape--temple"></div>
+            <div class="motif-shape motif-shape--dots"></div>
+            <div class="motif-shape motif-shape--wave"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Punjabi -->
+        <div class="region-panel region-panel--4">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #E91E63;">Punjabi</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The lively Roka, the rhythmic Jaggo night, and the sacred Anand Karaj ceremony.</p>
+            <div class="region-panel__tags">
+              <span>Roka</span>
+              <span>Jaggo</span>
+              <span>Anand Karaj</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #E91E63; --motif-2: #F48FB1;">
+            <div class="motif-shape motif-shape--diamond"></div>
+            <div class="motif-shape motif-shape--circle"></div>
+            <div class="motif-shape motif-shape--lines"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Rajasthani -->
+        <div class="region-panel region-panel--5">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #F57F17;">Rajasthani</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The royal Tilak ceremony, the melodious Banna-Banni songs, and the sacred Pheras.</p>
+            <div class="region-panel__tags">
+              <span>Tilak</span>
+              <span>Banna-Banni</span>
+              <span>Pheras</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #F57F17; --motif-2: #FFD54F;">
+            <div class="motif-shape motif-shape--arch"></div>
+            <div class="motif-shape motif-shape--diamond"></div>
+            <div class="motif-shape motif-shape--circle-sm"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Gujarati -->
+        <div class="region-panel region-panel--6">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #00897B;">Gujarati</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The joyful Pithi ceremony, the colourful Garba nights, and the traditional wedding rituals.</p>
+            <div class="region-panel__tags">
+              <span>Pithi</span>
+              <span>Garba</span>
+              <span>Wedding</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #00897B; --motif-2: #80CBC4;">
+            <div class="motif-shape motif-shape--circle"></div>
+            <div class="motif-shape motif-shape--wave"></div>
+            <div class="motif-shape motif-shape--dots"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Tamil -->
+        <div class="region-panel region-panel--7">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #6A1B9A;">Tamil</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The sacred Nichayathartham betrothal, the ritualistic Muhurtham with Thali tying, and the grand Sadhya feast that brings families together.</p>
+            <div class="region-panel__tags">
+              <span>Nichayathartham</span>
+              <span>Muhurtham</span>
+              <span>Sadhya</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #6A1B9A; --motif-2: #CE93D8;">
+            <div class="motif-shape motif-shape--temple"></div>
+            <div class="motif-shape motif-shape--dots"></div>
+            <div class="motif-shape motif-shape--circle"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Sikh -->
+        <div class="region-panel region-panel--8">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #FF8F00;">Sikh</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The joyous Chunni ceremony, Kirtan evenings filled with devotion, and the Anand Karaj performed in the Gurudwara.</p>
+            <div class="region-panel__tags">
+              <span>Chunni</span>
+              <span>Kirtan</span>
+              <span>Anand Karaj</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #FF8F00; --motif-2: #FFD54F;">
+            <div class="motif-shape motif-shape--circle"></div>
+            <div class="motif-shape motif-shape--lines"></div>
+            <div class="motif-shape motif-shape--diamond"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Muslim (Nikah) -->
+        <div class="region-panel region-panel--9">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #2E7D32;">Muslim (Nikah)</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The Mehendi celebration, the sacred Nikah ceremony with Ijab-e-Qubool, and the lavish Walima reception that follows.</p>
+            <div class="region-panel__tags">
+              <span>Mehendi</span>
+              <span>Nikah</span>
+              <span>Walima</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #2E7D32; --motif-2: #81C784;">
+            <div class="motif-shape motif-shape--arch"></div>
+            <div class="motif-shape motif-shape--dots"></div>
+            <div class="motif-shape motif-shape--circle-sm"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Christian -->
+        <div class="region-panel region-panel--10">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #5C6BC0;">Christian</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The Engagement ceremony with ring exchange, the Church Wedding with sacred vows, and the festive Reception celebration.</p>
+            <div class="region-panel__tags">
+              <span>Engagement</span>
+              <span>Church Wedding</span>
+              <span>Reception</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #5C6BC0; --motif-2: #9FA8DA;">
+            <div class="motif-shape motif-shape--circle"></div>
+            <div class="motif-shape motif-shape--wave"></div>
+            <div class="motif-shape motif-shape--lines"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Sindhi -->
+        <div class="region-panel region-panel--11">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #C62828;">Sindhi</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The vibrant Sagai with Pakki Mishri, the colourful Mehndi celebrations, and the Lada ceremony filled with Sindhi traditions.</p>
+            <div class="region-panel__tags">
+              <span>Sagai</span>
+              <span>Mehndi</span>
+              <span>Lada</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #C62828; --motif-2: #EF9A9A;">
+            <div class="motif-shape motif-shape--diamond"></div>
+            <div class="motif-shape motif-shape--arch"></div>
+            <div class="motif-shape motif-shape--dots"></div>
+          </div>
+        </div>
+
+        <!-- Panel: Assamese -->
+        <div class="region-panel region-panel--12">
+          <div class="region-panel__text">
+            <h3 class="heading-lg" style="color: #AD1457;">Assamese</h3>
+            <p class="body-lg text-muted" style="margin-top: 0.75rem;">The Juron ceremony where blessings begin, the Tel-Diya turmeric ritual, and the Biya wedding performed with traditional Assamese customs.</p>
+            <div class="region-panel__tags">
+              <span>Juron</span>
+              <span>Tel-Diya</span>
+              <span>Biya</span>
+            </div>
+          </div>
+          <div class="region-panel__motif" style="--motif-1: #AD1457; --motif-2: #F48FB1;">
+            <div class="motif-shape motif-shape--circle-sm"></div>
+            <div class="motif-shape motif-shape--wave"></div>
+            <div class="motif-shape motif-shape--diamond"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-bottom: var(--space-3xl);">
+    <div class="container">
+      <div class="feat-cta reveal-scale">
+        <h2 class="heading-xl" style="color: white;">
+          Ready to Plan Your<br/><em class="font-serif">Wedding?</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-left: auto; margin-right: auto;">
+          Manage every function. Track every RSVP. Share every Moment. Collect Digital Lifafa. All free. Always.
+        </p>
+        <a href="#" class="btn btn-cta-white" style="margin-top: var(--space-lg);">
+          Start Planning — Free <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer country={country} />
+</Layout>
+
+<style>
+  @import '../../../styles/global.css';
+
+  /* -- Hero (unchanged) -- */
+  .feat-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+    padding-top: calc(var(--space-3xl) + 80px);
+    background: linear-gradient(180deg, var(--color-surface-warm) 0%, var(--color-surface) 60%);
+  }
+
+  .feat-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .feat-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .feat-badge {
+    font-family: var(--font-body); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary);
+    background: rgba(255,82,82,0.06); padding: 0.4rem 1.2rem; border-radius: var(--radius-full);
+    display: inline-block;
+  }
+
+  .feat-hero__content h1 { color: var(--color-charcoal); }
+  .feat-hero__content h1 em { color: var(--color-primary); font-style: italic; }
+
+  .feat-hero__cta { margin-top: var(--space-sm); }
+
+  .feat-hero__img {
+    width: 100%; max-width: 440px; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg); margin: 0 auto; display: block;
+  }
+
+  /* -- CTA (unchanged) -- */
+  .feat-cta {
+    background: linear-gradient(135deg, var(--color-charcoal), var(--color-dark));
+    border-radius: var(--radius-xl); padding: clamp(3rem, 6vw, 5rem); text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .btn-cta-white {
+    background: white; color: var(--color-charcoal);
+    padding: 1rem 2.5rem; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.3s var(--ease-smooth); border: none; cursor: pointer;
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-cta-white .arrow { display: inline-block; transition: transform 0.3s var(--ease-smooth); }
+  .btn-cta-white:hover .arrow { transform: translateX(4px); }
+
+  /* 1. JOURNEY BENTO GRID */
+  .journey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .journey-card {
+    border-radius: var(--radius-xl);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    background-image: var(--jc-bg);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .journey-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  }
+
+  .journey-card--wide {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    border-color: transparent;
+  }
+
+  .journey-step {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 900;
+    opacity: 0.15;
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .journey-card--wide .journey-step {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    opacity: 0.08;
+    color: white;
+  }
+
+  .journey-card__mockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .jm-calendar {
+    width: 100px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .jm-cal-month {
+    display: block;
+    background: rgba(255,82,82,0.6);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.4rem;
+  }
+
+  .jm-cal-day {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: white;
+    padding: 0.5rem 0;
+  }
+
+  .jm-photos {
+    display: flex;
+    gap: 6px;
+  }
+
+  .jm-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+  }
+
+  /* 2. FUNCTION BENTO GRID */
+  .fn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .fn-card {
+    border-radius: var(--radius-xl);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .fn-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  }
+
+  .fn-card--wide {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .fn-card--dark {
+    background-image: linear-gradient(160deg, #1a1a3e, #2d1b4e) !important;
+    border-color: transparent;
+  }
+
+  .fn-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+  }
+
+  .fn-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+
+  .fn-feat {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+    padding: 0.25rem 0.65rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-full);
+  }
+
+  .fn-feat--light {
+    color: rgba(255,255,255,0.8);
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  .fn-card__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fn-mockup-rsvp {
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .fn-rsvp-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .fn-rsvp-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .fn-rsvp-bar {
+    height: 6px;
+    background-color: var(--color-border);
+    border-radius: 3px;
+  }
+
+  .fn-mockup-count {
+    text-align: center;
+  }
+
+  .fn-count-num {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.9);
+    line-height: 1;
+    display: block;
+  }
+
+  .fn-count-label {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  /* 3. CSS-ONLY TAB SELECTOR -- REGIONAL WEDDINGS */
+  .region-tabs {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .region-radio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .region-tab-bar {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--color-border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .region-tab-bar::-webkit-scrollbar { display: none; }
+
+  .region-tab {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 1rem 1.25rem;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+  }
+
+  .region-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--tab-color);
+    border-radius: 3px 3px 0 0;
+    transform: scaleX(0);
+    transition: transform 0.3s var(--ease-smooth);
+  }
+
+  .region-tab:hover {
+    color: var(--color-charcoal);
+  }
+
+  .region-panel {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2.5rem 0 1rem;
+    animation: regionFade 0.4s ease forwards;
+  }
+
+  @keyframes regionFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  #tab-marathi:checked ~ .region-tab-bar label[for="tab-marathi"],
+  #tab-bengali:checked ~ .region-tab-bar label[for="tab-bengali"],
+  #tab-south:checked ~ .region-tab-bar label[for="tab-south"],
+  #tab-punjabi:checked ~ .region-tab-bar label[for="tab-punjabi"],
+  #tab-rajasthani:checked ~ .region-tab-bar label[for="tab-rajasthani"],
+  #tab-gujarati:checked ~ .region-tab-bar label[for="tab-gujarati"],
+  #tab-tamil:checked ~ .region-tab-bar label[for="tab-tamil"],
+  #tab-sikh:checked ~ .region-tab-bar label[for="tab-sikh"],
+  #tab-muslim:checked ~ .region-tab-bar label[for="tab-muslim"],
+  #tab-christian:checked ~ .region-tab-bar label[for="tab-christian"],
+  #tab-sindhi:checked ~ .region-tab-bar label[for="tab-sindhi"],
+  #tab-assamese:checked ~ .region-tab-bar label[for="tab-assamese"] {
+    color: var(--tab-color);
+  }
+
+  #tab-marathi:checked ~ .region-tab-bar label[for="tab-marathi"]::after,
+  #tab-bengali:checked ~ .region-tab-bar label[for="tab-bengali"]::after,
+  #tab-south:checked ~ .region-tab-bar label[for="tab-south"]::after,
+  #tab-punjabi:checked ~ .region-tab-bar label[for="tab-punjabi"]::after,
+  #tab-rajasthani:checked ~ .region-tab-bar label[for="tab-rajasthani"]::after,
+  #tab-gujarati:checked ~ .region-tab-bar label[for="tab-gujarati"]::after,
+  #tab-tamil:checked ~ .region-tab-bar label[for="tab-tamil"]::after,
+  #tab-sikh:checked ~ .region-tab-bar label[for="tab-sikh"]::after,
+  #tab-muslim:checked ~ .region-tab-bar label[for="tab-muslim"]::after,
+  #tab-christian:checked ~ .region-tab-bar label[for="tab-christian"]::after,
+  #tab-sindhi:checked ~ .region-tab-bar label[for="tab-sindhi"]::after,
+  #tab-assamese:checked ~ .region-tab-bar label[for="tab-assamese"]::after {
+    transform: scaleX(1);
+  }
+
+  #tab-marathi:checked ~ .region-panel--1 { display: grid; }
+  #tab-bengali:checked ~ .region-panel--2 { display: grid; }
+  #tab-south:checked ~ .region-panel--3 { display: grid; }
+  #tab-punjabi:checked ~ .region-panel--4 { display: grid; }
+  #tab-rajasthani:checked ~ .region-panel--5 { display: grid; }
+  #tab-gujarati:checked ~ .region-panel--6 { display: grid; }
+  #tab-tamil:checked ~ .region-panel--7 { display: grid; }
+  #tab-sikh:checked ~ .region-panel--8 { display: grid; }
+  #tab-muslim:checked ~ .region-panel--9 { display: grid; }
+  #tab-christian:checked ~ .region-panel--10 { display: grid; }
+  #tab-sindhi:checked ~ .region-panel--11 { display: grid; }
+  #tab-assamese:checked ~ .region-panel--12 { display: grid; }
+
+  .region-panel__text h3 {
+    font-family: var(--font-heading);
+  }
+
+  .region-panel__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .region-panel__tags span {
+    padding: 0.4rem 1rem;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+  }
+
+  .region-panel__motif {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg,
+      color-mix(in srgb, var(--motif-1) 8%, transparent),
+      color-mix(in srgb, var(--motif-2) 12%, transparent)
+    );
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .motif-shape {
+    position: absolute;
+  }
+
+  .motif-shape--circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--motif-1);
+    opacity: 0.25;
+    top: 15%;
+    right: 10%;
+  }
+
+  .motif-shape--diamond {
+    width: 60px;
+    height: 60px;
+    background: var(--motif-2);
+    opacity: 0.15;
+    transform: rotate(45deg);
+    bottom: 20%;
+    left: 15%;
+  }
+
+  .motif-shape--dots {
+    width: 80px;
+    height: 80px;
+    background-image: radial-gradient(circle, var(--motif-1) 2px, transparent 2px);
+    background-size: 12px 12px;
+    opacity: 0.2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .motif-shape--arch {
+    width: 100px;
+    height: 50px;
+    border: 3px solid var(--motif-1);
+    border-bottom: none;
+    border-radius: 100px 100px 0 0;
+    opacity: 0.2;
+    top: 20%;
+    left: 20%;
+  }
+
+  .motif-shape--circle-sm {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--motif-2);
+    opacity: 0.15;
+    bottom: 25%;
+    right: 25%;
+  }
+
+  .motif-shape--lines {
+    width: 60px;
+    height: 60px;
+    background: repeating-linear-gradient(
+      45deg,
+      var(--motif-1),
+      var(--motif-1) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+    opacity: 0.12;
+    top: 10%;
+    right: 15%;
+  }
+
+  .motif-shape--temple {
+    width: 80px;
+    height: 100px;
+    border: 3px solid var(--motif-1);
+    border-radius: 40px 40px 0 0;
+    opacity: 0.2;
+    bottom: 10%;
+    left: 30%;
+  }
+
+  .motif-shape--wave {
+    width: 120px;
+    height: 30px;
+    border-bottom: 3px solid var(--motif-2);
+    border-radius: 0 0 50% 50%;
+    opacity: 0.2;
+    top: 30%;
+    right: 5%;
+  }
+
+  /* -- Responsive -- */
+  @media (max-width: 900px) {
+    .feat-hero__inner { grid-template-columns: 1fr; text-align: center; }
+    .feat-hero__content { align-items: center; }
+
+    .journey-grid { grid-template-columns: 1fr 1fr; }
+    .journey-card--wide { grid-column: span 2; }
+
+    .fn-grid { grid-template-columns: 1fr 1fr; }
+    .fn-card--wide { grid-column: span 2; }
+
+    .region-panel { grid-template-columns: 1fr; }
+    .region-panel__motif { max-width: 360px; margin: 0 auto; }
+    .region-tab { padding: 0.85rem 1rem; font-size: 0.85rem; }
+  }
+
+  @media (max-width: 600px) {
+    .feat-hero { min-height: auto; padding-bottom: 2rem; }
+    .feat-hero__img { max-width: 300px; }
+
+    .journey-grid { grid-template-columns: 1fr; }
+    .journey-card--wide { grid-column: span 1; grid-template-columns: 1fr; }
+
+    .fn-grid { grid-template-columns: 1fr; }
+    .fn-card--wide { grid-column: span 1; grid-template-columns: 1fr; }
+
+    .region-tab { font-size: 0.78rem; padding: 0.75rem 0.85rem; }
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Hero from '../../components/Hero.astro';
+import Stats from '../../components/Stats.astro';
+import Products from '../../components/Products.astro';
+import HowItWorks from '../../components/HowItWorks.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import { countries } from '../../data/countries';
+import type { CountryCode } from '../../data/countries';
+
+export function getStaticPaths() {
+  return [
+    { params: { country: 'in' } },
+    { params: { country: 'us' } },
+    { params: { country: 'uk' } },
+  ];
+}
+
+const country = Astro.params.country as CountryCode;
+const countryInfo = countries[country];
+---
+
+<Layout title={`Lumhe Invites — ${countryInfo.label}`}>
+  <Navbar country={country} />
+  <Hero country={country} />
+  <Stats />
+  <Products />
+  <HowItWorks />
+  <Testimonials country={country} />
+  <CTA />
+  <Footer country={country} />
+</Layout>
